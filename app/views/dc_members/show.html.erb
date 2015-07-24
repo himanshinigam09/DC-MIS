@@ -1,0 +1,107 @@
+<html>    
+<body>
+
+
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><b>DC Member Details</b></h1>
+                <ol class="breadcrumb">
+                  <p id="notice"><%= notice %></p>
+
+
+
+
+<p>
+  <b>First name :&nbsp;</b>
+  <%= @dc_member.first_name %>
+</p>
+<br>
+<p>
+  <b>Mid name :&nbsp;</b>
+  <%= @dc_member.mid_name %>
+</p>
+<br>
+<p>
+  <b>Last name :&nbsp;</b>
+  <%= @dc_member.last_name %>
+</p>
+<br>
+<p>
+  <b>Date of birth :&nbsp;</b>
+  <%= @dc_member.date_of_birth %>
+</p>
+<br>
+<p>
+  <b>Gender :&nbsp;</b>
+  <%= @dc_member.gender %>
+</p>
+<br>
+<p>
+  <b>Blood group :&nbsp;</b>
+  <%= @dc_member.blood_group %>
+</p>
+<br>
+<p>
+  <b>Local address :&nbsp;</b>
+  <%= @dc_member.local_address %>
+</p>
+<br>
+<p>
+  <b>Permanent address :&nbsp;</b>
+  <%= @dc_member.permanent_address %>
+</p>
+<br>
+<p>
+  <b>Father name :&nbsp;</b>
+  <%= @dc_member.father_name %>
+</p>
+<br>
+<p>
+  <b>Mother name :&nbsp;</b>
+  <%= @dc_member.mother_name %>
+</p>
+<br>
+<p>
+  <b>Guardian name :&nbsp;</b>
+  <%= @dc_member.guardian_name %>
+</p>
+<br>
+<p>
+  <b>Course name :&nbsp;</b>
+  <%= @dc_member.course_name %>
+</p>
+<br>
+<p>
+  <b>Github link :&nbsp;</b>
+  <%= @dc_member.github_link %>
+</p>
+<br>
+<p>
+  <b>Linkedin link :&nbsp;</b>
+  <%= @dc_member.linkedin_link %>
+</p>
+<br>
+<p>
+  <b>Sem of joining :&nbsp;</b>
+  <%= @dc_member.sem_of_joining %>
+</p>
+<br>
+<p>
+  <b>Email :&nbsp;</b>
+  <%= @dc_member.email %>
+</p>
+<br>
+
+<%= link_to 'Edit', edit_dc_member_path(@dc_member) %> |
+<%= link_to 'Back', dc_members_path %>
+</ol>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+              

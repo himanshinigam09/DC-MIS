@@ -184,8 +184,70 @@ table tr:hover td{
 </head>
 
 <body>
+<!-- Navigation -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="dcs">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="open_source.html">Open Source</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio-1-col.html">Current Members</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">Past Members</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="blog-home-1.html">Current Projects</a>
+                            </li>
+                            <li>
+                                <a href="blog-home-2.html">Past Projects</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">Sign In</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
     
-<!-- Page Content -->
+    <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
@@ -221,51 +283,68 @@ table tr:hover td{
                 </div>
             </div>
             <!-- Content Column -->
+            
+            
+            <div class="col-md-9">
+                <h1><b>Listing Correspondences</b></h1><br>
+
+<table cellspacing='0'>
+ 
+  <tr>
+    <th>Type of correspondence</th>
+    <th>Subject</th>
+    <th>User initials</th>
+    <th>Medium</th>
+    <th>Address</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @correspondences.each do |correspondence| %>
+  <tr>
+    <td><%= correspondence.type_of_correspondence %></td>
+    <td><%= correspondence.subject %></td>
+    <td><%= correspondence.user_initials %></td>
+    <td><%= correspondence.medium %></td>
+    <td><%= correspondence.address %></td>
+    <td><%= correspondence.description %></td>
+    <td><%= correspondence.date %></td>
+    <td><%= link_to 'Show', correspondence %></td>
+    <td><%= link_to 'Edit', edit_correspondence_path(correspondence) %></td>
+    <td><%= link_to 'Destroy', correspondence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
 
 
-             <div class="col-md-9">
 
-                <h1><b>Listing Events</b></h1><br>
 
-                <table cellspacing='0'>
-                <tr>
-                <th>Type of event</th>
-                <th>Organizer</th>
-                <th>Topic</th>
-                <th>Venue</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Duration</th>
-                <th>Material link</th>
-                <th>Summary link</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                </tr>
-
-                <% @events.each do |event| %>
-                <tr>
-                <td><%= event.type_of_event %></td>
-                <td><%= event.organizer_id %></td>
-                <td><%= event.topic %></td>
-                <td><%= event.venue %></td>
-                <td><%= event.date %></td>
-                <td><%= event.time %></td>
-                <td><%= event.duration %></td>
-                <td><%= event.material_link %></td>
-                <td><%= event.summary_link %></td>
-                <td><%= link_to 'Show', event %></td>
-                <td><%= link_to 'Edit', edit_event_path(event) %></td>
-                <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-                <% end %>
-                </table>
-
-                <br />
-
-                <%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Correspondence', new_correspondence_path %>
             </div>
         </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
+    <!-- /.container -->
+
+    
 </body>
+
+
 </html>
+
+    
