@@ -1,6 +1,7 @@
 class DailyLogsController < ApplicationController
   # GET /daily_logs
   # GET /daily_logs.json
+  layout "index", :only => [:index]
   def index
     @daily_logs = DailyLog.all
 

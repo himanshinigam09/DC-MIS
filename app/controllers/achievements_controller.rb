@@ -1,6 +1,7 @@
 class AchievementsController < ApplicationController
   # GET /achievements
   # GET /achievements.json
+  layout "index", :only => [:index]
   def index
     @achievements = Achievement.all
 

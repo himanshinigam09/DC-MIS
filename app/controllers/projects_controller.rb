@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
+  layout "index", :only => [:index]
   def index
     @projects = Project.all
 

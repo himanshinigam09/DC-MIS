@@ -2,7 +2,7 @@ class CorrespondencesController < ApplicationController
   before_filter :authorize
   # GET /correspondences
   # GET /correspondences.json
- 
+ layout "index", :only => [:index]
   def index
     
     @correspondences = Correspondence.order("type_of_correspondence").page(params[:page])

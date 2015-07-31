@@ -11,13 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150724071246) do
+ActiveRecord::Schema.define(:version => 20150724110002) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
     t.string   "achievement"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "edition"
+    t.string   "publication"
+    t.string   "ISBN_number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "communications", :force => true do |t|
@@ -131,6 +141,18 @@ ActiveRecord::Schema.define(:version => 20150724071246) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "issued_resources", :force => true do |t|
+    t.string   "type_of_resource"
+    t.string   "issued_by"
+    t.string   "issued_to"
+    t.date     "issue_date"
+    t.time     "issue_time"
+    t.date     "submission_date"
+    t.time     "submission_time"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "member_achievements", :force => true do |t|
     t.integer  "dc_member_id"
     t.integer  "achievement_id"
@@ -197,6 +219,20 @@ ActiveRecord::Schema.define(:version => 20150724071246) do
     t.string   "github_page_link"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "system_informations", :force => true do |t|
+    t.string   "system_name"
+    t.string   "ram"
+    t.string   "ram_type"
+    t.string   "hdd_capacity"
+    t.string   "monitor_type"
+    t.string   "lan"
+    t.string   "access"
+    t.string   "os_installed"
+    t.string   "sw_details"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

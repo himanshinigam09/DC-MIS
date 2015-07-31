@@ -1,0 +1,92 @@
+<!-- form for book-->
+
+<%= form_for @book, url: infrastructures_path do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :edition %><br />
+    <%= f.text_field :edition %>
+  </div>
+  <div class="field">
+    <%= f.label :publication %><br />
+    <%= f.text_field :publication %>
+  </div>
+  <div class="field">
+    <%= f.label :ISBN_number %><br />
+    <%= f.text_field :ISBN_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>  
+  <% end %>
+
+  <!-- form for system information -->
+  <%= form_for @system_information, url: infrastructures_path do |f| %>
+  <% if @system_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
+
+      <ul>
+      <% @system_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :system_name %><br />
+    <%= f.text_field :system_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ram %><br />
+    <%= f.text_field :ram %>
+  </div>
+  <div class="field">
+    <%= f.label :ram_type %><br />
+    <%= f.text_field :ram_type %>
+  </div>
+  <div class="field">
+    <%= f.label :hdd_capacity %><br />
+    <%= f.text_field :hdd_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :monitor_type %><br />
+    <%= f.text_field :monitor_type %>
+  </div>
+  <div class="field">
+    <%= f.label :lan %><br />
+    <%= f.text_field :lan %>
+  </div>
+  <div class="field">
+    <%= f.label :access %><br />
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :os_installed %><br />
+    <%= f.text_field :os_installed %>
+  </div>
+  <div class="field">
+    <%= f.label :sw_details %><br />
+    <%= f.text_field :sw_details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>  
+  <% end %>

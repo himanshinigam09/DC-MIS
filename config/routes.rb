@@ -42,6 +42,8 @@ resources :dcs
   resources :daily_logs
   resources :achievements
   resources :entrances
+  resources :infrastructures
+  
   
   
 # these routes are for showing users a login form, logging them in, and logging them out.

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_of_resource: MyString
+  issued_by: MyString
+  issued_to: MyString
+  issue_date: 2015-07-24
+  issue_time: 2015-07-24 16:30:02
+  submission_date: 2015-07-24
+  submission_time: 2015-07-24 16:30:02
+
+two:
+  type_of_resource: MyString
+  issued_by: MyString
+  issued_to: MyString
+  issue_date: 2015-07-24
+  issue_time: 2015-07-24 16:30:02
+  submission_date: 2015-07-24
+  submission_time: 2015-07-24 16:30:02

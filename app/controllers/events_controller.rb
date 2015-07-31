@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+  layout "index", :only => [:index]
   def index
     @events = Event.all
 

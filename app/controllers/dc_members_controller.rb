@@ -2,7 +2,7 @@ class DcMembersController < ApplicationController
  #before_filter :authorize
   # GET /dc_members
   # GET /dc_members.json
-  
+  layout "index", :only => [:index]
   def index
     @dc_members = DcMember.all
 

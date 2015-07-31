@@ -1,6 +1,7 @@
 class EntrancesController < ApplicationController
   # GET /entrances
   # GET /entrances.json
+  layout "index", :only => [:index]
   def index
     @entrances = Entrance.all
 

@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_filter :authorize
   # GET /profiles
   # GET /profiles.json
+  layout "index", :only => [:index]
   def index
     @profiles = Profile.all
 
