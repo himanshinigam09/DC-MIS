@@ -23,6 +23,7 @@ def new
   
 
 	respond_to do |format|
+<<<<<<< Updated upstream
       format.html # new.html.erb
       format.json { render json: @project }
       
@@ -31,6 +32,8 @@ def new
       format.json { render json: @system_information }
       format.json { render json: @issued_resource }
     end
+=======
+>>>>>>> Stashed changes
     format.html
     format.js      
     format.json { render json: @book }
