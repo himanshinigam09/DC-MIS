@@ -25,7 +25,11 @@ end
 gem 'jquery-rails'
 gem 'high_voltage'
 gem 'foreigner'
+<<<<<<< HEAD
 gem 'devise'
+=======
+
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 gem "kaminari"
 gem "bootstrap-kaminari-views"
 

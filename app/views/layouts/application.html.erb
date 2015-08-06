@@ -7,10 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 
  
 <!--added these lines.-->
 
+=======
+	
+<!--added these lines.-->
+<% if @current_user %>
+  Signed in as <%= @current_user.email %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
    
 
 <%= yield %>

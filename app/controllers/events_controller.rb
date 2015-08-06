@@ -5,7 +5,10 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -27,7 +30,10 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
+<<<<<<< HEAD
     @events = Event.order("topic").page(params[:page]).per(5) 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
     respond_to do |format|
       format.html # new.html.erb

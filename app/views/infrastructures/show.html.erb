@@ -1,4 +1,25 @@
+<<<<<<< HEAD
 <html>    
+=======
+<html>  
+<head>
+<style>
+$(document).ready ( 
+  $("#book").bind "ajax:success", (evt, data, status, xhr) ->
+    $("#loader").hide()
+    $("#display_result").html xhr.responseText
+  $("#book").bind "ajax:error", (xhr, status, error) ->
+    $("#loader").hide()
+    #Give an alert message
+  $("#book").bind "ajax:before", (evt, data, status, xhr) ->
+    $("#loader").show()
+);
+</style>
+
+
+
+</head>  
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 <body>
 
 

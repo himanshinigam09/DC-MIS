@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20150806063506) do
+=======
+ActiveRecord::Schema.define(:version => 20150724110002) do
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -41,7 +45,11 @@ ActiveRecord::Schema.define(:version => 20150806063506) do
   add_index "communications", ["dc_member_id"], :name => "index_communications_on_dc_member_id"
 
   create_table "correspondences", :force => true do |t|
+<<<<<<< HEAD
     t.string   "type_of_correspondence"
+=======
+    t.string   "type_of_correspondence", :null => false
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     t.string   "subject"
     t.string   "user_initials"
     t.string   "medium"
@@ -61,8 +69,11 @@ ActiveRecord::Schema.define(:version => 20150806063506) do
     t.datetime "updated_at",   :null => false
   end
 
+<<<<<<< HEAD
   add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   create_table "dc_members", :force => true do |t|
     t.string   "first_name"
     t.string   "mid_name"
@@ -143,11 +154,14 @@ ActiveRecord::Schema.define(:version => 20150806063506) do
     t.datetime "updated_at",    :null => false
   end
 
+<<<<<<< HEAD
   create_table "faqs", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   create_table "issued_resources", :force => true do |t|
     t.string   "type_of_resource"
     t.string   "issued_by"
@@ -243,6 +257,7 @@ ActiveRecord::Schema.define(:version => 20150806063506) do
   end
 
   create_table "users", :force => true do |t|
+<<<<<<< HEAD
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -260,4 +275,13 @@ ActiveRecord::Schema.define(:version => 20150806063506) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+=======
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 end

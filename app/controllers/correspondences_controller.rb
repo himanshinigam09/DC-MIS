@@ -5,9 +5,14 @@ class CorrespondencesController < ApplicationController
  layout "index", :only => [:index]
   def index
     
+<<<<<<< HEAD
     @correspondences = Correspondence.all
     @correspondences = Correspondence.order("subject").page(params[:page]).per(2) 
  
+=======
+    @correspondences = Correspondence.order("type_of_correspondence").page(params[:page])
+    @correspondences = Correspondence.all
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +38,10 @@ end
   # GET /correspondences/new.json
   def new
     @correspondence = Correspondence.new
+<<<<<<< HEAD
         @correspondences = Correspondence.order("subject").page(params[:page]).per(5) 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +52,10 @@ end
   # GET /correspondences/1/edit
   def edit
     @correspondence = Correspondence.find(params[:id])
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   end
 
   # POST /correspondences

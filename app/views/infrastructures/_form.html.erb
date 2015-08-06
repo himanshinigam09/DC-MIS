@@ -1,6 +1,12 @@
 <!-- form for book-->
 
+<<<<<<< HEAD
 <%= form_for @book, url: infrastructures_path do |f| %>
+=======
+
+
+<%= form_for @book, :url=>infrastructures_path, :remote=>true do |f| %>
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
@@ -33,12 +39,26 @@
     <%= f.text_field :ISBN_number %>
   </div>
   <div class="actions">
+<<<<<<< HEAD
     <%= f.submit %>
   </div>  
   <% end %>
 
   <!-- form for system information -->
   <%= form_for @system_information, url: infrastructures_path do |f| %>
+=======
+    <%= f.submit "Save", :disable_with=>"Loading..." %>
+  </div>  
+  <% end %>
+
+  
+
+
+  <div id="display_result"></div>
+
+  <!-- form for system information -->
+  <%= form_for @system_information, :url=>infrastructures_path, :id=>"system_information", :remote=>true do |f| %>
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   <% if @system_information.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
@@ -87,6 +107,10 @@
     <%= f.text_field :sw_details %>
   </div>
   <div class="actions">
+<<<<<<< HEAD
     <%= f.submit %>
+=======
+    <%= f.submit  "Save", :disable_with=>"Loading..." %>
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   </div>  
   <% end %>

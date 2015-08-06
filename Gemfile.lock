@@ -32,7 +32,10 @@ GEM
     autoprefixer-rails (5.2.1)
       execjs
       json
+<<<<<<< HEAD
     bcrypt (3.1.10)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     bcrypt-ruby (3.0.1)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
@@ -47,6 +50,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+<<<<<<< HEAD
     devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -54,6 +58,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     erubis (2.7.0)
     execjs (2.5.2)
     foreigner (1.7.4)
@@ -76,7 +82,10 @@ GEM
     minitest (5.7.0)
     multi_json (1.11.1)
     mysql2 (0.3.18)
+<<<<<<< HEAD
     orm_adapter (0.5.0)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     polyglot (0.3.5)
     rack (1.4.7)
     rack-cache (1.2)
@@ -103,8 +112,11 @@ GEM
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
+<<<<<<< HEAD
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     sass (3.4.15)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -121,7 +133,10 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
     thor (0.19.1)
+<<<<<<< HEAD
     thread_safe (0.3.5)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
@@ -130,8 +145,11 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+<<<<<<< HEAD
     warden (1.2.3)
       rack (>= 1.0)
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
 PLATFORMS
   ruby
@@ -142,7 +160,10 @@ DEPENDENCIES
   bootstrap-kaminari-views
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 3.2.1)
+<<<<<<< HEAD
   devise
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   foreigner
   high_voltage
   jquery-rails
@@ -153,3 +174,9 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   strong_parameters
   uglifier (>= 1.0.3)
+<<<<<<< HEAD
+=======
+
+BUNDLED WITH
+   1.10.5
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9

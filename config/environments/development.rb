@@ -34,6 +34,9 @@ DCMis::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+<<<<<<< HEAD
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 end

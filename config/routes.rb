@@ -2,6 +2,7 @@ DCMis::Application.routes.draw do
   
   
 
+<<<<<<< HEAD
   
   
 
@@ -11,6 +12,8 @@ DCMis::Application.routes.draw do
 
   devise_for :users
 
+=======
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
   resources :entrances
 
 
@@ -23,7 +26,11 @@ DCMis::Application.routes.draw do
   resources :projects
 
 
+<<<<<<< HEAD
   
+=======
+  resources :users
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
 
   resources :events
@@ -32,7 +39,11 @@ DCMis::Application.routes.draw do
   resources :profiles
 
 
+<<<<<<< HEAD
   resources :dcs
+=======
+resources :dcs
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
   resources :dc_members
   resources :correspondences
@@ -56,11 +67,20 @@ DCMis::Application.routes.draw do
   
   
 # these routes are for showing users a login form, logging them in, and logging them out.
+<<<<<<< HEAD
 
    devise_scope :user do
     get "/login" => "devise/sessions#new"
     delete "/logout" => "devise/sessions#destroy"
   end
+=======
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
 
 
@@ -113,7 +133,11 @@ DCMis::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+<<<<<<< HEAD
   root :to => 'dcs#index'
+=======
+  # root :to => 'welcome#index'
+>>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 
   # See how all your routes lay out with "rake routes"
 
