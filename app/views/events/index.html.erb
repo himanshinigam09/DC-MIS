@@ -1,0 +1,89 @@
+<html>
+
+<body>
+    
+<!-- Page Content -->
+
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Departments
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="dcs.html">Home</a>
+                    </li>
+                    <li class="active">Departments</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Sidebar Column -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item">Events</a>
+                    <a href="about.html" class="list-group-item">Infrastructure</a>
+                    <a href="services.html" class="list-group-item">Human Resource</a>
+                    <a href="contact.html" class="list-group-item">Project</a>
+                    <a href="correspondences.html" class="list-group-item">Correspondence</a>
+                    <a href="portfolio-2-col.html" class="list-group-item">Training</a>
+                    <a href="portfolio-3-col.html" class="list-group-item">Software Technical Support</a>
+                    <a href="portfolio-4-col.html" class="list-group-item">Hardware and Networking Support</a>
+                    <a href="portfolio-item.html" class="list-group-item">Future Enhancements</a>
+                    
+                </div>
+            </div>
+            <!-- Content Column -->
+
+
+             <div class="col-md-9">
+
+                <h1><b>Listing Events</b></h1><br>
+
+                <table cellspacing='0'>
+                <tr>
+                <th>Type of event</th>
+                <th>Organizer</th>
+                <th>Topic</th>
+                <th>Venue</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Duration</th>
+                <th>Material link</th>
+                <th>Summary link</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </tr>
+
+                <% @events.each do |event| %>
+                <tr>
+                <td><%= event.type_of_event %></td>
+                <td><%= event.organizer_id %></td>
+                <td><%= event.topic %></td>
+                <td><%= event.venue %></td>
+                <td><%= event.date %></td>
+                <td><%= event.time %></td>
+                <td><%= event.duration %></td>
+                <td><%= event.material_link %></td>
+                <td><%= event.summary_link %></td>
+                <td><%= link_to 'Show', event %></td>
+                <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+                </table>
+
+                <br />
+
+                <%= link_to 'New Event', new_event_path %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

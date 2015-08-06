@@ -1,0 +1,155 @@
+<html>    
+<body>
+
+
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><b>Profile Details</b></h1>
+                <ol class="breadcrumb">
+                  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name :&nbsp;</b>
+  <%= @profile.first_name %>
+</p>
+<br>
+
+<p>
+  <b>Mid name :&nbsp;</b>
+  <%= @profile.mid_name %>
+</p>
+<br>
+
+
+<p>
+  <b>Last name :&nbsp;</b>
+  <%= @profile.last_name %>
+</p>
+<br>
+
+
+<p>
+  <b>Date of birth :&nbsp;</b>
+  <%= @profile.date_of_birth %>
+</p>
+<br>
+
+
+<p>
+  <b>Gender :&nbsp;</b>
+  <%= @profile.gender %>
+</p>
+<br>
+
+
+<p>
+  <b>Blood group :&nbsp;</b>
+  <%= @profile.blood_group %>
+</p>
+<br>
+
+
+<p>
+  <b>Local address :&nbsp;</b>
+  <%= @profile.local_address %>
+</p>
+<br>
+
+
+<p>
+  <b>Permanent address :&nbsp;</b>
+  <%= @profile.permanent_address %>
+</p>
+<br>
+
+
+<p>
+  <b>Father name :&nbsp;</b>
+  <%= @profile.father_name %>
+</p>
+<br>
+
+
+<p>
+  <b>Mother name :&nbsp;</b>
+  <%= @profile.mother_name %>
+</p>
+<br>
+
+
+<p>
+  <b>Guardian name :&nbsp;</b>
+  <%= @profile.guardian_name %>
+</p>
+<br>
+
+
+<p>
+  <b>Course name :&nbsp;</b>
+  <%= @profile.course_name %>
+</p>
+
+<br>
+
+<p>
+  <b>Sem of joining :&nbsp;</b>
+  <%= @profile.sem_of_joining %>
+</p>
+<br>
+
+<p>
+  <b>Email :&nbsp;</b>
+  <%= @profile.email %>
+</p>
+<br>
+
+<p>
+  <b>Github :&nbsp;</b>
+  <%= @profile.github_id %>
+</p>
+<br>
+
+<p>
+  <b>Linkedin :&nbsp;</b>
+  <%= @profile.linkedin_id %>
+</p>
+<br>
+
+<p>
+  <b>Facebook :&nbsp;</b>
+  <%= @profile.facebook_id %>
+</p>
+<br>
+
+<p>
+  <b>Googleplus :&nbsp;</b>
+  <%= @profile.googleplus_id %>
+</p>
+<br>
+
+<p>
+  <b>Twitter :&nbsp;</b>
+  <%= @profile.twitter_id %>
+</p>
+<br>
+
+<p>
+  <b>Blog :&nbsp;</b>
+  <%= @profile.blog_id %>
+</p>
+
+<br>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+</ol>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>

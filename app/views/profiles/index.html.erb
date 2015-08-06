@@ -1,0 +1,167 @@
+<html>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="dcs">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="open_source.html">Open Source</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio-1-col.html">Current Members</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">Past Members</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="blog-home-1.html">Current Projects</a>
+                            </li>
+                            <li>
+                                <a href="blog-home-2.html">Past Projects</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">Sign In</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Departments
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="dcs.html">Home</a>
+                    </li>
+                    <li class="active">Departments</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Sidebar Column -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item">Events</a>
+                    <a href="about.html" class="list-group-item">Infrastructure</a>
+                    <a href="services.html" class="list-group-item">Human Resource</a>
+                    <a href="contact.html" class="list-group-item">Project</a>
+                    <a href="correspondences.html" class="list-group-item">Correspondence</a>
+                    <a href="portfolio-2-col.html" class="list-group-item">Training</a>
+                    <a href="portfolio-3-col.html" class="list-group-item">Software Technical Support</a>
+                    <a href="portfolio-4-col.html" class="list-group-item">Hardware and Networking Support</a>
+                    <a href="portfolio-item.html" class="list-group-item">Future Enhancements</a>
+                    
+                </div>
+            </div>
+            <!-- Content Column -->
+
+
+             <div class="col-md-9">
+            <h1><b>Listing Profiles</b></h1><br>
+
+            <table cellspacing='0'>
+            <tr>
+            <th>First name</th>
+            <th>Mid name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>Gender</th>
+            <th>Blood group</th>
+            <th>Local address</th>
+            <th>Permanent address</th>
+            <th>Father name</th>
+            <th>Mother name</th>
+            <th>Guardian name</th>
+            <th>Course name</th>
+            <th>Sem of joining</th>
+            <th>Email</th>
+            <th>Github</th>
+            <th>Linkedin</th>
+            <th>Facebook</th>
+            <th>Googleplus</th>
+            <th>Twitter</th>
+            <th>Blog</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </tr>
+
+            <% @profiles.each do |profile| %>
+            <tr>
+            <td><%= profile.first_name %></td>
+            <td><%= profile.mid_name %></td>
+            <td><%= profile.last_name %></td>
+            <td><%= profile.date_of_birth %></td>
+            <td><%= profile.gender %></td>
+            <td><%= profile.blood_group %></td>
+            <td><%= profile.local_address %></td>
+            <td><%= profile.permanent_address %></td>
+            <td><%= profile.father_name %></td>
+            <td><%= profile.mother_name %></td>
+            <td><%= profile.guardian_name %></td>
+            <td><%= profile.course_name %></td>
+            <td><%= profile.sem_of_joining %></td>
+            <td><%= profile.email %></td>
+            <td><%= profile.github_id %></td>
+            <td><%= profile.linkedin_id %></td>
+            <td><%= profile.facebook_id %></td>
+            <td><%= profile.googleplus_id %></td>
+            <td><%= profile.twitter_id %></td>
+            <td><%= profile.blog_id %></td>
+            <td><%= link_to 'Show', profile %></td>
+            <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+            <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+            </table>
+
+            <br />
+
+            <%= link_to 'New Profile', new_profile_path %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

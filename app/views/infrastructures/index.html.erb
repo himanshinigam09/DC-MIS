@@ -1,0 +1,232 @@
+<html>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="dcs">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="open_source.html">Open Source</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio-1-col.html">Current Members</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">Past Members</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="blog-home-1.html">Current Projects</a>
+                            </li>
+                            <li>
+                                <a href="blog-home-2.html">Past Projects</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">Sign In</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Departments
+                    
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="dcs.html">Home</a>
+                </li>
+                <li class="active">Departments</li>
+                </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+            <!-- Sidebar Column -->
+        <div class="col-md-2">
+            <div class="list-group">
+                <a href="index.html" class="list-group-item">Events</a>
+                <a href="about.html" class="list-group-item">Infrastructure</a>
+                <a href="services.html" class="list-group-item">Human Resource</a>
+                <a href="contact.html" class="list-group-item">Project</a>
+                <a href="correspondences.html" class="list-group-item">Correspondence</a>
+                <a href="portfolio-2-col.html" class="list-group-item">Training</a>
+                <a href="portfolio-3-col.html" class="list-group-item">Software Technical Support</a>
+                <a href="portfolio-4-col.html" class="list-group-item">Hardware and Networking Support</a>
+                <a href="portfolio-item.html" class="list-group-item">Future Enhancements</a>
+            </div>
+        </div>
+        <!-- Content Column -->
+
+
+  
+
+        <div class="col-md-9">
+            <h2><b>Infrastructure</b></h2>
+            <br>
+  
+            <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="/infrastructures#book">Book</a></li>
+            <li><a data-toggle="pill" href="/infrastructures#system_information">System Information</a></li>
+            <li><a data-toggle="pill" href="/infrastructures#issued_resource">Issue Resources</a></li>
+            </ul>
+            <br><br>
+            <div class="tab-content">
+                <div id="book" class="tab-pane fade in active">
+                  <h1><b>Listing Books</b></h1><br>
+
+                <table cellspacing='0'>
+                <tr>
+                <th>Book Title</th>
+                <th>Edition</th>
+                <th>Author</th>
+                <th>Publication</th>
+                <th>ISBN No.</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </tr>
+
+                <div id="product-modal" class="modal hide fade"></div>
+                
+                <% @books.each do |book| %>
+                <tr>
+                <td><%= book.title %></td>
+                <td><%= book.edition %></td>
+                <td><%= book.author %></td>
+                <td><%= book.publication %></td>
+                <td><%= book.ISBN_number %></td>
+                <td><%= link_to 'Show' %></td>
+                <td><%= link_to 'Edit', edit_infrastructure_path(book) %></td>
+                <td><%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                
+                <% end %>
+                </table>
+                <br />
+                
+                <%= link_to 'New Book', new_infrastructure_path, remote: true %>
+                
+                <div id="task-form" style="display:none;"></div>
+
+                </div>
+                <div id="system_information" class="tab-pane fade">
+                  <h1><b>Listing System Information</b></h1><br>
+
+                <table cellspacing='0'>
+                <tr>
+                <th>System Name</th> 
+                <th>Access</th>   
+                <th>OS Installed</th>
+                <th>RAM</th>
+                <th>Type of RAM</th>
+                <th>Type of Monitor</th>
+                <th>LAN</th>
+                <th>HDD Capacity</th>
+                <th>Software Details</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </tr>
+
+                <% @system_informations.each do |system_information| %>
+                <tr>
+                <td><%= system_information.system_name %></td>
+                <td><%= system_information.access %></td>
+                <td><%= system_information.os_installed %></td>
+                <td><%= system_information.ram %></td>
+                <td><%= system_information.ram_type %></td>
+                <td><%= system_information.monitor_type %></td>
+                <td><%= system_information.lan %></td>
+                <td><%= system_information.hdd_capacity %></td>
+                <td><%= system_information.sw_details %></td>
+                
+                <% end %>
+                </table>
+                <br />
+                
+                <%= link_to 'New System Information', new_infrastructure_path %>
+                </div>
+                <div id="issued_resource" class="tab-pane fade">
+                  <h1><b>Listing Issue Resources</b></h1><br>
+
+                <table cellspacing='0'>
+                <tr>
+                <th>Type of Resource</th> 
+                <th>Issue Date</th>   
+                <th>Issue Time</th>
+                <th>Issued by</th>
+                <th>Issued to</th>
+                <th>Submission Date</th>
+                <th>Submission Time</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </tr>
+
+                <% @issued_resources.each do |issued_resource| %>
+                <tr>
+                <td><%= issued_resource.type_of_resource %></td>
+                <td><%= issued_resource.issue_date %></td>
+                <td><%= issued_resource.issue_time %></td>
+                <td><%= issued_resource.issued_by %></td>
+                <td><%= issued_resource.issued_to %></td>
+                <td><%= issued_resource.submission_date %></td>
+                <td><%= issued_resource.submission_time %></td>
+                
+                </tr>
+                <% end %>
+                </table>
+                <br />
+                <%= link_to 'New Issued Resource', new_infrastructure_path %>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+
+
+
+</body>
+</html>
+
