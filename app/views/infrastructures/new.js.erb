@@ -1,2 +1,7 @@
-$("#product-modal").html("<%= escape_javascript(render 'new') %>")
-$("#product-modal").modal("show")
+
+$("#add_book").on("click",function(){
+	<%= render :partial => 'infrastructure/form' %>
+  $("#book").show();
+});
+
+<%= link_to 'Back', infrastructures_path %>

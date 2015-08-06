@@ -1,64 +1,3 @@
-<html>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="dcs">Home</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                        <a href="open_source.html">Open Source</a>
-                    </li>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">Current Members</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">Past Members</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Current Projects</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Past Projects</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="faq.html">Sign In</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
 <div class="container">
 
@@ -87,11 +26,7 @@
                 <a href="services.html" class="list-group-item">Human Resource</a>
                 <a href="contact.html" class="list-group-item">Project</a>
                 <a href="correspondences.html" class="list-group-item">Correspondence</a>
-                <a href="portfolio-2-col.html" class="list-group-item">Training</a>
-                <a href="portfolio-3-col.html" class="list-group-item">Software Technical Support</a>
-                <a href="portfolio-4-col.html" class="list-group-item">Hardware and Networking Support</a>
-                <a href="portfolio-item.html" class="list-group-item">Future Enhancements</a>
-            </div>
+                </div>
         </div>
         <!-- Content Column -->
 
@@ -144,6 +79,7 @@
                 
                 <%= link_to 'New Book', new_infrastructure_path, remote: true %>
                 
+                
                 <div id="task-form" style="display:none;"></div>
 
                 </div>
@@ -181,9 +117,10 @@
                 <% end %>
                 </table>
                 <br />
+
                 
-                <%= link_to 'New System Information', new_infrastructure_path %>
-                </div>
+                <%= button_to "ADD System Information",new_infrastructure_path , :method => "get" %>
+                  </div>
                 <div id="issued_resource" class="tab-pane fade">
                   <h1><b>Listing Issue Resources</b></h1><br>
 
@@ -215,8 +152,8 @@
                 <% end %>
                 </table>
                 <br />
-                <%= link_to 'New Issued Resource', new_infrastructure_path %>
-                </div>
+                <%= button_to "ADD Issue Resource",new_infrastructure_path , :method => "get" %>
+                  </div>
                 
             </div>
         </div>
@@ -227,6 +164,5 @@
 
 
 
-</body>
-</html>
+
 
