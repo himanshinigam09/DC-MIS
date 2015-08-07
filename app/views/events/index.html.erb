@@ -3,10 +3,7 @@
 <body>
     
 <!-- Page Content -->
-<<<<<<< HEAD
 
-=======
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
@@ -29,15 +26,12 @@
             <!-- Sidebar Column -->
             <div class="col-md-2">
                 <div class="list-group">
-                    <a href="index.html" class="list-group-item">Events</a>
-                    <a href="about.html" class="list-group-item">Infrastructure</a>
-                    <a href="services.html" class="list-group-item">Human Resource</a>
-                    <a href="contact.html" class="list-group-item">Project</a>
+                    <a href="events.html" class="list-group-item">Events</a>
+                    <a href="infrastructures.html" class="list-group-item">Infrastructure</a>
+                    <a href="profiles.html" class="list-group-item">Human Resource</a>
+                    <a href="projects.html" class="list-group-item">Project</a>
                     <a href="correspondences.html" class="list-group-item">Correspondence</a>
-                    <a href="portfolio-2-col.html" class="list-group-item">Training</a>
-                    <a href="portfolio-3-col.html" class="list-group-item">Software Technical Support</a>
-                    <a href="portfolio-4-col.html" class="list-group-item">Hardware and Networking Support</a>
-                    <a href="portfolio-item.html" class="list-group-item">Future Enhancements</a>
+                    
                     
                 </div>
             </div>
@@ -77,7 +71,7 @@
                 <td><%= event.summary_link %></td>
                 <td><%= link_to 'Show', event %></td>
                 <td><%= link_to 'Edit', edit_event_path(event) %></td>
-                <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= button_to 'Destroy', event_path(event), method: :delete, class: :destroy%></td>
                 </tr>
                 <% end %>
                 </table>

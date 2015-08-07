@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
@@ -13,7 +14,9 @@
         <link href="assets/styles1.css" rel="stylesheet">
     </head>
     <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -28,21 +31,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="about.html">About</a>
+                    <li>
+                        <a href="about.html">About Us</a>
                     </li>
                     <li>
                         <a href="open_source.html">Open Source</a>
                     </li>
                     
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="portfolio-1-col.html">Current Members</a>
+                                <a href="current_dcmembers.html">Current Members</a>
                             </li>
                             <li>
-                                <a href="portfolio-2-col.html">Past Members</a>
+                                <a href="past_dcmembers.html">Past Members</a>
                             </li>
                             
                         </ul>
@@ -62,15 +65,26 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                    <li>
-                        <a href="faq.html">Sign In</a>
-                    </li>
+                    
+<% if user_signed_in? %>
+  
+  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li><li>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li><br/>
+ 
+<% else %>
+<li>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li><li>
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+<% end %>
+                    
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
 
 
 <div class="container-fluid">
@@ -96,7 +110,7 @@
           <p class="visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
           </p>
-          
+          <br/><br/>
           <h1 class="page-header">
             Departments
             
@@ -110,15 +124,15 @@
                             <h4 class="panel-title">
                             
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Events</a>
-                            </h4>
-                         
-                        <div id="collapseOne" class="panel-collapse collapse">
-                            <div class="panel-body">
+                            </h4></div>
+                         <div class="panel-body">
                              
                                 Coordinators : Rohini  Choudary and Rahul Satal.
                                 This department consists of activities under taking in DC which includes prsentation, seminar, workshop, conference, test and assignment.
-                            </div></div>
-                        </div>
+                            </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            </div>
+                        
                     </div>
                     
                     <!-- /.panel -->
@@ -128,31 +142,29 @@
                             <h4 class="panel-title">
                             
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Infrastructure</a>
-                            </h4>
-                        
-                        <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                               Coordinators : Shiv Shankar Pindoria and Varun Wadhwani.
-                                This department includes keeping log of allocation of PC, mouse, keyboard, LAN and books and also to keep a track of these resources.
-                            </div>
+                            </h4></div>
+                        <div class="panel-body">
+                               Coordinators : Shiv Shankar Pindoria and Varun Wadhwani.It contains details of available books ,system information and issued resources.
                         </div>
-                    </div>
-            </div>
-            <div class="panel panel-default">
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            </div>
+            
+
+                    <div class="panel panel-default">
                     <img style='width:150px;height:150px;float:right; ' src="assets/pro.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Human Resource</a>
-                            </h4>
-                        
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">
+                            </h4></div>
+                        <div class="panel-body">
                                Coordinators :  Kajol Maheshwari and Aditi Thakur.
                                 This department consist of maintaining and keeping a log of Profile of member, worklog, performance, leave application, recruitment.
                             </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            
                         </div>
-                    </div>
+                    
             </div>
 
             <div class="panel panel-default">
@@ -161,15 +173,19 @@
                             <h4 class="panel-title">
                             
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Project</a>
-                            </h4>
-                        
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
+                            </h4></div>
+                        <div class="panel-body">
                                Coordinator :  Pulkit Vaishnav.
+
+                    
+                   
                                 It includes monitoring and tracking all types of projects like: Inhouse, Industry, Society, Personal.It will keep a record of : List of all projects(current + past), Team members(including caption separately), Current status of each project, Project description page on DC site + github link + hosted link(if any),  Status of work done by each member, Schedule, Resources allocated to projects.
                             </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            
                         </div>
-                    </div>
+                   
+
             </div>
 
             <div class="panel panel-default">
@@ -179,15 +195,16 @@
                             
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Correspondence
                                 </a>
-                            </h4>
-                        
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="panel-body">
+                            </h4></div>
+                        <div class="panel-body">
+                            
                                Coordinators : Sunny Raikwar and Pulkit Vaishnav.
                                 This department deals with communication with outside organizations by representing Development Centre in the form of mails, letters.It includes keeping logs and storage of official e­mails, meeting minutes, letters etc
                             </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            
                         </div>
-                    </div>
+                    
             </div>
             </div>
             </div>
@@ -203,9 +220,7 @@
     </div>
 </div><!--/.container-->
 
-<footer>
-  <p class="pull-right">©2014 Company</p>
-</footer>
+
         
     <!-- script references -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -213,3 +228,4 @@
         <script src="assets/scripts1.js"></script>
     </body>
 </html>
+

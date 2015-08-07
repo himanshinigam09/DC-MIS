@@ -1,0 +1,55 @@
+<!-- form for book-->
+
+<h1>New Issue Resource</h1>
+
+<%= form_for @issued_resource, :url=>infrastructures_path, :remote=>true do |f| %>
+  <% if @issued_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issued_resource.errors.count, "error") %> prohibited this issued resource from being saved:</h2>
+
+      <ul>
+      <% @issued_resource.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :type_of_resource %><br />
+    <%= f.text_field :type_of_resource %>
+  </div>
+  <div class="field">
+    <%= f.label :issued_by %><br />
+    <%= f.text_field :issued_by %>
+  </div>
+  <div class="field">
+    <%= f.label :issued_to %><br />
+    <%= f.text_field :issued_to %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_date %><br />
+    <%= f.date_select :issue_date %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_time %><br />
+    <%= f.time_select :issue_time %>
+  </div>
+  <div class="field">
+    <%= f.label :submission_date %><br />
+    <%= f.date_select :submission_date %>
+  </div>
+  <div class="field">
+    <%= f.label :submission_time %><br />
+    <%= f.time_select :submission_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>  
+  <% end %>
+
+  
+
+
+  
+
+  

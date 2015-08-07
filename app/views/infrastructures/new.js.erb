@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-$("#product-modal").html("<%= escape_javascript(render 'new') %>")
-$("#product-modal").modal("show")
-=======
+$(document).on("click","#add_system_information",function(){
+  $(#myform).show();
+});
 
 $("#add_book").on("click",function(){
 	<%= render :partial => 'infrastructure/form' %>
@@ -9,4 +8,3 @@ $("#add_book").on("click",function(){
 });
 
 <%= link_to 'Back', infrastructures_path %>
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9

@@ -5,10 +5,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
-<<<<<<< HEAD
 
-=======
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -30,10 +27,9 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-<<<<<<< HEAD
+
     @events = Event.order("topic").page(params[:page]).per(5) 
-=======
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -81,13 +77,14 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
+
+    @event = Event.find(params[:id]) 
+    @event.destroy 
 
     respond_to do |format|
       format.html { redirect_to events_url }
-      format.json { head :no_content }
     end
+
   end
 
   private

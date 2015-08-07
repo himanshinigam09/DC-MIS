@@ -55,6 +55,8 @@ params.require(:user).permit(:password, :email, :password_confirmation)
       format.json { head :no_content }
     end
   end
+
+  
 end
 
 

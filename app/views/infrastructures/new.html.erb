@@ -1,8 +1,16 @@
-<h1>New Book</h1>
 
-<<<<<<< HEAD
-<%= render 'form' %>
-=======
 <%= render :partial => 'form' %>
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
 <%= link_to 'Back', infrastructures_path %>
+
+
+
+<div id = "add_system_information">
+<%= render :partial => 'form1' %>
+</div>
+<%= link_to 'Back', infrastructures_path %>
+
+<div id = "add_issue_resource">
+<%= render :partial => 'form2' %>
+</div>
+<%= link_to 'Back', infrastructures_path %>
+

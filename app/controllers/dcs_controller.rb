@@ -1,7 +1,7 @@
 class DcsController < ApplicationController
   # GET /dcs
   # GET /dcs.json
-<<<<<<< HEAD
+
   def index
     @dcs = Dc.all
 
@@ -81,8 +81,8 @@ class DcsController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
-=======
+
+
   layout "index", :only => [:index]
   def index
     
@@ -90,4 +90,3 @@ end
 
 end
   
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
