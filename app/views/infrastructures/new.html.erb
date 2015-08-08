@@ -1,8 +1,7 @@
 <h1>New Book</h1>
+<%= if @add_book == 'New Book' %>
 
-<<<<<<< HEAD
-<%= render 'form' %>
-=======
 <%= render :partial => 'form' %>
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
+<%= render :partial => 'form1' %>
+<%= render :partial => 'form2' %>
 <%= link_to 'Back', infrastructures_path %>

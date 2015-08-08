@@ -125,7 +125,7 @@
     <td><%= entrance.why_choose %></td>
     <td><%= link_to 'Show', entrance %></td>
     <td><%= link_to 'Edit', edit_entrance_path(entrance) %></td>
-    <td><%= link_to 'Destroy', entrance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= button_to 'Destroy', entrance, method: :delete, class: :destroy %></td>
   </tr>
 <% end %>
 </table>
