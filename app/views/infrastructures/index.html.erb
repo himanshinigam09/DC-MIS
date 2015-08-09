@@ -3,6 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
 <!--Tabs-->
 <meta charset="utf-8">
@@ -107,14 +112,96 @@
                             <% end %>
                             </table>
                             <br />
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <button>New Book</button>
-                        </div>
+                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <button>Add Book</button>
+                            </div>
                         
-                    </a>
+                             </a>
+                        </div>
+                        <div id="system_information" class="tab-pane fade">
+                            <h1><b>Listing System Information</b></h1><br>
+
+                            <table cellspacing='0'>
+                            <tr>
+                            <th>System Name</th> 
+                            <th>Access</th>   
+                            <th>OS Installed</th>
+                            <th>RAM</th>
+                            <th>Type of RAM</th>
+                            <th>Type of Monitor</th>
+                            <th>LAN</th>
+                            <th>HDD Capacity</th>
+                            <th>Software Details</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            </tr>
+
+                            <% @system_informations.each do |system_information| %>
+                            <tr>
+                            <td><%= system_information.system_name %></td>
+                            <td><%= system_information.access %></td>
+                            <td><%= system_information.os_installed %></td>
+                            <td><%= system_information.ram %></td>
+                            <td><%= system_information.ram_type %></td>
+                            <td><%= system_information.monitor_type %></td>
+                            <td><%= system_information.lan %></td>
+                            <td><%= system_information.hdd_capacity %></td>
+                            <td><%= system_information.sw_details %></td>
+                            <td><%= link_to 'Show' %></td>
+                            <td><%= link_to 'Edit', edit_infrastructure_path(system_information) %></td>
+                            <td><%= button_to 'Destroy',  method: :delete, class: :destroy %></td>
+                            </tr>
+                            <% end %>
+                            </table>
+                            <br />
+                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                                        <div class="portfolio-hover">
+                                            <button>Add System Information</button>
+                                        </div></a>
+                        </div>
+                        <div id="issued_resource" class="tab-pane fade">
+                            <h1><b>Listing Issued Resource</b></h1><br>
+
+                            <table cellspacing='0'>
+                            <tr>
+                            <th>Type of resource</th> 
+                            <th>Issued By</th>   
+                            <th>Issued To</th>
+                            <th>Issue Date</th>
+                            <th>Issue Time</th>
+                            <th>Submission Date</th>
+                            <th>Submission Time</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            </tr>
+
+                            <% @issued_resources.each do |issued_resource| %>
+                            <tr>
+                            <td><%= issued_resource.type_of_resource %></td>
+                            <td><%= issued_resource.issued_by %></td>
+                            <td><%= issued_resource.issued_to %></td>
+                            <td><%= issued_resource.issue_date %></td>
+                            <td><%= issued_resource.issue_time %></td>
+                            <td><%= issued_resource.submission_date %></td>
+                            <td><%= issued_resource.submission_time %></td>
+                
+                            <td><%= link_to 'Show' %></td>
+                            <td><%= link_to 'Edit', edit_infrastructure_path(issued_resource) %></td>
+                            <td><%= button_to 'Destroy',  method: :delete, class: :destroy %></td>
+                            </tr>
+                            <% end %>
+                            </table>
+                            <br />
+                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                                        <div class="portfolio-hover">
+                                            <button>Issue Resources</button>
+                                        </div></a>
+                        </div>
+                    </div>
                 </div>
-                          
             </div>
         </div>
     </section>
@@ -132,23 +219,202 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <!-- form for book-->
+                            <h2>New Book</h2>
+                            <%= form_for @book, url: infrastructures_path do |f| %>
+                            <% if @book.errors.any? %>
+                            <div id="error_explanation">
+                              <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+                              <ul>
+                              <% @book.errors.full_messages.each do |msg| %>
+                                <li><%= msg %></li>
+                              <% end %>
+                              </ul>
+                            </div>
+                            <% end %>
+                              <div class="field">
+                                <%= f.label :title %><br />
+                                <%= f.text_field :title %>
+                              </div>
+                              <div class="field">
+                                <%= f.label :author %><br />
+                                <%= f.text_field :author %>
+                              </div>
+                              <div class="field">
+                                <%= f.label :edition %><br />
+                                <%= f.text_field :edition %>
+                              </div>
+                              <div class="field">
+                                <%= f.label :publication %><br />
+                                <%= f.text_field :publication %>
+                              </div>
+                              <div class="field">
+                                <%= f.label :ISBN_number %><br />
+                                <%= f.text_field :ISBN_number %>
+                              </div>
+                              <div class="actions">
+                              <%= f.submit %>
+                              </div>  
+                            <% end %>
+                            <br /><br />                        
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- form for system information -->
+<h1>New System Information</h1>
+
+  <%= form_for @system_information, :url=>infrastructures_path do |f| %>
+  <% if @system_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
+
+      <ul>
+      <% @system_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :system_name %><br />
+    <%= f.text_field :system_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ram %><br />
+    <%= f.text_field :ram %>
+  </div>
+  <div class="field">
+    <%= f.label :ram_type %><br />
+    <%= f.text_field :ram_type %>
+  </div>
+  <div class="field">
+    <%= f.label :hdd_capacity %><br />
+    <%= f.text_field :hdd_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :monitor_type %><br />
+    <%= f.text_field :monitor_type %>
+  </div>
+  <div class="field">
+    <%= f.label :lan %><br />
+    <%= f.text_field :lan %>
+  </div>
+  <div class="field">
+    <%= f.label :access %><br />
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :os_installed %><br />
+    <%= f.text_field :os_installed %>
+  </div>
+  <div class="field">
+    <%= f.label :sw_details %><br />
+    <%= f.text_field :sw_details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    
+  </div>  
+  <% end %>
+  <br /><br />
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <!-- form for book-->
+
+<h1>New Issue Resource</h1>
+
+<%= form_for @issued_resource, :url=>infrastructures_path, :remote=>true do |f| %>
+  <% if @issued_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issued_resource.errors.count, "error") %> prohibited this issued resource from being saved:</h2>
+
+      <ul>
+      <% @issued_resource.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :type_of_resource %><br />
+    <%= f.text_field :type_of_resource %>
+  </div>
+  <div class="field">
+    <%= f.label :issued_by %><br />
+    <%= f.text_field :issued_by %>
+  </div>
+  <div class="field">
+    <%= f.label :issued_to %><br />
+    <%= f.text_field :issued_to %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_date %><br />
+    <%= f.date_select :issue_date %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_time %><br />
+    <%= f.time_select :issue_time %>
+  </div>
+  <div class="field">
+    <%= f.label :submission_date %><br />
+    <%= f.date_select :submission_date %>
+  </div>
+  <div class="field">
+    <%= f.label :submission_time %><br />
+    <%= f.time_select :submission_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>  
+  <% end %>
+
+  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>

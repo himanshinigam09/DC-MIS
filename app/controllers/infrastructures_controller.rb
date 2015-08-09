@@ -53,9 +53,7 @@ def show
   end
 
 def create
-  @book = Book.new
-  @system_information = SystemInformation.new
-  @issued_resource = IssuedResource.new
+  
  
     @book = Book.new(params[:book])
     @system_information = SystemInformation.new(params[:system_information])
