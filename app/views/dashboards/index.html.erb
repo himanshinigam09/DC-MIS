@@ -7,7 +7,15 @@
         <title>Departments </title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
         <link href="assets/bootstrap.min1.css" rel="stylesheet">
+
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -54,10 +62,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="blog-home-1.html">Current Projects</a>
+                                <a href="current_projects.html">Current Projects</a>
                             </li>
                             <li>
-                                <a href="blog-home-2.html">Past Projects</a>
+                                <a href="past_projects.html">Past Projects</a>
                             </li>
                             
                         </ul>
@@ -65,17 +73,19 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                    
-<% if user_signed_in? %>
-  
-  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li><li>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li><br/>
- 
-<% else %>
-<li>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li><li>
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-<% end %>
+                     <% if current_user %> 
+                        <li><%= link_to "Departments", '/dashboards' %></a></li> 
+                       
+                        <li><%= link_to "Log out", logout_path, method: "get" %></li> <br/>
+
+                       
+                    <% else %> 
+                      
+                        <li><%= link_to "Login", 'login' %></a></li> 
+                        <li><%= link_to "Signup", 'signup' %></a></li> 
+                       
+                    <% end %>
+
                     
                 </ul>
 
@@ -99,6 +109,7 @@
               <li><a href="profiles.html">Human Resource</a></li>
               <li><a href="projects.html">Projects</a></li>
           <li><a href="correspondences.html">Correspondence</a></li>
+          <li><a href="publications.html">Publications</a></li>
             </ul>
             
           

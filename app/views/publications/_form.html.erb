@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Tabs-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    
+
+
+</head>
+<body>
+
+<div class="container">
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;text-shadow: 2px 2px gray;">
+    <div class="form">
+
+
+<%= form_for(@publication) do |f| %>
+  <% if @publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+      <% @publication.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <h1 style="font-family:verdanax ;">Publication </h1><hr>
+  
+    <%= f.text_field :publication_name, class: 'form-control', :placeholder => "Name of Publication" %>
+ 
+    <%= f.text_field :level, class: 'form-control', :placeholder => "Level of publication" %>
+ 
+    <%= f.text_field :organizer_name, class: 'form-control', :placeholder => "Organizer's name" %>
+ 
+    <%= f.text_field :sponsers_name, class: 'form-control', :placeholder => "Sponser's name" %>
+ 
+    <%= f.text_field :location, class: 'form-control', :placeholder => "Location" %>
+ 
+    <%= f.text_field :paper_id, class: 'form-control', :placeholder => "Paper id" %>
+ 
+    <%= f.text_field :paper_title, class: 'form-control', :placeholder => "Paper title" %>
+ 
+    <%= f.text_field :date_of_publication, class: 'form-control', :placeholder => "Date of publication" %>
+  
+    <%= f.text_area :abstract, class: 'form-control', :placeholder => "Abstract" %>
+ 
+    <%= f.text_field :link, class: 'form-control', :placeholder => "Link" %>
+ 
+    <%= f.text_field :author, class: 'form-control', :placeholder => "Author" %>
+ 
+  <div class="actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</body>
+</html>

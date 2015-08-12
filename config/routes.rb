@@ -10,10 +10,19 @@ DCMis::Application.routes.draw do
 
   
 
+  resources :publications
+
+
+  resources :past_projects
+
+
+  resources :current_projects
+
+
   resources :dashboards
 
 
-  devise_for :users
+  
 
 
   resources :entrances
@@ -64,12 +73,15 @@ DCMis::Application.routes.draw do
   
 # these routes are for showing users a login form, logging them in, and logging them out.
 
+post 'login' => 'sessions#create'
+get 'logout' => 'sessions#destroy'
 
-devise_scope :user do
-    get "users/sign_in" => "devise/sessions#new"
-    get "users/sign_out" => "devise/sessions#destroy"
-  end
-resources :devise
+get 'signup'  => 'users#new'
+get 'login'  => 'sessions#new' 
+resources :users
+
+
+
 
 
 
