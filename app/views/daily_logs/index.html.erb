@@ -1,6 +1,12 @@
 <html>
 <body>
 
+<!-- Navigation -->
+
+    
+
+    
+
     <!-- Page Content -->
     <div class="container">
 
@@ -61,7 +67,7 @@
     <td><%= daily_log.remark %></td>
     <td><%= link_to 'Show', daily_log %></td>
     <td><%= link_to 'Edit', edit_daily_log_path(daily_log) %></td>
-    <td><%= button_to 'Destroy', daily_log, method: :delete, class: :destroy %></td>
+    <td><%= link_to 'Destroy', daily_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

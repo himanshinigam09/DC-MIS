@@ -1,9 +1,11 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+
   layout "index", :only => [:index]
   def index
     @events = Event.all
+    @events = Event.order("").page(params[:page]).per(4)
 
 
     respond_to do |format|
@@ -27,7 +29,9 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @events = Event.order("topic").page(params[:page]).per(5) 
+
+     
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,10 +49,14 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
+
     respond_to do |format|
-      if @event.save
+      if @event.save 
+        
+          
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
+      
       else
         format.html { render action: "new" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
@@ -75,13 +83,14 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
+
+    @event = Event.find(params[:id]) 
+    @event.destroy 
 
     respond_to do |format|
       format.html { redirect_to events_url }
-      format.json { head :no_content }
     end
+
   end
 
   private

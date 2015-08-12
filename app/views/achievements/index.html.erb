@@ -1,6 +1,9 @@
 <html>
 <body>
 
+<!-- Navigation -->
+
+    
     <!-- Page Content -->
     <div class="container">
 
@@ -58,7 +61,7 @@
     <td><%= achievement.achievement %></td>
     <td><%= link_to 'Show', achievement %></td>
     <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
-    <td><%= button_to 'Destroy', achievement, method: :delete, class: :destroy %></td>
+    <td><%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

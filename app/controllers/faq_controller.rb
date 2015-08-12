@@ -1,4 +1,5 @@
 class FaqController < ApplicationController
+
 def index
     @faq = Faq.all
 
@@ -11,7 +12,7 @@ def index
   # GET /dcs/1
   # GET /dcs/1.json
   
+
 layout "index", :only => [:index]
-def index
-end
+
 end

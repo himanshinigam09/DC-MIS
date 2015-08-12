@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   layout "index", :only => [:index]
   def index
     @profiles = Profile.all
+    @profiles = Profile.order("first_name").page(params[:page]).per(4) 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +28,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new.json
   def new
     @profile = Profile.new
+    @profiles = Profile.order("").page(params[:page]).per(4) 
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +39,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find(params[:id])
+        @profiles = Profile.order("first_name").page(params[:page]).per(4) 
+
   end
 
   # POST /profiles

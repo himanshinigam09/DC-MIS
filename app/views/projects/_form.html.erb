@@ -1,7 +1,29 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Tabs-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    
 
 
-<%= form_for(@project) do |f| %>
+</head>
+<body>
+
+<div class="container">
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;text-shadow: 2px 2px gray;">
+    <div class="form">
+   <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -13,42 +35,49 @@
       </ul>
     </div>
   <% end %>
+  
+  
+ <h1 style="font-family:verdanax ;">Project </h1><hr>
+  
 
+
+    <%= f.text_field :project_name, class: 'form-control', :placeholder => "Project name" %>
   
-    <div class="field">
-    <%= f.label :project_name %><br />
-    <%= f.text_field :project_name %>
-  </div>
-  <div class="field">
-    <%= f.label :project_type %><br />
-    <%= f.text_field :project_type %>
-  </div>
-  <div class="field">
-    <%= f.label :project_description %><br />
-    <%= f.text_field :project_description %>
-  </div>
-  <div class="field">
-    <%= f.label :project_leader %><br />
-    <%= f.text_field :project_leader %>
-  </div>
-  <div class="field">
-    <%= f.label :team_id %><br />
-    <%= f.text_field :team_id %>
-  </div>
-  <div class="field">
-    <%= f.label :project_status %><br />
-    <%= f.text_field :project_status %>
-  </div>
-  <div class="field">
-    <%= f.label :dc_page_link %><br />
-    <%= f.text_field :dc_page_link %>
-  </div>
-  <div class="field">
-    <%= f.label :github_page_link %><br />
-    <%= f.text_field :github_page_link %>
-  </div>
+   
+    <%= f.text_field :project_type, class: 'form-control', :placeholder => "Project type" %>
   
-    <div class="actions">
-    <%= f.submit %>
+    <%= f.text_area :project_description, class: 'form-control', :placeholder => "Project description"  %>
+   
+    <%= f.text_field :project_leader, class: 'form-control', :placeholder => "Project leader"  %>
+  
+    <%= f.text_field :team_id, class: 'form-control', :placeholder => "Team id"  %>
+ 
+    <%= f.number_field :project_status, class: 'form-control', :placeholder => "Project status"  %>
+ 
+    <%= f.text_field :dc_page_link, class: 'form-control', :placeholder => "Dc page link"  %>
+  
+    <%= f.text_field :github_page_link, class: 'form-control', :placeholder => "Github page link"  %>
+ 
+  
+  
+  <div class="actions ">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
+ 
 <% end %>
+
+    </div>
+    </div>
+
+<!-- Registration form - END -->
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+ 

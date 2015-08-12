@@ -2,6 +2,7 @@ DCMis::Application.routes.draw do
   
   
 
+
   
   
 
@@ -9,9 +10,45 @@ DCMis::Application.routes.draw do
 
   
 
+  resources :publications
+
+
+  resources :past_projects
+
+
+  resources :current_projects
+
+
+  resources :dashboards
+
 
   
-resources :dcs
+
+
+  resources :entrances
+
+
+  resources :achievements
+
+
+  resources :daily_logs
+
+
+  resources :projects
+
+
+  
+
+
+  resources :events
+
+
+  resources :profiles
+
+
+
+  resources :dcs
+
 
   resources :dc_members
   resources :correspondences
@@ -35,6 +72,17 @@ resources :dcs
   
   
 # these routes are for showing users a login form, logging them in, and logging them out.
+
+post 'login' => 'sessions#create'
+get 'logout' => 'sessions#destroy'
+
+get 'signup'  => 'users#new'
+get 'login'  => 'sessions#new' 
+resources :users
+
+
+
+
 
 
   # The priority is based upon order of creation:
@@ -88,7 +136,9 @@ resources :dcs
   # just remember to delete public/index.html.
 
   root :to => 'dcs#index'
+
   # root :to => 'welcome#index'
+
 
   # See how all your routes lay out with "rake routes"
 

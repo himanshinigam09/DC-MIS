@@ -1,4 +1,29 @@
-<%= form_for(@correspondence) do |f| %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Tabs-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    
+
+
+</head>
+<body>
+<div class="container">
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7   inset;border:solid; border-color:#F5F5F5;border-radius:25px;text-shadow: 2px 2px gray;">
+    <div class="form">
+    
+    <%= form_for(@correspondence) do |f| %>
   <% if @correspondence.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@correspondence.errors.count, "error") %> prohibited this correspondence from being saved:</h2>
@@ -9,39 +34,92 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
+  
+  
 
-  <div class="field">
-    <%= f.label :type_of_correspondence %><br />
-    <%= f.text_field :type_of_correspondence %>
+    <h1 style="font-family:verdanax ;"> Correspondence</h1><hr>
+    <%= f.text_field :type_of_correspondence, class: 'form-control', :placeholder => "Type of Correspondence"  %>
+ 
+  
+    
+    <%= f.text_field :subject, class: 'form-control', :placeholder => "Subject" %>
+  
+  
+    
+    <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
+   
+ 
+    
+    <%= f.text_field :medium, class: 'form-control', :placeholder => "Medium"  %>
+  
+    <%= f.text_field :address, class: 'form-control', :placeholder => "Address"  %>
+  
+    <%= f.text_area :description, class: 'form-control' , :placeholder => "Description"  %><br/>
+  
+    <%= f.date_select :date, class: 'form-control', :placeholder => "Date"  %>
+  
+  
+  <br/>
+  <div class="actions ">
+      <br/>
+<%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :user_initials %><br />
-    <%= f.text_field :user_initials %>
-  </div>
-  <div class="field">
-    <%= f.label :medium %><br />
-    <%= f.text_field :medium %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.text_field :date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>
 
-<%= paginate @correspondences %> <br/>
+ </div>  
+</div>
+<!-- Registration form - END -->
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+

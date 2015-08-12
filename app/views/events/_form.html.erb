@@ -1,5 +1,31 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Tabs-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    
+
+
+</head>
+<body >
+
+  <div class="container">
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;text-shadow: 2px 2px gray;">
+    <div class="form">
+
+        <%= form_for(@event) do |f| %>
+         <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
@@ -10,110 +36,60 @@
       </ul>
     </div>
   <% end %>
+  
+  
+  
+   
+    <h1 style="font-family:verdanax ;">Events </h1><hr>
 
-
-                <div class="form-group">
-
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-
-               <div class="form-group">
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Meal Preference</label>
-                    <div class="col-sm-9">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="calorieCheckbox" value="Low calorie">Low calorie
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="saltCheckbox" value="Low salt">Low salt
-                            </label>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">I accept <a href="#">terms</a>
-                            </label>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <!--<div class="form-group">
-                <div class="form-group">
->>>>>>> fe87f00a8436fe8680b5eb15c11aaf7da60113f9
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-            </form> <!-- /form -->
-
-
-  <div class="field">
-</div> <!-- ./container -->
-
-
-  <div class="field">
-    <%= f.label :type_of_event %><br />
-    <%= f.text_field :type_of_event %>
+    
+    <%= f.text_field :type_of_event, class: 'form-control', :placeholder => "Type of event" %>
+  
+ 
+    
+    
+    <%= f.text_field :organizer_id, class: 'form-control', :placeholder => "Organizer Name" %>
+    
+      
+    <%= f.text_field :topic, class: 'form-control', :placeholder => "Topic"   %>
+   
+   
+    
+    <%= f.text_field :venue, class: 'form-control', :placeholder => "Venue"   %>
+    
+  
+    
+    
+    <%= f.date_select :date, class: 'form-control', :placeholder => "Date"   %><br/><br/>
+    
+  
+   
+    <%= f.time_select :time, class: 'form-control', :placeholder => "Time"   %>
+    
+  
+    
+    <%= f.text_field :duration, class: 'form-control', :placeholder => "Duration"   %>
+  
+   
+    <%= f.text_field :material_link, class: 'form-control', :placeholder => "Material link"   %>
+  
+   
+    <%= f.text_field :summary_link, class: 'form-control', :placeholder => "Summary link"   %>
+  
+  
+  
+  <div class="actions ">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
-  <div class="field">
-    <%= f.label :organizer_id %><br />
-    <%= f.text_field :organizer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :topic %><br />
-    <%= f.text_field :topic %>
-  </div>
-  <div class="field">
-    <%= f.label :venue %><br />
-    <%= f.text_field :venue %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br />
-    <%= f.time_select :time %>
-  </div>
-  <div class="field">
-    <%= f.label :duration %><br />
-    <%= f.text_field :duration %>
-  </div>
-  <div class="field">
-    <%= f.label :material_link %><br />
-    <%= f.text_field :material_link %>
-  </div>
-  <div class="field">
-    <%= f.label :summary_link %><br />
-    <%= f.text_field :summary_link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>
-<%= paginate @events %> <br/>
-<% end %>-->
+</div>
+    
+    </div>
+</div>
+<!-- Registration form - END -->
+
+
+</body>
+</html>
+

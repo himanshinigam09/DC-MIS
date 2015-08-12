@@ -1,7 +1,7 @@
 <!-- form for system information -->
 <h1>New System Information</h1>
 
-  <%= form_for @system_information, :url=>infrastructures_path do |f| %>
+  <%= form_for @system_information, :url=>infrastructures_path, :remote=>true do |f| %>
   <% if @system_information.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>

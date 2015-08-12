@@ -21,6 +21,11 @@
 
     
 
+    <!-- Navigation -->
+    
+
+
+
     <div class="container">
 
         <div class="row">
@@ -549,7 +554,31 @@
     <input class="btn btn-danger" type="reset" value="Reset">
     </div>
     </form>
-   
+   <?php
+
+
+        include ('database_connect.php');
+          
+        $github=$_POST['github'];
+        $blog=$_POST['blog'];
+        $facebook=$_POST['facebook'];
+        $twitter=$_POST['twitter'];
+        $linkedin=$_POST['linkedin'];
+        $googleplus=$_POST['googleplus'];
+        $name=$_POST['name'];
+        $members=$_POST['members'];
+        $sql="INSERT INTO `dc_database`.`dc_member_social` (`github`, `facebook`, `googleplus`, `linkedin`, `name`, `twitter`, `blog`) VALUES ('$github', '$facebook', '$googleplus', '$linkedin', '$name', '$twitter', '$blog');";
+          
+        $query=mysqli_query($dbconnect,$sql);
+        if ($query) {
+            echo "<script>data_submitted();</script>";
+        }
+        
+
+    ?>
+       
+
+
 
        
 
@@ -559,7 +588,8 @@
     <!-- /.container -->
 
   
-    
+    <?php include ('footer.html') ?>
+    <!-- /.container -->
 
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>

@@ -3,6 +3,10 @@
 <body>
 
 
+    <!-- Navigation -->
+    
+
+
 <!-- Page Content -->
     <div class="container">
 
@@ -69,7 +73,7 @@
             <td><%= dc_member.email %></td>
             <td><%= link_to 'Show', dc_member %></td>
             <td><%= link_to 'Edit', edit_dc_member_path(dc_member) %></td>
-            <td><%= button_to 'Destroy', dc_member, method: :delete, class: :destroy %></td>
+            <td><%= link_to 'Destroy', dc_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr><!-- Table Row -->
             <% end %>
             </table>

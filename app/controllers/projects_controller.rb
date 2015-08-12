@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   layout "index", :only => [:index]
   def index
     @projects = Project.all
+    @projects = Project.order("").page(params[:page]).per(4) 
 
     respond_to do |format|
       format.html # index.html.erb

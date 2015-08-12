@@ -189,6 +189,7 @@ table tr:hover td{
 </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -219,7 +220,7 @@ table tr:hover td{
                                 <a href="current_dcmembers.html">Current Members</a>
                             </li>
                             <li>
-                                <a href="portfolio-2-col.html">Past Members</a>
+                                <a href="past_dcmembers.html">Past Members</a>
                             </li>
                             
                         </ul>
@@ -228,10 +229,10 @@ table tr:hover td{
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="blog-home-1.html">Current Projects</a>
+                                <a href="current_projects.html">Current Projects</a>
                             </li>
                             <li>
-                                <a href="blog-home-2.html">Past Projects</a>
+                                <a href="past_projects.html">Past Projects</a>
                             </li>
                             
                         </ul>
@@ -239,18 +240,33 @@ table tr:hover td{
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                    <li>
-                        <a href="faq.html">Sign In</a>
-                    </li>
+                    <% if current_user %> 
+                    <li><%= link_to "Departments", '/dashboards' %></a></li> 
+                        
+                        <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+                        
+                       
+                    <% else %> 
+                      
+                        <li><%= link_to "Login", 'login' %></a></li> 
+                        <li><%= link_to "Signup", 'signup' %></a></li> 
+                       
+                    <% end %>
+
+
+
+
                     
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
 
-    
+   
+
 
     <%= yield %>
     </body>
