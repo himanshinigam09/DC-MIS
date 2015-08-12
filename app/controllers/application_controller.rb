@@ -4,10 +4,22 @@ class ApplicationController < ActionController::Base
 
 
   protect_from_forgery with: :exception
- def after_sign_in_path_for(resource)
+ def after_login_path_for(resource)
     '/dashboards' # Or :prefix_to_your_route
   end
   
+helper_method :current_user 
+
+def current_user 
+  @current_user ||= User.find(session[:user_id]) if session[:user_id] 
+end
+
+
+def require_user 
+  redirect_to '/login' unless current_user 
+end
+
+
 
 
   

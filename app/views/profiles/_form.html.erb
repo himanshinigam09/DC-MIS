@@ -1,4 +1,29 @@
-<%= form_for(@profile) do |f| %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Tabs-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    
+
+
+</head>
+<body>
+
+<div class="container">
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;text-shadow: 2px 2px gray;">
+    <div class="form">
+   <%= form_for(@profile) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -10,88 +35,105 @@
       </ul>
     </div>
   <% end %>
+  
+  
+<h1 style="font-family:verdanax ;">Profile </h1><hr> 
+  
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: 'form-control', :placeholder => "First name"  %>
+  
+    <%= f.text_field :mid_name, class: 'form-control', :placeholder => "Mid name" %>
+ 
+    <%= f.text_area :last_name, class: 'form-control', :placeholder => "Last name"  %>
+  
+    
+    <%= f.text_field :date_of_birth, class: 'form-control', :placeholder => "Date of birth"  %>
+    <%= f.text_field :gender, class: 'form-control', :placeholder => "Gender"  %>
+    <%= f.number_field :blood_group, class: 'form-control', :placeholder => "Blood group"  %>
+    <%= f.text_field :local_address, class: 'form-control' , :placeholder => "Local address" %>
+  
+    <%= f.text_field :permanent_address, class: 'form-control' , :placeholder => "Permanent addresss" %>
+    <%= f.text_field :father_name, class: 'form-control', :placeholder => "Father's name"  %>
+    <%= f.text_field :mother_name, class: 'form-control', :placeholder => "Mother's name"  %>
+ 
+    <%= f.text_field :guardian_name, class: 'form-control', :placeholder => "Guardian's name"   %>
+  
+    <%= f.text_field :course_name, class: 'form-control' , :placeholder => "Course name"  %>
+ 
+    <%= f.text_field :sem_of_joining, class: 'form-control' , :placeholder => "Sem of joining"  %>
+  
+    <%= f.text_field :email, class: 'form-control', :placeholder => "Email"  %>
+ 
+    <%= f.text_field :github_id, class: 'form-control' , :placeholder => "Github id" %>
+  
+    <%= f.text_field :linkedin_id, class: 'form-control' , :placeholder => "Linkedin id" %>
+ 
+    <%= f.text_field :facebook_id, class: 'form-control', :placeholder => "Facebook id"  %>
+ 
+    <%= f.text_field :googleplus_id, class: 'form-control', :placeholder => "Google+ id"  %>
+  
+    <%= f.text_field :twitter_id, class: 'form-control', :placeholder => "Twitter id"  %>
+ 
+    <%= f.text_field :blog_id, class: 'form-control', :placeholder => "Blog id"  %>
+ 
+  
+  
+  <div class="actions ">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
-  <div class="field">
-    <%= f.label :mid_name %><br />
-    <%= f.text_field :mid_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :date_of_birth %><br />
-    <%= f.date_select :date_of_birth %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :blood_group %><br />
-    <%= f.text_field :blood_group %>
-  </div>
-  <div class="field">
-    <%= f.label :local_address %><br />
-    <%= f.text_field :local_address %>
-  </div>
-  <div class="field">
-    <%= f.label :permanent_address %><br />
-    <%= f.text_field :permanent_address %>
-  </div>
-  <div class="field">
-    <%= f.label :father_name %><br />
-    <%= f.text_field :father_name %>
-  </div>
-  <div class="field">
-    <%= f.label :mother_name %><br />
-    <%= f.text_field :mother_name %>
-  </div>
-  <div class="field">
-    <%= f.label :guardian_name %><br />
-    <%= f.text_field :guardian_name %>
-  </div>
-  <div class="field">
-    <%= f.label :course_name %><br />
-    <%= f.text_field :course_name %>
-  </div>
-  <div class="field">
-    <%= f.label :sem_of_joining %><br />
-    <%= f.text_field :sem_of_joining %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :github_id %><br />
-    <%= f.text_field :github_id %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin_id %><br />
-    <%= f.text_field :linkedin_id %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook_id %><br />
-    <%= f.text_field :facebook_id %>
-  </div>
-  <div class="field">
-    <%= f.label :googleplus_id %><br />
-    <%= f.text_field :googleplus_id %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter_id %><br />
-    <%= f.text_field :twitter_id %>
-  </div>
-  <div class="field">
-    <%= f.label :blog_id %><br />
-    <%= f.text_field :blog_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ 
 <% end %>
+
+
+    </div>
+    </div>
+</div>
+<!-- Registration form - END -->
+
+
+</body>
+</html>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+  
+  
+ 
+  
+ 
+  
