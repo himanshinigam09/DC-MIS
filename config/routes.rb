@@ -10,6 +10,8 @@ DCMis::Application.routes.draw do
 
   
 
+  
+
   resources :publications
 
 
@@ -25,27 +27,7 @@ DCMis::Application.routes.draw do
   
 
 
-  resources :entrances
-
-
-  resources :achievements
-
-
-  resources :daily_logs
-
-
-  resources :projects
-
-
   
-
-
-  resources :events
-
-
-  resources :profiles
-
-
 
   resources :dcs
 
@@ -59,9 +41,8 @@ DCMis::Application.routes.draw do
   resources :profiles
   resources :open_source
   resources :current_dcmembers
-  resources :events 
-  resources :past_dcmembers
-  resources :past_dcmembers
+   resources :past_dcmembers
+  
   resources :projects
   resources :events
   resources :daily_logs

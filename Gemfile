@@ -26,8 +26,7 @@ gem 'jquery-rails'
 gem 'high_voltage'
 gem 'foreigner'
 
-gem 'bootstrap-datepicker-rails'
-gem 'client_side_validations'
+ 
 
 gem "kaminari"
 gem "bootstrap-kaminari-views"
