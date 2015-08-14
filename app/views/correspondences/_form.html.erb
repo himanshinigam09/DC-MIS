@@ -24,6 +24,8 @@
     <div class="form">
     
     <%= form_for(@correspondence) do |f| %>
+   
+
   <% if @correspondence.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@correspondence.errors.count, "error") %> prohibited this correspondence from being saved:</h2>
@@ -49,7 +51,6 @@
     
     <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
    
- 
     
     <%= f.text_field :medium, class: 'form-control', :placeholder => "Medium"  %>
   
@@ -72,8 +73,7 @@
 </div>
 <!-- Registration form - END -->
 </div>
-
-
+              
 </body>
 </html>
 

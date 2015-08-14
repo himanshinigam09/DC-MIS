@@ -33,6 +33,7 @@ class CorrespondencesController < ApplicationController
   # GET /correspondences/new.json
   def new
     @correspondence = Correspondence.new
+    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
 
        
 
@@ -46,6 +47,7 @@ class CorrespondencesController < ApplicationController
   # GET /correspondences/1/edit
   def edit
     @correspondence = Correspondence.find(params[:id])
+    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
 
   end
 
