@@ -12,6 +12,8 @@ DCMis::Application.routes.draw do
 
   
 
+  get "password_resets/new"
+
   resources :publications
 
 
@@ -61,7 +63,7 @@ get 'signup'  => 'users#new'
 get 'login'  => 'sessions#new' 
 resources :users
 
-
+resources :sessions
 
 
 
