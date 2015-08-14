@@ -20,6 +20,30 @@
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link href="assets/styles1.css" rel="stylesheet">
+        <style>
+            @keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75%
+    {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.img1,.img2,.img3 {
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+        </style>
     </head>
     
     <body>
@@ -133,12 +157,14 @@
                     <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Events</a>
+                               Events
                             </h4></div>
                          <div class="panel-body">
                              
                                 Coordinators : Rohini  Choudary and Rahul Satal.
-                                This department consists of activities under taking in DC which includes prsentation, seminar, workshop, conference, test and assignment.
+                                This department consists of activities under taking in DC which includes presentation, seminar, workshop, conference, test and assignment.<br/>
+                                <b> Recent Activities: </b>
+                                Presentation given by Nitesh Mishra on <a href="https://docs.vagrantup.com/v2/getting-started/index.html">Vagrant</a>&nbsp; & &nbsp; <a href="https://docs.docker.com/">Docker</a>&nbsp;<img class="img1" src="assets/news3.gif"    >
                             </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             </div>
@@ -151,7 +177,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Infrastructure</a>
+                                Infrastructure
                             </h4></div>
                         <div class="panel-body">
                                Coordinators : Shiv Shankar Pindoria and Varun Wadhwani.It contains details of available books ,system information and issued resources.
@@ -165,11 +191,13 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Human Resource</a>
+                                Human Resource
                             </h4></div>
                         <div class="panel-body">
                                Coordinators :  Kajol Maheshwari and Aditi Thakur.
-                                This department consist of maintaining and keeping a log of Profile of member, worklog, performance, leave application, recruitment.
+                                This department consist of maintaining and keeping a log of Profile of member, worklog, performance, leave application, recruitment.<br/>
+                                <b> Recent Activities: </b>
+                                <a href="https://docs.google.com/spreadsheets/d/1yoqZ1M1wJZYikrM9_xf_pfgva6y-GkDQMfaWY5qxk0g/edit#gid=0">Big Buddy's Allotment List</a>&nbsp;<img class="img2" src="assets/news3.gif"/ >
                             </div>
                         <div id="collapseThree" class="panel-collapse collapse">
                             
@@ -182,7 +210,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Project</a>
+                                Project
                             </h4></div>
                         <div class="panel-body">
                                Coordinator :  Pulkit Vaishnav.
@@ -203,13 +231,13 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Correspondence
-                                </a>
+                                Correspondence
+                                
                             </h4></div>
                         <div class="panel-body">
                             
                                Coordinators : Sunny Raikwar and Pulkit Vaishnav.
-                                This department deals with communication with outside organizations by representing Development Centre in the form of mails, letters.It includes keeping logs and storage of official e­mails, meeting minutes, letters etc
+                                This department deals with communication with outside organizations by representing Development Centre in the form of mails, letters.It includes keeping logs and storage of official e­mails, meeting minutes, letters etc.
                             </div>
                         <div id="collapseFive" class="panel-collapse collapse">
                             
@@ -219,11 +247,13 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                             
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Publications
-                                </a>
+                                Publications
+                                
                             </h4></div>
                         <div class="panel-body">
-                            
+                             This department includes information of paper published by DC members.<br/>
+                              <b> Recent Activities: </b>
+                              Research paper on <b>Cryptanalysis</b> authored by Kajol Maheshwari & Aditi Thakur&nbsp;<img class="img3" src="assets/news3.gif"    >
                                
                             </div>
                         <div id="collapseFive" class="panel-collapse collapse">
@@ -244,7 +274,13 @@
       </div><!--/row-->
     </div>
 </div><!--/.container-->
-
+<footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <center><p>Copyright &copy;  IIPSDC </p></center>
+                </div>
+            </div>
+        </footer>
 
         
     <!-- script references -->
