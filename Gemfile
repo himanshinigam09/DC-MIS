@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'high_voltage'
 gem 'foreigner'
 
- 
+ gem 'activeadmin'
 
 gem "kaminari"
 gem "bootstrap-kaminari-views"
