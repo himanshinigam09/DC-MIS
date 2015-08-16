@@ -2,7 +2,7 @@ DCMis::Application.routes.draw do
   
   
 
-
+root :to => 'dcs#index'
   
   
 
@@ -10,10 +10,9 @@ DCMis::Application.routes.draw do
 
   
 
-  
+    ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
   get "password_resets/new"
 
@@ -121,7 +120,7 @@ resources :sessions
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  root :to => 'dcs#index'
+  
 
   # root :to => 'welcome#index'
 

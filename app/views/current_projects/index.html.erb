@@ -80,7 +80,7 @@ n})
                      <% if current_user %> 
   
                     <li><%= link_to "Departments", '/dashboards' %></a></li>
-                        <li><%= link_to "Log out", logout_path, method: "get" %></li>
+                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li>
                     <% else %> 
                       
                         <li><%= link_to "Login", 'login' %></a></li> 
