@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
+  before_action :zero_users_or_authenticated
+
   layout "index", :only => [:index]
   def index
     @projects = Project.all
@@ -91,4 +93,11 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:dc_page_link, :github_page_link, :project_description, :project_leader, :project_name, :project_status, :project_type, :team_id)
     end
+ def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

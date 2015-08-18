@@ -253,10 +253,10 @@ table tr:hover td{
                         
                        <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
                     <% else %> 
-                        <li><%= link_to "Admin", 'admin' %></a></li> 
+                         
                         <li><%= link_to "Login", 'login' %></a></li> 
                         <li><%= link_to "Signup", 'signup' %></a></li> 
-                       
+                        <li><%= link_to "Admin", 'admin' %></a></li>
                     <% end %>
 
 

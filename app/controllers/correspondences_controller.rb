@@ -2,7 +2,11 @@ class CorrespondencesController < ApplicationController
   
   # GET /correspondences
   # GET /correspondences.json
+
  layout "index", :only => [:index]
+ before_filter :zero_users_or_authenticated
+
+
  
   def index
     
@@ -94,4 +98,11 @@ class CorrespondencesController < ApplicationController
       format.json { head :no_content }
     end
   end
+ def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

@@ -1,4 +1,7 @@
 class InfrastructuresController < ApplicationController
+ before_filter :zero_users_or_authenticated
+
+
 layout "index", :only => [:index]
 
 def index
@@ -45,7 +48,7 @@ def show
     end
 end
 def show1
-    @system_information = SystemInformation.find(params[:system_information])
+    @system_information = SystemInformation.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @system_information }
@@ -115,5 +118,11 @@ end
     
   end
 
+def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
 
+    return false
+  end
+end 
 end

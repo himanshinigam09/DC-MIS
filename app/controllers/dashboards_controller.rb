@@ -1,6 +1,10 @@
 class DashboardsController < ApplicationController
   # GET /dashboards
   # GET /dashboards.json
+before_filter :zero_users_or_authenticated
+
+
+
   def index
     @dashboards = Dashboard.all
 
@@ -89,4 +93,14 @@ class DashboardsController < ApplicationController
     def dashboard_params
       params.require(:dashboard).permit()
     end
+
+ 
+  
+ def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+    flash[:notice] = "You must be logged in to access this section"
+    redirect_to login_path
+    return false
+  end
+end
 end

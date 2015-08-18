@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+    before_filter :zero_users_or_authenticated
 
   layout "index", :only => [:index]
   def index
@@ -101,4 +102,11 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:date, :duration, :material_link, :organizer_id, :summary_link, :time, :topic, :type_of_event, :venue)
     end
+def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+    flash[:notice] = "You must be logged in to access this section"
+    redirect_to login_path
+    return false
+  end
+end
 end

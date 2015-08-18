@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150815115440) do
+ActiveRecord::Schema.define(:version => 20150818110426) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20150815115440) do
 
   create_table "events", :force => true do |t|
     t.string   "type_of_event"
-    t.string   "organizer_id"
+    t.string   "organizer_name"
     t.string   "topic"
     t.string   "venue"
     t.date     "date"
@@ -183,8 +183,8 @@ ActiveRecord::Schema.define(:version => 20150815115440) do
     t.string   "duration"
     t.string   "material_link"
     t.string   "summary_link"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "faqs", :force => true do |t|

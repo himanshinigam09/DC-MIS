@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  
+  before_action :zero_users_or_authenticated
+
   # GET /profiles
   # GET /profiles.json
   layout "index", :only => [:index]
@@ -86,4 +87,11 @@ class ProfilesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

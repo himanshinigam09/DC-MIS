@@ -67,8 +67,8 @@
     <td><%= correspondence.address %></td>
     <td><%= correspondence.description %></td>
     <td><%= correspondence.date %></td>
-    <td><%= link_to 'Show', correspondence %></td>
-    <td><%= link_to 'Edit', edit_correspondence_path(correspondence) %></td>
+    <td><%= button_to 'Show', correspondence ,method: :get%></td>
+    <td><%= button_to 'Edit', edit_correspondence_path(correspondence) ,method: :get %></td>
     <td><%= button_to 'Destroy', correspondence, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
   </tr>
 <% end %>

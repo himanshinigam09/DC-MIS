@@ -91,8 +91,8 @@
             <td><%= profile.googleplus_id %></td>
             <td><%= profile.twitter_id %></td>
             <td><%= profile.blog_id %></td>
-            <td><%= link_to 'Show', profile %></td>
-            <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+            <td><%= button_to 'Show', profile,method: :get %></td>
+            <td><%= button_to 'Edit', edit_profile_path(profile),method: :get %></td>
             <td><%= button_to 'Destroy', profile, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
             </tr>
             <% end %>

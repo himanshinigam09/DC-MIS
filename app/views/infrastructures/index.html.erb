@@ -146,7 +146,7 @@
                             <td><%= system_information.lan %></td>
                             <td><%= system_information.hdd_capacity %></td>
                             <td><%= system_information.sw_details %></td>
-                            <td><%= link_to "Show" %></td>
+                            <td><%= link_to "Show" , infrastructure_path(system_information),{:action => 'show1'}%></td>
                             <td><%= link_to 'Edit', edit_infrastructure_path(system_information) %></td>
                             <td><%= button_to 'Destroy', method: :delete, class: :destroy %></td>
                             </tr>
