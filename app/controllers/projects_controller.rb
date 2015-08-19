@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
-  before_action :zero_users_or_authenticated
+  before_filter :zero_users_or_authenticated
 
   layout "index", :only => [:index]
   def index

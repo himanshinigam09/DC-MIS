@@ -1,19 +1,21 @@
 DCMis::Application.routes.draw do  
   
   
-
 root :to => 'dcs#index'
   
-  
-
-  
-
-  
-
-    ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+  
 
+
+  
+
+  
+
+  
+
+    
   get "password_resets/new"
 
   resources :publications
@@ -67,6 +69,11 @@ resources :users
 
 resources :sessions
 
+get 'show1/:id' => "infrastructures#show1"
+get 'show2/:id' => "infrastructures#show2"
+delete 'destroy1/:id' => "infrastructures#destroy1"
+
+delete 'destroy2/:id' => "infrastructures#destroy2"
 
 
 

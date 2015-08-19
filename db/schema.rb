@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150818110426) do
+ActiveRecord::Schema.define(:version => 20150819073944) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20150818110426) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "remember_me"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20150818110426) do
   add_index "communications", ["dc_member_id"], :name => "index_communications_on_dc_member_id"
 
   create_table "correspondences", :force => true do |t|
-    t.string   "type_of_correspondence"
+    t.string   "type_of_correspondence", :null => false
     t.string   "subject"
     t.string   "user_initials"
     t.string   "medium"
@@ -99,8 +98,6 @@ ActiveRecord::Schema.define(:version => 20150818110426) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
-
-  add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -320,7 +317,6 @@ ActiveRecord::Schema.define(:version => 20150818110426) do
     t.string   "password_confirmation"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.string   "auth_token"
   end
 
 end

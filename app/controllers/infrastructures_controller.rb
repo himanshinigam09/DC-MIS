@@ -8,6 +8,12 @@ def index
     @books = Book.all
     @system_informations = SystemInformation.all
     @issued_resources = IssuedResource.all
+
+    @books = Book.order("").page(params[:page]).per(4)
+    @system_informations = SystemInformation.order("").page(params[:page]).per(4)
+    @issued_resources = IssuedResource.order("").page(params[:page]).per(4)
+
+
     @book = Book.new
   @system_information = SystemInformation.new
   @issued_resource = IssuedResource.new
@@ -88,29 +94,50 @@ def create
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
-end
 def edit
    @book = Book.find(params[:id])
    
 end
  def destroy
     @book = Book.find(params[:id])
-    @system_information = SystemInformation.find(params[:id])
-    @issued_resource = IssuedResource.find(params[:id])
-    if @book.destroy
+   
+    @book.destroy
       respond_to do |format|
-      format.html { redirect_to book_url }
+      format.html { redirect_to '/infrastructures' }
       format.json { head :no_content }
     end
-    elsif @system_information.destroy
+    
+  end
+def destroy1
+  @system_information =  SystemInformation.find(params[:id])
+   
+    @system_information.destroy
       respond_to do |format|
-      format.html { redirect_to system_information_url }
+      format.html { redirect_to '/infrastructures' }
       format.json { head :no_content }
     end
-    elsif @issued_resource.destroy
+    end
+
+    def destroy2
+  @issued_resource =  IssuedResource.find(params[:id])
+   
+    @issued_resource.destroy
       respond_to do |format|
-      format.html { redirect_to issued_resource_url }
+      format.html { redirect_to '/infrastructures' }
       format.json { head :no_content }
+    end
+    end
+    def update
+    @book = Book.find(params[:id])
+
+    respond_to do |format|
+      if @book.update_attributes(params[:book])
+        format.html { redirect_to '/infrastructure', notice: 'Project was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
     end
   end
 

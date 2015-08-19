@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :zero_users_or_authenticated
+  before_filter :zero_users_or_authenticated
 
   # GET /profiles
   # GET /profiles.json
