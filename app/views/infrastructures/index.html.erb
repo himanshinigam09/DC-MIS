@@ -12,6 +12,10 @@
 <!--Tabs-->
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="nav.css" />
+  <script type="text/javascript" src="nav.js"></script>
+
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -33,12 +37,13 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   <style>
+a:hover
+{
+    background: transparent;
+}
+  </style>
+    
 </head>
 <body>
     <section id="portfolio" class="bg-light-gray">
@@ -101,8 +106,8 @@
                             <td><%= book.author %></td>
                             <td><%= book.publication %></td>
                             <td><%= book.ISBN_number %></td>
-                            <td><%= link_to 'Show', infrastructure_path(book) %></td>
-                            <td><a href="#portfolioModal4" class="portfolio-link" data-toggle="modal"><button>Edit</button></a></td>
+                            <td><%= button_to 'Show', infrastructure_path(book) %></td>
+                            <td><%= button_to 'Edit' , edit_infrastructure_path(book) %></td>
                             <td><%= button_to 'Destroy',infrastructure_path(book), method: :delete, class: :destroy %></td>
                             </tr>
                     
@@ -146,9 +151,9 @@
                             <td><%= system_information.lan %></td>
                             <td><%= system_information.hdd_capacity %></td>
                             <td><%= system_information.sw_details %></td>
-                            <td><%= link_to "Show" , infrastructure_path(system_information),{:action => 'show1'}%></td>
-                            <td><%= link_to 'Edit', edit_infrastructure_path(system_information) %></td>
-                            <td><%= button_to 'Destroy', method: :delete, class: :destroy %></td>
+                            <td><%= button_to "Show", "/show1/#{system_information.id}" %></td>
+                            <td><%= button_to 'Edit', edit_infrastructure_path(system_information) %></td>
+                            <td><%= button_to 'Destroy', "/destroy1/#{system_information.id}", method: :delete, :onclick => "return confirm ('Are you sure you want to delete this item?')"%></td>
                             </tr>
                             <% end %>
                             </table>
@@ -185,9 +190,9 @@
                             <td><%= issued_resource.submission_date %></td>
                             <td><%= issued_resource.submission_time %></td>
                 
-                            <td><%= link_to 'Show' %></td>
-                            <td><%= link_to 'Edit', edit_infrastructure_path(issued_resource) %></td>
-                            <td><%= button_to 'Destroy',  method: :delete, class: :destroy %></td>
+                            <td><%= button_to 'Show',"/show2/#{issued_resource.id}" %></td>
+                            <td><%= button_to 'Edit'%></td>
+                            <td><%= button_to 'Destroy', "/destroy2/#{issued_resource.id}", method: :delete, :onclick => "return confirm ('Are you sure you want to delete this item?')"%></td>
                             </tr>
                             <% end %>
                             </table>
@@ -217,46 +222,118 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <!-- form for book-->
-                            <h2>New Book</h2>
-                            <%= form_for @book, url: infrastructures_path do |f| %>
-                            <% if @book.errors.any? %>
-                            <div id="error_explanation">
-                              <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-                              <ul>
-                              <% @book.errors.full_messages.each do |msg| %>
-                                <li><%= msg %></li>
-                              <% end %>
-                              </ul>
-                            </div>
-                            <% end %>
-                              <div class="field">
-                                <%= f.label :title %><br />
-                                <%= f.text_field :title %>
-                              </div>
-                              <div class="field">
-                                <%= f.label :author %><br />
-                                <%= f.text_field :author %>
-                              </div>
-                              <div class="field">
-                                <%= f.label :edition %><br />
-                                <%= f.text_field :edition %>
-                              </div>
-                              <div class="field">
-                                <%= f.label :publication %><br />
-                                <%= f.text_field :publication %>
-                              </div>
-                              <div class="field">
-                                <%= f.label :ISBN_number %><br />
-                                <%= f.text_field :ISBN_number %>
-                              </div>
-                              <div class="actions">
-                              <%= f.submit %>
-                              </div>  
-                            <% end %>
-                            <br /><br />                        
                             
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                            <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+           
+            <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
+              <div class="form">
+
+                  <%= form_for @book, url: infrastructures_path do |f| %>
+                   <% if @book.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+                <ul>
+                <% @book.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+  
+  
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                         <%= f.text_field :title, class: 'form-control', :placeholder => "Title" %>
+                        <%= f.text_field :edition, class: 'form-control', :placeholder => "edition"   %>
+ 
+    
+    
+                        
+                          
+                        
+   
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                         <%= f.text_field :author, class: 'form-control', :placeholder => "Author" %>
+                        
+                      
+                       
+                        <%= f.text_field :publication, class: 'form-control', :placeholder => "Publication"   %>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        
+                         
+                          <%= f.text_field :ISBN_number, class: 'form-control', :placeholder => "ISBN Number"   %>
+                        
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
+
+                    
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all steps.</p>
+                      <div class="actions ">
+                      <%= f.submit nil, :class => 'btn btn-primary' %>
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <% end %>
+        </div>
+   
+   </div>
+</div>
                         </div>
                     </div>
                 </div>
