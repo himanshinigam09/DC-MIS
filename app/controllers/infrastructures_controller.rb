@@ -98,7 +98,25 @@ def edit
    @book = Book.find(params[:id])
    
 end
- def destroy
+ 
+    def update
+    @book = Book.find(params[:id])
+
+    respond_to do |format|
+      if @book.update_attributes(params[:book])
+        format.html { redirect_to '/infrastructure', notice: 'Project was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+    
+    
+  end
+  def destroy
     @book = Book.find(params[:id])
    
     @book.destroy
@@ -127,23 +145,6 @@ def destroy1
       format.json { head :no_content }
     end
     end
-    def update
-    @book = Book.find(params[:id])
-
-    respond_to do |format|
-      if @book.update_attributes(params[:book])
-        format.html { redirect_to '/infrastructure', notice: 'Project was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-    
-    
-  end
 
 def zero_users_or_authenticated
   unless User.count == 0 || current_user

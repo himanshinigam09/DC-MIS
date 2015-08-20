@@ -1,11 +1,12 @@
 class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.json
-  before_action :zero_users_or_authenticated
+  before_filter :zero_users_or_authenticated
 
   layout "index", :only => [:index]
   def index
     @publications = Publication.all
+    @publications = Publication.order("").page(params[:page]).per(4) 
 
     respond_to do |format|
       format.html # index.html.erb
