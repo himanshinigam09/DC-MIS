@@ -27,6 +27,8 @@ gem 'high_voltage'
 gem 'foreigner'
 
  gem 'activeadmin'
+ gem "paperclip"
+
 
 gem "kaminari"
 gem "bootstrap-kaminari-views"

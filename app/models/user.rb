@@ -4,7 +4,11 @@ attr_accessible :first_name, :last_name, :email, :password, :password_confirmati
    validates :email, uniqueness: true
    validates :first_name, :last_name, :email, presence: true
    validates :password, length: { in: 8..20 } , confirmation: true
+has_one :user_profile
 
 
 
+after_create do
+  create_user_profile(:name => self.username)
+end
 end
