@@ -16,7 +16,7 @@
     <!-- Add custom CSS here -->
     <link href="assets/modern-business.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-   
+   <script src="assets/application.js"></script>
 </head>
 
 <body>
@@ -72,7 +72,8 @@
                      <% if current_user %> 
   
                     <li><%= link_to "Departments", '/dashboards' %></a></li>
-                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li>
+                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li><br/>
+                        <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
                     <% else %> 
                       
                         <li><%= link_to "Login", 'login' %></a></li> 
