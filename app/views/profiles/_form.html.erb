@@ -74,7 +74,7 @@ a:hover
            
             <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
               <div class="form">
-                   <%= form_for(@profile) do |f| %>
+                   <%= form_for((@profile), html: { multipart: true }) do |f| %>
                     <% if @profile.errors.any? %>
                       <div id="error_explanation">
                         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -140,7 +140,10 @@ a:hover
                           <%= f.text_field :twitter_id, class: 'form-control', :placeholder => "Twitter id"  %>
                        
                           <%= f.text_field :blog_id, class: 'form-control', :placeholder => "Blog id"  %>
-                       
+                           
+                          <%= f.label :image, "Attach an Image" %>
+                          <%= f.file_field :image %>
+
                           
                         
                         
