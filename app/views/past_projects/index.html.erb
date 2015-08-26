@@ -16,15 +16,8 @@
     <!-- Add custom CSS here -->
     <link href="/assets/modern-business.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript">
-   $(document).ready(function(){
-    $('.navbar .dropdown').hover(function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-    }, function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
-    });
-n})
-   </script>
+    <script src="assets/application.js"></script>
+   
 
 </head>
 
@@ -81,8 +74,8 @@ n})
                      <% if current_user %> 
   
                         <li><%= link_to "Departments", '/dashboards' %></a></li> 
-                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li>
-
+                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li><br/>
+                        <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
                        
                     <% else %> 
                       

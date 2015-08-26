@@ -39,10 +39,19 @@ a:hover
 
 
         </style>
+        <script type="text/javascript">
+   $(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+n})
+   </script>
     </head>
     
     <body>
-
+<br/>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -95,7 +104,7 @@ a:hover
                         <li><%= link_to "Departments", '/dashboards' %></a></li> 
                        
                         <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')"  %></li> <br/>
-
+                        <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
                        
                     <% else %> 
                       
