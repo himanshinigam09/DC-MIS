@@ -1,4 +1,5 @@
 ActiveAdmin.register Event do
+	
   index do  
   	column :id                          
     column :type_of_event                     

@@ -15,6 +15,10 @@ ActiveAdmin.register AdminUser do
       f.input :password               
       f.input :password_confirmation  
     end                               
-    f.actions                         
-  end                                 
+    f.actions 
+
+    
+    strong { link_to "Back", root_path }                           
+  end 
+
 end                                   
