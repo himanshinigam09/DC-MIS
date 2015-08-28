@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150819073944) do
+ActiveRecord::Schema.define(:version => 20150821080028) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -123,6 +123,9 @@ ActiveRecord::Schema.define(:version => 20150819073944) do
     t.string   "email"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "contact_no"
+    t.string   "parent_email"
+    t.string   "parent_contact_no"
   end
 
   create_table "dcs", :force => true do |t|
@@ -257,8 +260,12 @@ ActiveRecord::Schema.define(:version => 20150819073944) do
     t.string   "googleplus_id"
     t.string   "twitter_id"
     t.string   "blog_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "projects", :force => true do |t|

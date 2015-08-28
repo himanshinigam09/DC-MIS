@@ -50,7 +50,7 @@
 
             <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
             <tr><th>First name</th><th>Mid name</th><th>Last name</th><th>Date of birth
-            </th><th>Gender</th><th>Blood group</th><th>Local address</th><th>Permanent address</th><th>Father name</th><th>Mother name</th><th>Guardian name</th><th>Course name</th><th>Github link</th><th>Linkedin link</th><th>Sem of joining</th><th>Email</th><th></th><th></th><th>
+            </th><th>Gender</th><th>Blood group</th><th>Local address</th><th>Permanent address</th><th>Father name</th><th>Mother name</th><th>Guardian name</th><th>Course name</th><th>Github link</th><th>Linkedin link</th><th>Sem of joining</th><th>Email</th><th>Contact no.</th><th>Parent contact no.</th><th>Parent email</th><th></th><th></th><th>
             </th></tr><!-- Table Header -->
             
             <% @dc_members.each do |dc_member| %>
@@ -71,6 +71,9 @@
             <td><%= dc_member.linkedin_link %></td>
             <td><%= dc_member.sem_of_joining %></td>
             <td><%= dc_member.email %></td>
+            <td><%= dc_member.contact_no %></td>
+            <td><%= dc_member.parent_contact_no %></td>
+            <td><%= dc_member.parent_email %></td>
             <td><%= link_to 'Show', dc_member %></td>
             <td><%= link_to 'Edit', edit_dc_member_path(dc_member) %></td>
             <td><%= link_to 'Destroy', dc_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
