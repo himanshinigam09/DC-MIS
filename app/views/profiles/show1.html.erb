@@ -10,79 +10,28 @@
 </head>    
 <body>
 
-<div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				 <ol class="breadcrumb">
+    <div class="container">
+      <h1 class="page-header"><b>Your Profile</b></h1>
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-3">
+                
+                <ol class="breadcrumb">
           
-				<div class="profile-userpic" align="center">
-					<%= image_tag @profile.image.url %>
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						<%= @profile.first_name + " " + @profile.last_name %>
-					</div>
-					<div class="profile-usertitle-job">
-						Developer
-					</div>
-				</div>
-					<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
-				<div class="bottom" align="center">
-                    <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" rel="publisher"
-                       href="https://plus.google.com/+ahmshahnuralam">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-linkedin-square"></i>
+                  
+<p id="notice"><%= notice %></p>
 
-                    </a>
-                    
-                </div>
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-							<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			   <ul class="nav nav-tabs">
+
+<p><%= image_tag @profile.image.url %></p>
+<br />
+<h3><%= @profile.first_name + " " + @profile.last_name %></h3>
+&nbsp;&nbsp;<img src="/assets/social_icon/googleplus-icon.png">&nbsp;
+<img src="/assets/social_icon/icon_facebook_20.png">&nbsp;
+<img src="/assets/social_icon/link-in-icon.png">
+
+</div>
+<div class="col-lg-9">
+  <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="/infrastructures#personal">Personal</a></li>
     <li><a data-toggle="pill" href="/infrastructures#contact">Contact</a></li>
     <li><a data-toggle="pill" href="/infrastructures#social">Social</a></li>
@@ -91,7 +40,7 @@
   <br><br>
   <div class="tab-content">
     <div id="personal" class="tab-pane fade in active">
-      <h2>Personal Information</h2><br />
+      <h2>Personal Information</h2>
       <p>
         <b>Course name :&nbsp;</b>
         <%= @profile.course_name %>
@@ -203,16 +152,9 @@
 
 
 </ol>
-            </div>
-		</div>
-		</div>
-</div>
-<footer>
-            
-                
-                    <p>Copyright &copy;  IIPSDC </p>
-                
-                
-        </footer>
+        </div>
+        </div>
+    </div>
+    
 </body>
 </html>
