@@ -8,7 +8,7 @@ ActiveAdmin::Dashboards.build do
           column :name do |event|  
             link_to event.topic, admin_event_path(event)  
           end  
-          column :type_of_event  
+          column :date  
         end  
         strong { link_to "View All Events", admin_events_path }  
       

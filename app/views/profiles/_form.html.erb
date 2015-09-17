@@ -13,11 +13,22 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  $('text_area').keydown(function(event){
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      var s = $(this).val();
+      $(this).val(s+"\n");
+    }
+  });
+});</script>
 <style>
 a:hover
 {
     background: transparent;
 }
+
   </style>
     
 
@@ -104,8 +115,8 @@ a:hover
    
    
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
@@ -123,9 +134,9 @@ a:hover
                        
                      
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
@@ -143,14 +154,16 @@ a:hover
                            
                           <%= f.label :image, "Attach an Image" %>
                           <%= f.file_field :image %>
-
+                          <p style="white-space: pre-line;"><%= f.text_area :achievement, class: 'form-control', :placeholder => "Achievement"  %></p><br/>
+                          <p style="white-space: pre-line;"><%= f.text_area :blog, class: 'form-control', :placeholder => "Blog"  %></p><br/>
+                          <p style="white-space: pre-line;"><%= f.text_area :education, class: 'form-control', :placeholder => "Education"  %></p><br/>
                           
                         
                         
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>
                    
@@ -160,7 +173,7 @@ a:hover
                         <h3>Complete</h3>
                         <p>You have successfully completed all steps.</p>
                       <div class="actions ">
-                      <%= f.submit nil, :class => 'btn btn-primary' %>
+                      <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
                     </div>
                     </div>
                     <div class="clearfix"></div>
@@ -174,6 +187,7 @@ a:hover
 </div>
 
 </body>
+
 </html>
 
 

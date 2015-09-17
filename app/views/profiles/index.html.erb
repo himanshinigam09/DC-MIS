@@ -104,11 +104,16 @@ a:hover
             
             <td><%= profile.email %></td>
             <td><%= profile.github_id %></td>
-            
+            <% if current_user.email == profile.email %> 
             <td><%= button_to 'Show', profile,method: :get %></td>
             <td><%= button_to 'Edit', edit_profile_path(profile),method: :get %></td>
             <td><%= button_to 'Destroy', profile, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
             </tr>
+             <% else %> 
+             <td><%= button_to 'Show', profile,method: :get %></td>
+             <td></td>
+            <td></td>
+            <% end %>
             <% end %>
             </table>
 

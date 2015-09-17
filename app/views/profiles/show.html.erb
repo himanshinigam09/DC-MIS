@@ -1,145 +1,147 @@
-<html>  
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>DC-MIS</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
+    <meta name="author" content="3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.css">
+    <!-- github acitivity css -->
+    <link rel="stylesheet" href="/assets/plugins/github-activity/dist/github-activity-0.1.1.min.css">
+    <link rel="stylesheet" href="/assets/plugins/github-activity/dist/octicons/octicons.min.css">
+    
+    <link rel="stylesheet" href="/assets/snippet.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="/assets/profile.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       <style>
+            
+a:hover
+{
+    background: transparent;
+}
+        </style>
+    
+</head> 
 
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-</head>    
-<body>
+<body style="padding:0;">
+    <!-- ******HEADER****** --> 
+    <header  class="header">
+        <div style="width:1042px;height:220px;" class="container">   
+          <%= image_tag @profile.image.url , class:'profile-image img-responsive pull-left', :style => "height:220px;width:220px;border-radius:200px;"%>                  
+            
+            <br/><br/><br/>
+           <div class="col-md-4" style="width:237px;height:163px;font-size:30px;">
+           
+                <i><h1 style="font-family:verdana;color:#49515a" class="name"><%= @profile.first_name + " " + @profile.last_name %></h1></i>
+                <h2 style="font-family:verdana;"class="desc">Web App Developer</h2>
 
-<div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				 <ol class="breadcrumb">
+                 
+                
+       
+      <a target="_blank" href="<%= @profile.facebook_id %>" style="color: #FFF;
+text-align: center;" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+        <a target="_blank"  href="<%= @profile.twitter_id %>" style="color: #FFF;
+text-align: center;" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+       
+        <a target="_blank"  href="<%= @profile.googleplus_id %>" style="color: #FFF;
+text-align: center;" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+        
+        <a target="_blank"  href="<%= @profile.linkedin_id %>" style="color: #FFF;
+text-align: center;" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
           
-				<div class="profile-userpic" align="center">
-					<%= image_tag @profile.image.url %>
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						<%= @profile.first_name + " " + @profile.last_name %>
-					</div>
-					<div class="profile-usertitle-job">
-						Developer
-					</div>
-				</div>
-					<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
-				<div class="bottom" align="center">
-                    <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" rel="publisher"
-                       href="https://plus.google.com/+ahmshahnuralam">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-linkedin-square"></i>
-
-                    </a>
-                    
-                </div>
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-							<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="/infrastructures#personal">Personal</a></li>
-    <li><a data-toggle="pill" href="/infrastructures#contact">Contact</a></li>
-    <li><a data-toggle="pill" href="/infrastructures#social">Social</a></li>
-    <li><a data-toggle="pill" href="/infrastructures#actions">Actions</a></li>
-  </ul>
-  <br><br>
-  <div class="tab-content">
-    <div id="personal" class="tab-pane fade in active">
-      <h2>Personal Information</h2><br />
-      <p>
+             <a target="_blank"  href="<%= @profile.github_id %>" style="color: #FFF;
+text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>        
+                
+            </div><!--//profile-->
+          
+               
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <div class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                            <p>
         <b>Course name :&nbsp;</b>
         <%= @profile.course_name %>
       </p>
 
-      <br>
+     <br/>
       <p>
         <b>Sem of joining :&nbsp;</b>
         <%= @profile.sem_of_joining %>
       </p>
-      <br>
+      <br/>
 
         <p>
         <b>Date of birth :&nbsp;</b>
         <%= @profile.date_of_birth %>
       </p>
-      <br>
-      <p>
-        <b>Mid name :&nbsp;</b>
-        <%= @profile.mid_name %>
-      </p>
-      <br>
+     <br/>
+      
       <p>
         <b>Blood group :&nbsp;</b>
         <%= @profile.blood_group %>
       </p>
-      <br>
+      <br/>
       <p>
         <b>Father name :&nbsp;</b>
         <%= @profile.father_name %>
       </p>
-      <br>
+     <br/>
       <p>
         <b>Mother name :&nbsp;</b>
         <%= @profile.mother_name %>
       </p>
       <br>
-      <p>
-        <b>Guardian name :&nbsp;</b>
-        <%= @profile.guardian_name %>
-      </p>
-      <br>
-    </div>
-    <div id="contact" class="tab-pane fade in active">
-
-
-      <h2>Contact Information</h2>
-      <p>
+                    
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </div><!--//section-->
+    
+               
+                
+                
+                <div class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Achievements</h2>
+                        <div class="content">
+                              <p>
+                                
+                                <%= @profile.achievement %>
+                              </p>
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </div><!--//section-->
+               
+            </div><!--//primary-->
+            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+                 <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Contact</h2>
+                        <div class="content">
+                            <p>
         <b>Local address :&nbsp;</b>
         <%= @profile.local_address %>
       </p>
@@ -154,65 +156,57 @@
         <%= @profile.email %> 
       </p>
       <br>
-    </div>
-    <div id="social" class="tab-pane fade in active">
-
-      <h2>Social Information</h2>
-      <p>
-        <b>Github :&nbsp;</b>
-        <%= @profile.github_id %>
-      </p>
-      <br>
-
-      <p>
-        <b>Linkedin :&nbsp;</b>
-        <%= @profile.linkedin_id %>
-      </p>
-      <br>
-
-      <p>
-        <b>Facebook :&nbsp;</b>
-        <%= @profile.facebook_id %>
-      </p>
-      <br>
-
-      <p>
-        <b>Googleplus :&nbsp;</b>
-        <%= @profile.googleplus_id %>
-      </p>
-      <br>
-
-      <p>
-        <b>Twitter :&nbsp;</b>
-        <%= @profile.twitter_id %>
-      </p>
-      <br>
-
-      <p>
-        <b>Blog :&nbsp;</b>
-        <%= @profile.blog_id %>
-      </p>
-
-      <br>
-    </div>
-    <div id="actions" class="tab-pane fade in active">
-      <p><%= link_to 'Edit', edit_profile_path(@profile) %></p>
-      <p><%= link_to 'Back', profiles_path %></p>
-    </div>
-  </div>
-
-
-</ol>
-            </div>
-		</div>
-		</div>
-</div>
-<footer>
-            
-                
-                    <p>Copyright &copy;  IIPSDC </p>
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->
                 
                 
-        </footer>
+                
+               
+                
+                <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">
+                            <p>
+                                
+                                <%= @profile.education %>
+                              </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                            
+                <aside class="languages aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Blog</h2>
+                        <div class="content">
+                            <p>
+                                
+                                <%= @profile.blog %>
+                              </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                
+                
+               
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    <!-- ******FOOTER****** --> 
+   
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
+    <!-- github activity plugin -->
+    <script type="text/javascript" src="assets/plugins/github-activity/dist/mustache/mustache.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/github-activity/dist/github-activity-0.1.1.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="/assets/profile.js"></script>            
 </body>
-</html>
+</html> 
