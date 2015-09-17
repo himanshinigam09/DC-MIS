@@ -44,7 +44,9 @@ a:hover
     <!-- ******HEADER****** --> 
     <header  class="header">
         <div style="width:1042px;height:220px;" class="container">   
-          <%= image_tag @profile.image.url , class:'profile-image img-responsive pull-left', :style => "height:220px;width:220px;border-radius:200px;"%>                  
+          <%= image_tag @profile.image.url , class:'profile-image img-responsive pull-left', :style => "height:220px;width:220px;border-radius:200px;"%>  
+           
+                   
             
             <br/><br/><br/>
            <div class="col-md-4" style="width:237px;height:163px;font-size:30px;">
@@ -70,8 +72,16 @@ text-align: center;" class="btn btn-social-icon btn-linkedin"><i class="fa fa-li
 text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>        
                 
             </div><!--//profile-->
+
           
-               
+           <% if @current_user.email == @profile.email %> 
+            
+           <%= button_to 'Edit', edit_profile_path(@profile),method: :get, :style=>"float:right;color:grey;" %>
+            
+           <%= button_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')",:style=>"float:right;color:grey;" %>
+           
+             
+            <% end %>            
         </div><!--//container-->
     </header><!--//header-->
     
@@ -123,7 +133,7 @@ text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-gith
                
                 
                 
-                <div class="experience section">
+                <div style="height:500px;" class="experience section">
                     <div class="section-inner">
                         <h2 class="heading">Achievements</h2>
                         <div class="content">
