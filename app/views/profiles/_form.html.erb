@@ -13,11 +13,22 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  $('text_area').keydown(function(event){
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      var s = $(this).val();
+      $(this).val(s+"\n");
+    }
+  });
+});</script>
 <style>
 a:hover
 {
     background: transparent;
 }
+
   </style>
     
 
@@ -143,7 +154,9 @@ a:hover
                            
                           <%= f.label :image, "Attach an Image" %>
                           <%= f.file_field :image %>
-
+                          <p style="white-space: pre-line;"><%= f.text_area :achievement, class: 'form-control', :placeholder => "Achievement"  %></p><br/>
+                          <p style="white-space: pre-line;"><%= f.text_area :blog, class: 'form-control', :placeholder => "Blog"  %></p><br/>
+                          <p style="white-space: pre-line;"><%= f.text_area :education, class: 'form-control', :placeholder => "Education"  %></p><br/>
                           
                         
                         
@@ -174,6 +187,7 @@ a:hover
 </div>
 
 </body>
+
 </html>
 
 
