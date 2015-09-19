@@ -6,6 +6,11 @@ class ProfilesController < ApplicationController
   layout "index", :only => [:index]
   def index
     @profiles = Profile.all
+    if params[:search]
+      @profiles = Profile.search(params[:search]).order("created_at DESC")
+    else
+      @profiles = Profile.order("created_at DESC")
+    end
     @profiles = Profile.order("first_name").page(params[:page]).per(4) 
 
     respond_to do |format|
