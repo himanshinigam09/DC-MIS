@@ -1,6 +1,7 @@
 class PastProjectsController < ApplicationController
   # GET /past_projects
   # GET /past_projects.json
+  layout "index", :only => [:index]
   def index
     @past_projects = PastProject.all
 

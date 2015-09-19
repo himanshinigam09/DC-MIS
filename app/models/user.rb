@@ -8,7 +8,5 @@ has_one :user_profile
 
 
 
-after_create do
-  create_user_profile(:name => self.username)
-end
+
 end

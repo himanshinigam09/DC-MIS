@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+layout "index", :only => [:index]
 	def new
   @user = User.new
 end

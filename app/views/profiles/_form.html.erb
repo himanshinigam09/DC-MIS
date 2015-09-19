@@ -34,7 +34,7 @@ a:hover
 
 </head>
 <body>
-        <center><h1 style="color:#B8B8B8  ;font-family:verdanax;text-shadow:  4px 4px 4px #C0C0C0 ;">Profiles </h1></center>
+   <br/><br/>       <center><h1 style="color:#B8B8B8  ;font-family:verdanax;text-shadow:  4px 4px 4px #C0C0C0 ;">Profiles </h1></center>
 
 <div class="container">
 
@@ -113,11 +113,14 @@ a:hover
                         <%= f.text_field :local_address, class: 'form-control' , :placeholder => "Local address" %>
                       
    
-   
+                      
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+                            <li><%= link_to 'Back', profiles_path, method: 'get' %></li>
+
                         </ul>
+
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
                         
@@ -155,7 +158,7 @@ a:hover
                           <%= f.label :image, "Attach an Image" %>
                           <%= f.file_field :image %>
                           <p style="white-space: pre-line;"><%= f.text_area :achievement, class: 'form-control', :placeholder => "Achievement"  %></p><br/>
-                          <p style="white-space: pre-line;"><%= f.text_area :blog, class: 'form-control', :placeholder => "Blog"  %></p><br/>
+                         
                           <p style="white-space: pre-line;"><%= f.text_area :education, class: 'form-control', :placeholder => "Education"  %></p><br/>
                           
                         
