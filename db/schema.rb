@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20150917115459) do
   add_index "communications", ["dc_member_id"], :name => "index_communications_on_dc_member_id"
 
   create_table "correspondences", :force => true do |t|
-    t.string   "type_of_correspondence"
+    t.string   "type_of_correspondence", :null => false
     t.string   "subject"
     t.string   "user_initials"
     t.string   "medium"
@@ -98,8 +98,6 @@ ActiveRecord::Schema.define(:version => 20150917115459) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
-
-  add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -125,6 +123,9 @@ ActiveRecord::Schema.define(:version => 20150917115459) do
     t.string   "email"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "contact_no"
+    t.string   "parent_email"
+    t.string   "parent_contact_no"
   end
 
   create_table "dcs", :force => true do |t|
@@ -326,7 +327,6 @@ ActiveRecord::Schema.define(:version => 20150917115459) do
     t.string   "password_confirmation"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.string   "auth_token"
   end
 
 end
