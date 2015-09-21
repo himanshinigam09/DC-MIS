@@ -4,10 +4,7 @@ class ApplicationController < ActionController::Base
 
 
   protect_from_forgery with: :exception
- def after_login_path_for(resource)
-    '/dashboards' # Or :prefix_to_your_route
-  end
-  
+ 
 helper_method :current_user 
 
 def current_user 

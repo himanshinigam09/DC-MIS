@@ -1,21 +1,18 @@
-
-
-
 <html>
 
 <head>
 
 <!--Tabs-->
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="nav.css" />
+ <link rel="stylesheet" type="text/css" href="nav.css" />
     
     
  <script type="text/javascript" src="nav.js"></script>
+ 
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+<script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -34,7 +31,7 @@ a:hover
 
 </head>
 <body>
-    <br/><br/>    <center><div><h1 style="color:#B8B8B8  ;font-family:verdanax;text-shadow:  4px 4px 4px #C0C0C0 ;">Correspondence </h1></center>
+   <br/><br/>       <center><h1 style="color:#B8B8B8  ;font-family:verdanax;text-shadow:  4px 4px 4px #C0C0C0 ;">Recent Activities </h1></center>
 
 <div class="container">
 
@@ -84,61 +81,66 @@ a:hover
             <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
               <div class="form">
 
-                      <%= form_for(@correspondence) do |f| %>
-                     
+                  <%= form_for(@department) do |f| %>
+                <% if @department.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-                    <% if @correspondence.errors.any? %>
-                      <div id="error_explanation">
-                        <h2><%= pluralize(@correspondence.errors.count, "error") %> prohibited this correspondence from being saved:</h2>
+                    <ul>
+                    <% @department.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
-                        <ul>
-                        <% @correspondence.errors.full_messages.each do |msg| %>
-                          <li><%= msg %></li>
-                        <% end %>
-                        </ul>
-                      </div>
-                    <% end %> 
-  
-             
   
   
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
-                         <%= f.text_field :type_of_correspondence, class: 'form-control', :placeholder => "Type of Correspondence"  %>
- 
+
+                         <%= f.text_area :event, class: 'form-control', :placeholder => "Events" %>
   
+ 
     
-                        <%= f.text_field :subject, class: 'form-control', :placeholder => "Subject" %>
-                      
-                      
+    
+                        <%= f.text_area :infrastructure, class: 'form-control', :placeholder => "Infrastructure" %>
                         
-                        <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
+                          
                        
+   
+   
                         <ul class="list-inline pull-right">
-                            <li><button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
+                            <li><button onClick="location.href='/departments'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                              
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
+                         <%= f.text_area :profile, class: 'form-control', :placeholder => "Human Resource"   %>
+    
+  
+    
+    
+                        <%= f.text_area :project, class: 'form-control', :placeholder => "Project"   %><br/><br/>
+                        
+                      
                        
-                      <%= f.text_field :medium, class: 'form-control', :placeholder => "Medium"  %>
-                    
-                      <%= f.text_field :address, class: 'form-control', :placeholder => "Address"  %>
-                    
+                       
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                           
+                            
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
-                         <%= f.text_area :description, class: 'form-control' , :placeholder => "Description"  %><br/>
+                        <%= f.text_area :correspondence, class: 'form-control', :placeholder => "Correspondence"   %>
   
-                      
-                         <%= f.date_select :date, class: 'form-control', :placeholder => "Date"  %>
-  
-  
+   
+                          <%= f.text_area :publication, class: 'form-control', :placeholder => "Publication"   %>
+                        
+                       
+                        
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
                             
@@ -151,7 +153,9 @@ a:hover
                         <h3>Complete</h3>
                         <p>You have successfully completed all steps.</p>
                       <div class="actions ">
+
                       <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
+
                     </div>
                     </div>
                     <div class="clearfix"></div>
@@ -207,5 +211,13 @@ a:hover
 
 
 
-  
+
+
+
+
+
+
+
+
+
   

@@ -1,6 +1,12 @@
 DCMis::Application.routes.draw do  
   
   
+  resources :departments
+
+
+  resources :items
+
+
 root :to => 'dcs#index'
   
   ActiveAdmin.routes(self)
