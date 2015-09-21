@@ -265,7 +265,7 @@ Listing Infrastructures
 <%= f.text_field :title, class: 'form-control', :placeholder => "Title" %>
 <%= f.text_field :edition, class: 'form-control', :placeholder => "edition" %>
 <ul class="list-inline pull-right">
-<li><button type="button" class="btn btn-default next-step">Skip</button></li>
+<li><button onClick="location.href='/infrastructures'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
 <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
 </ul>
 </div>
@@ -274,7 +274,6 @@ Listing Infrastructures
 <%= f.text_field :publication, class: 'form-control', :placeholder => "Publication" %>
 <ul class="list-inline pull-right">
 <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-<li><button type="button" class="btn btn-default next-step">Skip</button></li>
 <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
 </ul>
 </div>
@@ -282,7 +281,6 @@ Listing Infrastructures
 <%= f.text_field :ISBN_number, class: 'form-control', :placeholder => "ISBN Number" %>
 <ul class="list-inline pull-right">
 <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-<li><button type="button" class="btn btn-default next-step">Skip</button></li>
 <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
 </ul>
 </div>

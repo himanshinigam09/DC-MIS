@@ -13,16 +13,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-  $('text_area').keydown(function(event){
-    if (event.keyCode == 13) {
-      event.preventDefault();
-      var s = $(this).val();
-      $(this).val(s+"\n");
-    }
-  });
-});</script>
+  
 <style>
 a:hover
 {
@@ -115,9 +106,8 @@ a:hover
    
                       
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button onClick="location.href='/profiles'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
-                            <li><%= link_to 'Back', profiles_path, method: 'get' %></li>
 
                         </ul>
 
@@ -138,7 +128,7 @@ a:hover
                      
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                           
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -165,7 +155,7 @@ a:hover
                         
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            
                             <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>

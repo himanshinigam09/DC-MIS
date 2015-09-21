@@ -109,9 +109,9 @@ a:hover
    
    
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button onClick="location.href='/events'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
-                             <li><%= link_to 'Back', profiles_path, method: 'get' %></li>
+                             
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
@@ -127,7 +127,7 @@ a:hover
                         <%= f.time_select :time, class: 'form-control', :placeholder => "Time"   %>
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -142,7 +142,7 @@ a:hover
                         
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            
                             <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -152,11 +152,9 @@ a:hover
                         <h3>Complete</h3>
                         <p>You have successfully completed all steps.</p>
                       <div class="actions ">
-<<<<<<< HEAD
+
                       <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
-=======
-                      <%= f.submit nil, :class => 'btn btn-primary btn-block ' %>
->>>>>>> 749dd406d73e796cdaebb5010a1847dadf4f4663
+
                     </div>
                     </div>
                     <div class="clearfix"></div>

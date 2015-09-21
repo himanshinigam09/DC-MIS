@@ -115,9 +115,9 @@ a:hover
                         <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
                        
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            <li><button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
-                             <li><%= link_to 'Back', profiles_path, method: 'get' %></li>
+                             
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
@@ -128,7 +128,7 @@ a:hover
                     
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                           
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -140,7 +140,7 @@ a:hover
   
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default btn-block next-step">Skip</button></li>
+                            
                             <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -208,4 +208,3 @@ a:hover
 
   
   
-

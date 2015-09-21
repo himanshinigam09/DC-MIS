@@ -74,7 +74,7 @@ n})
                     <% if current_user %> 
                     <li><%= link_to "Departments", '/dashboards' %></a></li> 
                         
-                        <li><%= link_to "Log out", logout_path, method: "delete",:onclick=> "return confirm('Are you sure you want to log out?')" %></li> <br/>
+                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')" %></li> <br/>
                         
                        <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
                     <% else %> 
@@ -94,6 +94,7 @@ n})
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+
     </nav>
  
 <%= yield %>

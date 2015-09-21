@@ -152,7 +152,7 @@ text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-gith
                         <div class="content">
                               <p>
                                 
-                                <%= @profile.achievement %>
+                                <%= simple_format(@profile.achievement) %>
                               </p>
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
@@ -193,7 +193,7 @@ text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-gith
                         <div class="content">
                             <p>
                                 
-                                <%= @profile.education %>
+                                <%= simple_format(@profile.education) %>
                               </p>
                         </div><!--//content-->
                     </div><!--//section-inner-->

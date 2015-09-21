@@ -6,12 +6,9 @@ class ProfilesController < ApplicationController
   layout "index", :only => [:index]
   def index
     @profiles = Profile.all
-<<<<<<< HEAD
+
     
     @profiles = Profile.order("first_name").page(params[:page]).per(4) 
-=======
- @profiles = Profile.order("first_name").page(params[:page]).per(4) 
->>>>>>> eaad10370820ef210183f720a86ff04a243a2884
 
     respond_to do |format|
       format.html # index.html.erb
