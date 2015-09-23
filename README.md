@@ -1,6 +1,6 @@
 # DC-MIS
-IIPS-DC is driven by passionate student teams working 24 X 7 with enthusiastic, committed and experts from Industries and Academia of its industrious team and Alumni.
-The D.C. Management Information System of IIPS is a web application to speed up the process of managing development center in this educational institute . 
+IIPS-DC is driven by passionate student teams working 24 X 7 with enthusiastic, committed and experts from Industries and Academia of its industrious team and Alumni.<br/>
+
 The main objective of this project is to provide the solution for a non-profitable organization which provides a base to carry out academic experiments, to introduce new trends and technologies and involves a good practice to groom their students as an IT professionals in all aspects .
 
 ## SPECIFICATIONS
