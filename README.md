@@ -5,8 +5,8 @@ The main objective of this project is to provide the solution for a non-profitab
 
 ## SPECIFICATIONS
 **Backend**   
-Framework: Ruby on Rails(ROR) 
-database language: MySQL  
+Framework: Ruby on Rails(ROR)<br/> 
+Database language: MySQL  
 **Frontend**    
 Platform: Sublime text editor   
 Language used: Ruby  
