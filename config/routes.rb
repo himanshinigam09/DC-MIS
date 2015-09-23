@@ -1,10 +1,7 @@
 DCMis::Application.routes.draw do  
   
   
-  resources :departments
-
-
-  resources :items
+  
 
 
 root :to => 'dcs#index'
@@ -16,7 +13,10 @@ root :to => 'dcs#index'
 
 
   
+resources :departments
 
+
+  resources :items
   
 
   
@@ -33,7 +33,7 @@ root :to => 'dcs#index'
   resources :current_projects
 
 
-  resources :dashboards
+  
 
 
   

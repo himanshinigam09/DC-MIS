@@ -237,7 +237,7 @@ table tr:hover td{
                     </li>
                    
                     <% if current_user %> 
-                    <li><%= link_to "Departments", '/dashboards' %></a></li> 
+                    <li><%= link_to "Departments", '/departments' %></a></li> 
                         
                         <li><%= link_to "Log out", logout_path, method: "delete",:onclick=> "return confirm('Are you sure you want to log out?')" %></li> <br/>
                         
@@ -265,6 +265,8 @@ table tr:hover td{
 
 
     <%= yield %>
+    <%= render "layouts/footer" %>
+
     
     </body>
 </html>
