@@ -9,7 +9,7 @@ Framework: Ruby on Rails(ROR)<br/>
 Database language: MySQL  
 **Frontend**    
 Platform: Sublime text editor   
-Language used: Ruby  
+Languages used: Ruby, Html, Css, javascript 
 
 
 ## FUNCTIONALITIES
