@@ -12,7 +12,7 @@ class CorrespondencesController < ApplicationController
     
 
     @correspondences = Correspondence.all
-    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
+    @correspondences = Correspondence.order("created_at DESC").page(params[:page]).per(4) 
  
 
     respond_to do |format|

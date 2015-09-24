@@ -33,7 +33,7 @@ root :to => 'dcs#index'
   resources :current_projects
 
 
-  resources :dashboards
+ 
 
 
   
