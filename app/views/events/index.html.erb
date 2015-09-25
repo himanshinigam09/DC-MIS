@@ -32,56 +32,32 @@ a:hover
     background: transparent;
 }
         </style>
-    </head>
+</head>
     
-<body >
+<body>
 
 <!-- Navigation -->
  
-    
-<br/>
- 
-      <div class="container-fluid" >
-      
-      <div class="row row-offcanvas row-offcanvas-left" >
-      
-        
-         <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation" >
-           
-            <ul class="nav nav-sidebar">
-              <li><a href="events.html">Events</a></li>
-              <li><a href="infrastructures.html">Infrastructure</a></li>
-              <li><a href="profiles.html">Human Resource</a></li>
-              <li><a href="projects.html">Projects</a></li>
-          <li><a href="correspondences.html">Correspondence</a></li>
-          <li><a href="publications.html">Publications</a></li>
-            </ul>
-            
-          
-        </div><!--/span-->
-        
-        <div class="col-sm-9 col-md-10 main " >
-          
-          <!--toggle sidebar button-->
-          
-          
-          <h1 class="page-header">
-            Listing Events
-
-            
-          </h1>
-          
-                <div class="panel-group" id="accordion" style="background-color:white;">
-          <div class="row placeholders" >
-            <div class="col-lg-11" >
-          <!--toggle sidebar button-->
-          
-         
-         
-      
-          
-           
-<table cellspacing='0'>
+ <br />   
+<div class="container-fluid">
+  <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+        <ul class="nav nav-sidebar">
+        <li><a href="events.html">Events</a></li>
+        <li><a href="infrastructures.html">Infrastructure</a></li>
+        <li><a href="profiles.html">Human Resource</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="correspondences.html">Correspondence</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-md-10 main " >
+        <h1 class="page-header" style="sans-serif;text-transform: capitalize;">
+        Listing Events</h1>
+        <div class="panel-group" id="accordion" style="background-color:white;">
+          <div class="row placeholders">
+            <div class="col-lg-11">
+              <table cellspacing='0'>
                 <tr>
                 <th>Type of event</th>
                 <th>Organizer</th>
@@ -104,29 +80,27 @@ a:hover
                 <td><%= event.venue %></td>
                 <td><%= event.date %></td>
               
-               
+              
                
                 <td><%= button_to 'Show', event ,method: :get%></td>
                 <td><%= button_to 'Edit', edit_event_path(event) , method: :get%></td>
-                <td><%= button_to 'Destroy', event_path(event), method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
+                <td><%= button_to 'Destroy', event_path(event), method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')"%></td>
                 </tr>
                 <% end %>
                 </table>
-
                 <br />
 
 
 
 
-                <%= link_to 'New Event', new_event_path %><br/>
+                <%= button_to 'Add Event', new_event_path, method: :get, :class => 'btn btn-primary' %><br/>
                 <%= paginate @events %>
-<br/>
-
-      
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    
+      </div>
+  </div>
 
     
 </body>

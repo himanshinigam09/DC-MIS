@@ -9,7 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="assets/bootstrap1.min.js"></script>
+        <script src="assets/scripts1.js"></script>
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
@@ -48,135 +51,106 @@ n})
 <body>
 <br/>
     <!-- Navigation -->
-   
-
-
-
-  <div class="container-fluid">
-    <div class="row row-offcanvas row-offcanvas-left">
-      <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="    navigation"><ul class="nav nav-sidebar">
+<div class="container-fluid">
+  <div class="row row-offcanvas row-offcanvas-left">
+    <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation"><ul class="nav nav-sidebar">
         <li><a href="events.html">Events</a></li>
         <li><a href="infrastructures.html">Infrastructure</a></li>
         <li><a href="profiles.html">Human Resource</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="correspondences.html">Correspondence</a></li>
         <li><a href="publications.html">Publications</a></li>
-        </ul>
-      </div><!--/span-->
-      <div class="col-sm-9 col-md-10 main">
+      </ul>
+    </div><!--/span-->
+    <div class="col-sm-9 col-md-10 main">
           <!--toggle sidebar button-->
-          <p class="visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
-          </p>
-          <br/><br/>
-          <h1 class="page-header">Departments</h1>
-
-          <% @departments.each do |department| %>
-             <%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %>
-   
-              
-        <div class="row placeholders">
-          <div class="col-lg-11">
-            <div class="panel-group" id="accordion">
-              <div class="panel panel-default"><img style='width:150x;height:150px;float:right; ' src="assets/events.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+      <p class="visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+      </p>
+      <br/><br/>
+      <h1 class="page-header">Departments</h1>
+      <% @departments.each do |department| %>
+      <%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %>
+      <div class="row placeholders">
+        <div class="col-lg-11">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default"><img style='width:150x;height:150px;float:right; ' src="assets/events.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <div class="panel-heading">
+                <h4 class="panel-title">Events</h4>
+              </div>
+              <div class="panel-body">
+                <%= simple_format(department.event) %>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse">
+              </div>
+            </div>
+                  <!-- /.panel -->
+            <div class="panel panel-default">
+              <img style='width:150px;height:150px;float:right; 'src="assets/infras.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <div class="panel-heading">
+                <h4 class="panel-title">Infrastructure</h4>
+              </div>
+              <div class="panel-body">
+                <%= simple_format(department.infrastructure) %>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+              </div>
+              <div class="panel panel-default">
+                <img style='width:150px;height:150px;float:right; ' src="assets/pro.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                 <div class="panel-heading">
-                  <h4 class="panel-title">Events</h4>
+                  <h4 class="panel-title">Human Resource</h4>
                 </div>
                 <div class="panel-body">
-                       <%= simple_format(department.event) %>
+                  <%= simple_format(department.profile) %>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse">
+                <div id="collapseThree" class="panel-collapse collapse">
                 </div>
               </div>
-                  <!-- /.panel -->
               <div class="panel panel-default">
-                    <img style='width:150px;height:150px;float:right; 'src="assets/infras.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                <img style='width:150px;height:150px;float:right; ' src="assets/projects.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                 <div class="panel-heading">
-                      <h4 class="panel-title">Infrastructure</h4>
+                  <h4 class="panel-title">Project</h4>
                 </div>
                 <div class="panel-body">
-                        <%= simple_format(department.infrastructure) %>
+                  <%= simple_format(department.project) %>
                 </div>
-                <div id="collapseTwo" class="panel-collapse collapse">
+                <div id="collapseFour" class="panel-collapse collapse">
                 </div>
-                <div class="panel panel-default">
-                        <img style='width:150px;height:150px;float:right; ' src="assets/pro.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              </div>
+              <div class="panel panel-default">
+                <img style='float:right;width:150px;height:150px ;float:right;' src="assets/correspondence.jpeg" class="center-block img-responsive img-circle"alt="Generic placeholder thumbnail">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Correspondence</h4>
+                </div>
+                <div class="panel-body">
+                  <%= simple_format(department.correspondence) %>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+              </div>
+              <div class="panel panel-default">
+                <img style='float:right;width:150px;height:150px ;float:right;' src="assets/publication1.jpeg" class="center-block img-responsive img-circle"alt="Generic placeholder thumbnail">
                   <div class="panel-heading">
-                          <h4 class="panel-title">Human Resource</h4>
+                    <h4 class="panel-title">Publications</h4>
                   </div>
                   <div class="panel-body">
-                           <%= simple_format(department.profile) %>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                            
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                        <img style='width:150px;height:150px;float:right; ' src="assets/projects.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                  <div class="panel-heading">
-                            <h4 class="panel-title">
-                            
-                                Project
-                            </h4>
-                  </div>
-                  <div class="panel-body">
-                          <%= simple_format(department.project) %>
-                  </div>
-                  <div id="collapseFour" class="panel-collapse collapse">
-                            
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                        <img style='float:right;width:150px;height:150px ;float:right;' src="assets/correspondence.jpeg" class="center-block img-responsive img-circle"alt="Generic placeholder thumbnail">
-                  <div class="panel-heading">
-                            <h4 class="panel-title">
-                            
-                                Correspondence
-                                
-                            </h4>
-                  </div>
-                  <div class="panel-body">
-                            
-                         <%= simple_format(department.correspondence) %>
+                    <%= simple_format(department.publication) %>
                   </div>
                   <div id="collapseFive" class="panel-collapse collapse">
-                            
-                  </div>
-                  <div class="panel panel-default">
-                          <img style='float:right;width:150px;height:150px ;float:right;' src="assets/publication1.jpeg" class="center-block img-responsive img-circle"alt="Generic placeholder thumbnail">
-                    <div class="panel-heading">
-                            <h4 class="panel-title">
-                            
-                                Publications
-                                
-                            </h4>
-                    </div>
-                    <div class="panel-body">
-                             <%= simple_format(department.publication) %>
-                    </div>
-                    <div id="collapseFive" class="panel-collapse collapse">
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div><!--/row-->
-      </div>
+        </div>
+      </div><!--/row-->
     </div>
-  </div><!--/.container-->
- 
-    
-    
-  
+  </div>
+</div><!--/.container-->
 <% end %>
-           <hr>
+<hr>
     
         
-    <!-- script references -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="assets/bootstrap1.min.js"></script>
-        <script src="assets/scripts1.js"></script>
+   
     </body>
 </html>
 
@@ -184,6 +158,6 @@ n})
 
 
 
-<br />
+
 
 

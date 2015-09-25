@@ -35,26 +35,31 @@ a:hover
 <br/><br/>
                 
 <br/><br/>
-<div class="login">
-	<div class="container">
-   
-		<div class="form">
+	
+    <div class="container-fluid" >
+      <div class="row row-offcanvas row-offcanvas-left" >
+      <div class="form">
+        <h1>Log in</h1>
+      	<%= form_for(:session, url: login_path) do |f| %> 
+        <%= f.email_field :email, :placeholder => "Email", class: 'form-control'  %> 
+        <%= f.password_field :password, :placeholder => "Password", class: 'form-control'  %>
+        <%= f.submit "Log in", class: "btn-submit" %>
+        <br />
+        <div class="field">
+          New user? <%= link_to "Sign up now!", signup_path %>
+        </div>
+        <% end %>
+		  </div>
+	  </div>
 
-      <h1>Log in</h1>
-			
-	<%= form_for(:session, url: login_path) do |f| %> 
-  <%= f.email_field :email, :placeholder => "Email", class: 'form-control'  %> 
-  <%= f.password_field :password, :placeholder => "Password", class: 'form-control'  %>
+  </div>
+ 
 
-  <%= f.submit "Log in", class: "btn-submit" %>
-  <div class="field">
-  New user? <%= link_to "Sign up now!", signup_path %></div>
-<% end %>
-		
-    </div>
-	</div>
-</div>
-<hr>
+<br/><br/>
+                
+<br/><br/>
+<br/><br/>
+<br /><br/><br/>
 
 
 </body>
