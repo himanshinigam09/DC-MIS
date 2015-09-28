@@ -35,6 +35,7 @@ a:hover
 <br/><br/>
                 
 <br/><br/>
+<<<<<<< HEAD
 <div class="login">
 	<div class="container" style="height:400px;">
    
@@ -55,6 +56,33 @@ a:hover
 	</div>
 </div>
 <hr>
+=======
+	
+    <div class="container-fluid" >
+      <div class="row row-offcanvas row-offcanvas-left" >
+      <div class="form">
+        <h1>Log in</h1>
+      	<%= form_for(:session, url: login_path) do |f| %> 
+        <%= f.email_field :email, :placeholder => "Email", class: 'form-control'  %> 
+        <%= f.password_field :password, :placeholder => "Password", class: 'form-control'  %>
+        <%= f.submit "Log in", class: "btn-submit" %>
+        <br />
+        <div class="field">
+          New user? <%= link_to "Sign up now!", signup_path %>
+        </div>
+        <% end %>
+		  </div>
+	  </div>
+
+  </div>
+ 
+
+<br/><br/>
+                
+<br/><br/>
+<br/><br/>
+<br /><br/><br/>
+>>>>>>> fb6d81a35fe544b9d8a44f9d857244caf908e08f
 
 
 </body>

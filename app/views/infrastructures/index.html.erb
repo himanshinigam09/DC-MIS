@@ -114,7 +114,8 @@ Listing Infrastructures
 <br />
 <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
 <div class="portfolio-hover">
-<button>Add Book</button>
+	<%= button_to 'Add Book', new_event_path, :class => 'btn btn-primary' %><br/>
+
 </div>
 </a>
 <%= paginate @books %>
@@ -155,7 +156,7 @@ Listing Infrastructures
 <br />
 <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
 <div class="portfolio-hover">
-<button>Add System Information</button>
+<%= button_to 'Add System Information', new_event_path, :class => 'btn btn-primary' %><br/>
 </div></a>
 <%= paginate @system_informations %>
 </div>
@@ -191,7 +192,7 @@ Listing Infrastructures
 <br />
 <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
 <div class="portfolio-hover">
-<button>Issue Resources</button>
+<%= button_to 'Add Issue Resources', new_event_path, :class => 'btn btn-primary' %><br/>
 </div></a>
 <%= paginate @issued_resources %>
 </div>
