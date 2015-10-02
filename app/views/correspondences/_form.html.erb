@@ -1,4 +1,6 @@
- 
+
+
+
 <html>
 
 <head>
@@ -32,8 +34,7 @@ a:hover
 
 </head>
 <body>
- <br/><br/> 
-        <center><h1 style="color:black;font-family:verdanax;">Projects </h1></center>
+    <br/><br/>    <center><div><h1 style="color:black;font-family:verdanax;">Correspondence </h1></center>
 
 <div class="container">
 
@@ -68,8 +69,6 @@ a:hover
                             </span>
                         </a>
                     </li>
-                   
-                    
 
                     <li role="presentation" class="disabled">
                         <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
@@ -84,45 +83,49 @@ a:hover
            
             <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
               <div class="form">
-                   <%= form_for(@project) do |f| %>
-                      <% if @project.errors.any? %>
-                        <div id="error_explanation">
-                          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-                          <ul>
-                          <% @project.errors.full_messages.each do |msg| %>
-                            <li><%= msg %></li>
-                          <% end %>
-                          </ul>
-                        </div>
-                      <% end %>
+                      <%= form_for(@correspondence) do |f| %>
+                     
+
+                    <% if @correspondence.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@correspondence.errors.count, "error") %> prohibited this correspondence from being saved:</h2>
+
+                        <ul>
+                        <% @correspondence.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    <% end %> 
+  
+             
   
   
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
-                        <%= f.text_field :project_name, class: 'form-control', :placeholder => "Project name" %>
+                         <%= f.text_field :type_of_correspondence, class: 'form-control', :placeholder => "Type of Correspondence"  %>
+ 
   
-   
-                        <%= f.text_field :project_type, class: 'form-control', :placeholder => "Project type" %>
+    
+                        <%= f.text_field :subject, class: 'form-control', :placeholder => "Subject" %>
                       
-                        <%= f.text_area :project_description, class: 'form-control', :placeholder => "Project description"  %>
-                                          
-   
-   
+                      
+                        
+                        <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
+                       
                         <ul class="list-inline pull-right">
-                           <li><button onClick="location.href='/projects'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
+                            <li><button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+                             
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
-                        
-                        <%= f.text_field :project_leader, class: 'form-control', :placeholder => "Project leader"  %>
-  
-                          <%= f.text_field :team_id, class: 'form-control', :placeholder => "Team id"  %>
                        
-                          <%= f.number_field :project_status, class: 'form-control', :placeholder => "Project status"  %>
-                       
-                     
+                      <%= f.text_field :medium, class: 'form-control', :placeholder => "Medium"  %>
+                    
+                      <%= f.text_field :address, class: 'form-control', :placeholder => "Address"  %>
+                    
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
                            
@@ -130,22 +133,18 @@ a:hover
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
-                        
-                          <%= f.text_field :dc_page_link, class: 'form-control', :placeholder => "Dc page link"  %>
+                         <%= f.text_area :description, class: 'form-control' , :placeholder => "Description"  %><br/>
   
-                          <%= f.text_field :github_page_link, class: 'form-control', :placeholder => "Github page link"  %>
-                       
-                        
-                          
-                        
-                        
+                      
+                         <%= f.date_select :date, class: 'form-control', :placeholder => "Date"  %>
+  
+  
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                           
+                            
                             <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>
-                   
                     <div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
 
                     
@@ -155,7 +154,7 @@ a:hover
                       <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
                       
                     </div>
-                    <button onClick="location.href='/projects'" type="button">Back</button>
+                    <button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button>
                     <br /><br /><br />
                     </div>
                     <div class="clearfix"></div>
@@ -172,7 +171,6 @@ a:hover
 </html>
 
 
- 
 
 
 
@@ -203,12 +201,14 @@ a:hover
 
 
 
- 
- 
+
+
+
+
+
+
+
+
+
   
   
- 
-  
- 
-  
-s
