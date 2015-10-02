@@ -1,41 +1,35 @@
- 
 <html>
-
 <head>
-
 <!--Tabs-->
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="nav.css" />
-    
-    
- <script type="text/javascript" src="nav.js"></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-   $(document).ready(function(){
-    $('.navbar .dropdown').hover(function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-    }, function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
-    });
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<script type="text/javascript" src="nav.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.navbar .dropdown').hover(function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+}, function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+});
 n})
-   </script>
+</script>
 <style>
 a:hover
 {
-    background: transparent;
+background: transparent;
 }
-  </style>
-    
-
+</style>
 </head>
 <body>
- <br/><br/> 
-        <center><h1 style="color:black;font-family:verdanax;">Projects </h1></center>
-
+<br/><br/>
+<center><h1 style="color:black;font-family:verdanax;">Projects </h1></center>
 <div class="container">
+<<<<<<< HEAD
 
   <div class="row">
 
@@ -162,50 +156,99 @@ a:hover
         </div>
    
    </div>
+=======
+<div class="row">
+<div class="wizard">
+<div class="wizard-inner">
+<div class="connecting-line"></div>
+<ul class="nav nav-tabs" role="tablist">
+<li role="presentation" class="active">
+<a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+<span class="round-tab">
+<i class="glyphicon glyphicon-pencil"></i>
+</span>
+</a>
+</li>
+<li role="presentation" class="disabled">
+<a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+<span class="round-tab">
+<i class="glyphicon glyphicon-pencil"></i>
+</span>
+</a>
+</li>
+<li role="presentation" class="disabled">
+<a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+<span class="round-tab">
+<i class="glyphicon glyphicon-pencil"></i>
+</span>
+</a>
+</li>
+<li role="presentation" class="disabled">
+<a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+<span class="round-tab">
+<i class="glyphicon glyphicon-ok"></i>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
+<div class="form">
+<%= form_for(@project) do |f| %>
+<% if @project.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<ul>
+<% @project.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<div class="tab-content">
+<div class="tab-pane active" role="tabpanel" id="step1">
+<%= f.text_field :project_name, class: 'form-control', :placeholder => "Project name" %>
+<%= f.text_field :project_type, class: 'form-control', :placeholder => "Project type" %>
+<%= f.text_area :project_description, class: 'form-control', :placeholder => "Project description" %>
+<ul class="list-inline pull-right">
+<li><button onClick="location.href='/projects'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
+<li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+</ul>
+</div>
+<div class="tab-pane" role="tabpanel" id="step2">
+<%= f.text_field :project_leader, class: 'form-control', :placeholder => "Project leader" %>
+<%= f.text_field :team_id, class: 'form-control', :placeholder => "Team id" %>
+<%= f.number_field :project_status, class: 'form-control', :placeholder => "Project status" %>
+<ul class="list-inline pull-right">
+<li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+<li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+</ul>
+</div>
+<div class="tab-pane" role="tabpanel" id="step3">
+<%= f.text_field :dc_page_link, class: 'form-control', :placeholder => "Dc page link" %>
+<%= f.text_field :github_page_link, class: 'form-control', :placeholder => "Github page link" %>
+<ul class="list-inline pull-right">
+<li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+<li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
+</ul>
+</div>
+<div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
+<h3>Complete</h3>
+<p>You have successfully completed all steps.</p>
+<div class="actions ">
+<%= f.submit nil, :class => 'btn btn-primary btn-block' %>
+</div>
+<br/><br/>
+<br/>
+</div>
+<div class="clearfix"></div>
+</div>
+<% end %>
+</div>
+</div>
+>>>>>>> b21fd82c5f655522ff01812aa58627191b2f1273
 </div>
 </div>
 </div>
-
 </body>
 </html>
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-  
-  
- 
-  
- 
-  

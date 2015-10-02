@@ -9,9 +9,9 @@ def index
     @system_informations = SystemInformation.all
     @issued_resources = IssuedResource.all
 
-    @books = Book.order("").page(params[:page]).per(4)
-    @system_informations = SystemInformation.order("").page(params[:page]).per(4)
-    @issued_resources = IssuedResource.order("").page(params[:page]).per(4)
+    @books = Book.order("created_at DESC").page(params[:page]).per(4)
+    @system_informations = SystemInformation.order("created_at DESC").page(params[:page]).per(4)
+    @issued_resources = IssuedResource.order("created_at DESC").page(params[:page]).per(4)
 
 
     @book = Book.new

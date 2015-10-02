@@ -33,8 +33,6 @@ resources :departments
   resources :current_projects
 
 
-  
-
 
   
 
