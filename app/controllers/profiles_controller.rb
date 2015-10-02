@@ -7,8 +7,8 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
 
-    
-    @profiles = Profile.search(params[:search]).order("full_name").page(params[:page]) 
+
+    @profiles = Profile.search(params[:search]).order("full_name").page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
