@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
 
     
-    @profiles = Profile.order("first_name").page(params[:page]).per(4) 
+    @profiles = Profile.search(params[:search]).order("full_name").page(params[:page]) 
 
     respond_to do |format|
       format.html # index.html.erb

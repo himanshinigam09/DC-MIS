@@ -33,12 +33,6 @@ resources :departments
   resources :current_projects
 
 
-<<<<<<< HEAD
- 
-=======
-  
->>>>>>> 948c743a657e860b8ad95302f7c0c8514b58bde6
-
 
   
 
