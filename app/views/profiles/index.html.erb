@@ -49,9 +49,10 @@ background: transparent;
 <div class="row placeholders" >
 <div class="col-lg-11" >
 <!--toggle sidebar button-->
+<!--search-->
     <%= form_tag profiles_path, :method => 'get' do %>  
       <p>  
-        <%= text_field_tag :search, params[:search] %>  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter name' %>  
         <%= submit_tag "Search", :name => nil %>  
       </p>  
     <% end %>  

@@ -6,8 +6,10 @@ class ProjectsController < ApplicationController
   layout "index", :only => [:index]
   def index
     @projects = Project.all
-    @projects = Project.order("created_at DESC").page(params[:page]).per(4) 
 
+    @projects = Project.search(params[:search]).order("project_name").page(params[:page])
+
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }

@@ -6,7 +6,8 @@ class PublicationsController < ApplicationController
   layout "index", :only => [:index]
   def index
     @publications = Publication.all
-    @publications = Publication.order("created_at DESC").page(params[:page]).per(3) 
+@publications = Publication.search(params[:search]).order("paper_title").page(params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb

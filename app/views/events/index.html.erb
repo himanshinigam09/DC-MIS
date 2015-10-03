@@ -48,6 +48,14 @@ Listing Events</h1>
 <div class="panel-group" id="accordion" style="background-color:white;">
 <div class="row placeholders">
 <div class="col-lg-11">
+
+	<!--search-->
+    <%= form_tag events_path, :method => 'get' do %>  
+      <p>  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter event topic' %>  
+        <%= submit_tag "Search", :name => nil %>  
+      </p>  
+    <% end %>  
 <table cellspacing='0'>
 <tr>
 <th>Type of event</th>

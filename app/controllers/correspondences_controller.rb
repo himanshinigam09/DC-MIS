@@ -12,7 +12,8 @@ class CorrespondencesController < ApplicationController
     
 
     @correspondences = Correspondence.all
-    @correspondences = Correspondence.order("created_at DESC").page(params[:page]).per(4) 
+    @correspondences = Correspondence.search(params[:search]).order("type_of_correspondence").page(params[:page])
+
  
 
     respond_to do |format|
