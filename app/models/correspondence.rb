@@ -6,7 +6,7 @@ class Correspondence < ActiveRecord::Base
   default_scope order('type_of_correspondence')
   def self.search(search)  
     if search  
-      where('type_of_correspondence  LIKE ? OR subject LIKE ?', "%#{search}%", "%#{search}%")  
+      where('type_of_correspondence  LIKE ? OR subject LIKE ?', "#{search}%", "#{search}%")  
     else  
       scoped  
     end  

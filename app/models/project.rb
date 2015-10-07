@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   has_many :dc_members, through: :member_projects
   def self.search(search)  
     if search  
-      where('project_name  LIKE ?', "%#{search}%")  
+      where('project_name  LIKE ?', "#{search}%")  
     else  
       scoped  
     end  

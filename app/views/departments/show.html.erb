@@ -28,58 +28,40 @@ n})
                   <p id="notice"><%= notice %></p>
 
                    
-            <p><b>Type of event :&nbsp;</b>
-              <%= @event.type_of_event %></p>
+            <p><b>Event Details :&nbsp;</b>
+              <%= @department.event %></p>
 
             <br>
 
-              <p><b>Organizer :&nbsp;</b>
-              <%= @event.organizer_name %>
+              <p><b>Infrastructure Details :&nbsp;</b>
+              <%= @department.infrastructure %>
             </p>
 
             <br>
             <p>
-              <b>Topic :&nbsp;</b>
-              <%= @event.topic %>
+              <b>Profile Details :&nbsp;</b>
+              <%= @department.profile %>
             </p>
             <br>
             <p>
-              <b>Venue :&nbsp;</b>
-              <%= @event.venue %>
-            </p>
-            <br>
-
-            <p>
-              <b>Date :&nbsp;</b>
-              <%= @event.date %>
+              <b>Project Details :&nbsp;</b>
+              <%= @department.project %>
             </p>
             <br>
 
             <p>
-              <b>Time :&nbsp;</b>
-              <%= @event.time %>
+              <b>Correspondence Details :&nbsp;</b>
+              <%= @department.correspondence %>
             </p>
             <br>
 
             <p>
-              <b>Duration :&nbsp;</b>
-              <%= @event.duration %>
+              <b>Publication Details :&nbsp;</b>
+              <%= @department.publication %>
             </p>
             <br>
 
-            <p>
-              <b>Material link :&nbsp;</b>
-              <%= @event.material_link %>
-            </p>
-            <br>
-
-            <p>
-              <b>Summary link :&nbsp;</b>
-              <%= @event.summary_link %>
-            </p>
-            <br>
-
-
+            
             <%= link_to 'Edit', edit_event_path(@event) %> |
             <%= link_to 'Back', events_path %>
             </ol>

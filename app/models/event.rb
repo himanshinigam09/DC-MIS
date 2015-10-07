@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   has_many :dc_members, through: :member_events
   def self.search(search)  
     if search  
-      where('topic  LIKE ? OR type_of_event LIKE ?', "%#{search}%", "%#{search}%")  
+      where('topic LIKE ? OR type_of_event LIKE ?', "#{search}%", "#{search}%")  
     else  
       scoped  
     end  

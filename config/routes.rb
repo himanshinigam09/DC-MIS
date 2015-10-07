@@ -44,7 +44,7 @@ resources :departments
 
   resources :dc_members
   resources :correspondences
-
+  resources :books
   resources :about
   resources :contact
   resources :faq

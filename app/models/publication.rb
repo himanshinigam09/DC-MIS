@@ -4,7 +4,7 @@ class Publication < ActiveRecord::Base
 
 def self.search(search)  
     if search  
-      where('paper_title  LIKE ?', "%#{search}%")  
+      where('paper_title  LIKE ?', "#{search}%")  
     else  
       scoped  
     end  

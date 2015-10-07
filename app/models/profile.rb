@@ -5,7 +5,7 @@ validates_attachment_content_type :image, :content_type => ["image/jpg", "image/
  
   def self.search(search)  
     if search  
-      where('full_name  LIKE ?', "%#{search}%")  
+      where('full_name  LIKE ?', "#{search}%")  
     else  
       scoped  
     end  
