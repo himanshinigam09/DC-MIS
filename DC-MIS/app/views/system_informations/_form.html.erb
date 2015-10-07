@@ -1,0 +1,162 @@
+<html>
+
+<head>
+
+<!--Tabs-->
+<meta charset="utf-8">
+ <link rel="stylesheet" type="text/css" href="nav.css" />
+    
+    
+ <script type="text/javascript" src="nav.js"></script>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+n})
+   </script>
+<style>
+a:hover
+{
+    background: transparent;
+}
+  </style>
+    
+
+</head>
+<body>
+   <br/><br/>       <center><h1 style="color:black;font-family:verdanax;">System Information </h1></center>
+
+<div class="container">
+
+  <div class="row">
+
+   
+
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+           
+            <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
+              <div class="form">
+
+                
+                  <%= form_for @system_information do |f| %>
+                  <% if @system_information.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
+
+                      <ul>
+                      <% @system_information.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <% end %>
+                       </ul>
+              </div>
+            <% end %>
+                    
+  
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                         
+                         <%= f.text_field :system_name, class: 'form-control', :placeholder => "System Name" %>
+                        <%= f.text_field :ram, class: 'form-control', :placeholder => "ram used"   %>
+                        <%= f.text_field :ram_type, class: 'form-control', :placeholder => "ram type"   %>
+ 
+    
+   
+                        <ul class="list-inline pull-right">
+                            <li><button onClick="location.href='/system_informations'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
+                            <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+                             
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                         <%= f.text_field :hdd_capacity, class: 'form-control', :placeholder => "Hdd capacity" %>
+                        
+                      
+                       
+                        <%= f.text_field :monitor_type, class: 'form-control', :placeholder => "Monitor type"   %>
+                         <%= f.text_field :lan, class: 'form-control', :placeholder => "Lan"   %>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+                            
+                            <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                         <%= f.text_field :access, class: 'form-control', :placeholder => "Access"   %>
+                         <%= f.text_field :os_installed, class: 'form-control', :placeholder => "OS installed"   %>
+                         <%= f.text_field :sw_details, class: 'form-control', :placeholder => "S/w details"   %>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
+                            
+                            <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
+
+                    
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all steps.</p>
+                      <div class="actions ">
+
+                      <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
+                      </div>
+                      
+                      <button onClick="location.href='/system_informations'" type="button">Back</button>
+                      <br /><br /><br />
+                    
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <% end %>
+        </div>
+   
+   </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

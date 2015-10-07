@@ -1,0 +1,90 @@
+<!-- Page Content -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.navbar .dropdown').hover(function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+}, function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+});
+n})
+</script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="assets/styles1.css" rel="stylesheet">
+<style>
+a:hover
+{
+background: transparent;
+}
+</style>
+</head>
+<body >
+<!-- Navigation -->
+<br/>
+<div class="container-fluid" >
+<div class="row row-offcanvas row-offcanvas-left" >
+<div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation" >
+<ul class="nav nav-sidebar">
+<li><a href="events.html">Events</a></li>
+<li><a href="infrastructures.html">Infrastructure</a></li>
+<li><a href="profiles.html">Human Resource</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="correspondences.html">Correspondence</a></li>
+<li><a href="publications.html">Publications</a></li>
+</ul>
+</div><!--/span-->
+<div class="col-sm-9 col-md-10 main " >
+<h1 class="page-header">Listing Profiles</h1>
+<div class="panel-group" id="accordion" style="background-color:white;">
+<div class="row placeholders" >
+<div class="col-lg-11" >
+<!--toggle sidebar button-->
+<!--search-->
+    <%= form_tag profiles_path, :method => 'get' do %>  
+      <p>  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter name' %>  
+        <%= submit_tag "Search", :name => nil %>  
+      </p>  
+    <% end %>  
+<table cellspacing='0'>
+<tr>
+<th>Name</th>
+<th>Date of birth</th>
+<th>Address</th>
+<th>Course name</th>
+<th>Email</th>
+<th>Github</th>
+<th></th>
+</tr>
+<% @profiles.each do |profile| %>
+<tr>
+<td><%= profile.full_name %></td>
+<td><%= profile.date_of_birth %></td>
+<td><%= profile.local_address %></td>
+<td><%= profile.course_name %></td>
+<td><%= profile.email %></td>
+<td><%= profile.github_id %></td>
+<td><%= button_to 'Show', profile,method: :get %></td>
+<% end %>
+</table>
+<br />
+<%= button_to 'Add Profile', new_profile_path,method: :get, :class => 'btn btn-primary' %><br/>
+<%= paginate @profiles %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

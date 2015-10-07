@@ -1,0 +1,170 @@
+<div class="container", align="center">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><b>Entrance Form</b></h1>
+<%= form_for(@entrance) do |f| %>
+  <% if @entrance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrance.errors.count, "error") %> prohibited this entrance from being saved:</h2>
+
+      <ul>
+      <% @entrance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_of_joining %>&nbsp;&nbsp;&nbsp;
+    <%= f.date_select :date_of_joining %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %>
+    <%= f.text_field :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_group %>
+    <%= f.text_field :blood_group %>
+  </div>
+  <div class="field">
+    <%= f.label :area_of_interest %>
+    <%= f.text_field :area_of_interest %>
+  </div>
+  <div class="field">
+    <%= f.label :basic_skills %>
+    <%= f.text_field :basic_skills %>
+  </div>
+  <div class="field">
+    <%= f.label :current_address %>
+    <%= f.text_field :current_address %>
+  </div>
+  <div class="field">
+    <%= f.label :permanent_address %>
+    <%= f.text_field :permanent_address %>
+  </div>
+  <div class="field">
+    <%= f.label :country_code %>
+    <%= f.text_field :country_code %>
+  </div>
+  <div class="field">
+    <%= f.label :std_code %>
+    <%= f.text_field :std_code %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_no %>
+    <%= f.text_field :mobile_no %>
+  </div>
+  <div class="field">
+    <%= f.label :student_email %>
+    <%= f.text_field :student_email %>
+  </div>
+  <div class="field">
+    <%= f.label :github_id %>
+    <%= f.text_field :github_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fathers_name %>
+    <%= f.text_field :fathers_name %>
+  </div>
+  <div class="field">
+    <%= f.label :fathers_contact %>
+    <%= f.text_field :fathers_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :fathers_email %>
+    <%= f.text_field :fathers_email %>
+  </div>
+  <div class="field">
+    <%= f.label :guardian_name %>
+    <%= f.text_field :guardian_name %>
+  </div>
+  <div class="field">
+    <%= f.label :guardian_contact %>
+    <%= f.text_field :guardian_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :school_name %>
+    <%= f.text_field :school_name %>
+  </div>
+  <div class="field">
+    <%= f.label :percentage_10th %>
+    <%= f.text_field :percentage_10th %>
+  </div>
+  <div class="field">
+    <%= f.label :percentage_12th %>
+    <%= f.text_field :percentage_12th %>
+  </div>
+  <div class="field">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :semester %>
+    <%= f.text_field :semester %>
+  </div>
+  <div class="field">
+    <%= f.label :cgpa %>
+    <%= f.text_field :cgpa %>
+  </div>
+  <div class="field">
+    <%= f.label :online_courses %>
+    <%= f.text_field :online_courses %>
+  </div>
+  <div class="field">
+    <%= f.label :project_name %>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type %>
+    <%= f.text_field :project_type %>
+  </div>
+  <div class="field">
+    <%= f.label :project_duration %>
+    <%= f.text_field :project_duration %>
+  </div>
+  <div class="field">
+    <%= f.label :project_description %>
+    <%= f.text_field :project_description %>
+  </div>
+  <div class="field">
+    <%= f.label :reference_category %>
+    <%= f.text_field :reference_category %>
+  </div>
+  <div class="field">
+    <%= f.label :reference %>
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :why_choose %>
+    <%= f.text_field :why_choose %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+            
+        
+<% end %>
+</div>
+            
+        </div>
+    </div>
