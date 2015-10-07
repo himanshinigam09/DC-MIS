@@ -45,7 +45,7 @@ background: transparent;
 </div>
 <div class="col-sm-9 col-md-10 main " >
 <h1 class="page-header" style="sans-serif;text-transform: capitalize;">
-Listing Books</h1>
+Listing System Information</h1>
 <div class="panel-group" id="accordion" style="background-color:white;">
 <div class="row placeholders">
 <div class="col-lg-11">
@@ -53,33 +53,40 @@ Listing Books</h1>
 	
 <table cellspacing='0'>
 <tr>
-<th>Book Title</th>
-<th>Edition</th>
-<th>Author</th>
-<th>Publication</th>
-<th>ISBN No.</th>
+<th>System Name</th>
+<th>Access</th>
+<th>OS Installed</th>
+<th>RAM</th>
+<th>Type of RAM</th>
+<th>Type of Monitor</th>
+<th>LAN</th>
+<th>HDD Capacity</th>
+<th>Software Details</th>
 <th></th>
 <th></th>
 <th></th>
 </tr>
-<div id="product-modal" class="modal hide fade"></div>
-<% @books.each do |book| %>
+<% @system_informations.each do |system_information| %>
 <tr>
-<td><%= book.title %></td>
-<td><%= book.edition %></td>
-<td><%= book.author %></td>
-<td><%= book.publication %></td>
-<td><%= book.ISBN_number %></td>
-<td><%= button_to 'Show', book, method: :get %></td>
-<td><%= button_to 'Edit', edit_book_path(book) ,method: :get %></td>
+<td><%= system_information.system_name %></td>
+<td><%= system_information.access %></td>
+<td><%= system_information.os_installed %></td>
+<td><%= system_information.ram %></td>
+<td><%= system_information.ram_type %></td>
+<td><%= system_information.monitor_type %></td>
+<td><%= system_information.lan %></td>
+<td><%= system_information.hdd_capacity %></td>
+<td><%= system_information.sw_details %></td>
+<td><%= button_to "Show",system_information, method: :get %></td>
+<td><%= button_to 'Edit', edit_system_information_path(system_information) ,method: :get %></td>
 
-<td><%= button_to 'Destroy',book, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
+<td><%= button_to 'Destroy',system_information, method: :delete, :onclick => "return confirm ('Are you sure you want to delete this item?')"%></td>
 </tr>
 <% end %>
 </table>
 <br />
-<%= button_to 'Add Book', new_book_path, method: :get, :class => 'btn btn-primary' %><br/>
-<%= paginate @books %>
+<%= button_to 'Add System Information', new_system_information_path, method: :get, :class => 'btn btn-primary' %><br/>
+<%= paginate @system_informations %>
 </div>
 </div>
 </div>
