@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event: MyText
+  infrastructure: MyText
+  correspondence: MyText
+  profile: MyText
+  project: MyText
+  publication: MyText
+
+two:
+  event: MyText
+  infrastructure: MyText
+  correspondence: MyText
+  profile: MyText
+  project: MyText
+  publication: MyText

@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  mid_name: MyString
+  last_name: MyString
+  date_of_birth: 2015-07-07
+  gender: MyString
+  blood_group: MyString
+  local_address: MyString
+  permanent_address: MyString
+  father_name: MyString
+  mother_name: MyString
+  guardian_name: MyString
+  course_name: MyString
+  sem_of_joining: MyString
+  email: MyString
+  github_id: MyString
+  linkedin_id: MyString
+  facebook_id: MyString
+  googleplus_id: MyString
+  twitter_id: MyString
+  blog_id: MyString
+
+two:
+  first_name: MyString
+  mid_name: MyString
+  last_name: MyString
+  date_of_birth: 2015-07-07
+  gender: MyString
+  blood_group: MyString
+  local_address: MyString
+  permanent_address: MyString
+  father_name: MyString
+  mother_name: MyString
+  guardian_name: MyString
+  course_name: MyString
+  sem_of_joining: MyString
+  email: MyString
+  github_id: MyString
+  linkedin_id: MyString
+  facebook_id: MyString
+  googleplus_id: MyString
+  twitter_id: MyString
+  blog_id: MyString

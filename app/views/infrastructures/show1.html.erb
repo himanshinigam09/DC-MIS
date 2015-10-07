@@ -1,0 +1,72 @@
+  
+<html>  
+
+<body>
+
+
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><b>System Information Details</b></h1>
+                <ol class="breadcrumb">
+                  <p id="notice"><%= notice %></p>
+
+        <p>
+          <b>System Name :&nbsp;</b>
+          <%= @system_information.system_name %>
+        </p>
+        <br>
+
+        <p>
+          <b>Access :&nbsp;</b>
+          <%= @system_information.access %>
+        </p>
+        <br>
+
+        <p>
+          <b>OS Installed :&nbsp;</b>
+          <%= @system_information.os_installed %>
+        </p>
+        <br>
+
+        <p>
+          <b>RAM :&nbsp;</b>
+          <%= @system_information.ram %>
+        </p>
+        <br>
+
+        <p>
+          <b>Type of RAM :&nbsp;</b>
+          <%= @system_information.ram_type %>
+        </p>
+        <br>
+        <p>
+          <b>Type of Monitor :&nbsp;</b>
+          <%= @system_information.monitor_type %>
+        </p>
+        <br>
+        <p>
+          <b>LAN :&nbsp;</b>
+          <%= @system_information.lan %>
+        </p>
+        <br>
+        <p>
+          <b>HDD Capacity :&nbsp;</b>
+          <%= @system_information.hdd_capacity %>
+        </p>
+        <br>
+        <p>
+          <b>Software Details :&nbsp;</b>
+          <%= @system_information.sw_details %>
+        </p>
+        <br>
+        
+        </ol>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>
