@@ -10,11 +10,13 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
 
 
-//= require bootstrap-sprockets
+
+
 
 //= require_tree .
 $('form').submit(function() {  
@@ -29,3 +31,11 @@ $('form').submit(function() {
     });
     return false; // prevents normal behaviour
 });
+
+   $(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+n})

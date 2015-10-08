@@ -1,6 +1,7 @@
 class CurrentProjectsController < ApplicationController
   # GET /current_projects
   # GET /current_projects.json
+  layout "index", :only => [:index]
   def index
     @current_projects = CurrentProject.all
 

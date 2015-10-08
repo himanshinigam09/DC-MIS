@@ -18,7 +18,7 @@ class DashboardsControllerTest < ActionController::TestCase
 
   test "should create dashboard" do
     assert_difference('Dashboard.count') do
-      post :create, dashboard: {  }
+      post :create, dashboard: { correspondence: @dashboard.correspondence, event: @dashboard.event, infrastructure: @dashboard.infrastructure, profile: @dashboard.profile, project: @dashboard.project, publication: @dashboard.publication }
     end
 
     assert_redirected_to dashboard_path(assigns(:dashboard))
@@ -35,7 +35,7 @@ class DashboardsControllerTest < ActionController::TestCase
   end
 
   test "should update dashboard" do
-    put :update, id: @dashboard, dashboard: {  }
+    put :update, id: @dashboard, dashboard: { correspondence: @dashboard.correspondence, event: @dashboard.event, infrastructure: @dashboard.infrastructure, profile: @dashboard.profile, project: @dashboard.project, publication: @dashboard.publication }
     assert_redirected_to dashboard_path(assigns(:dashboard))
   end
 

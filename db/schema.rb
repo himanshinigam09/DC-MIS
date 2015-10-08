@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150811180411) do
+ActiveRecord::Schema.define(:version => 20151007155801) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -20,14 +20,48 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "active_admin_comments", :force => true do |t|
+    t.string   "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "namespace"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
   create_table "books", :force => true do |t|
     t.string   "title"
     t.string   "author"
     t.string   "edition"
     t.string   "publication"
     t.string   "ISBN_number"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
   end
 
   create_table "communications", :force => true do |t|
@@ -50,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.date     "date"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.text     "recent_activities"
   end
 
   create_table "current_projects", :force => true do |t|
@@ -67,11 +102,6 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
   end
 
   add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
-
-  create_table "dashboards", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "dc_members", :force => true do |t|
     t.string   "first_name"
@@ -97,6 +127,17 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
   create_table "dcs", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "departments", :force => true do |t|
+    t.text     "event"
+    t.text     "infrastructure"
+    t.text     "correspondence"
+    t.text     "profile"
+    t.text     "project"
+    t.text     "publication"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "entrances", :force => true do |t|
@@ -141,7 +182,7 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
 
   create_table "events", :force => true do |t|
     t.string   "type_of_event"
-    t.string   "organizer_id"
+    t.string   "organizer_name"
     t.string   "topic"
     t.string   "venue"
     t.date     "date"
@@ -149,13 +190,26 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "duration"
     t.string   "material_link"
     t.string   "summary_link"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
   end
 
   create_table "faqs", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "issue_resources", :force => true do |t|
+    t.string   "type_of_resource"
+    t.string   "issued_by"
+    t.string   "issued_to"
+    t.date     "issue_date"
+    t.time     "issue_time"
+    t.date     "submission_date"
+    t.time     "submission_time"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "issued_resources", :force => true do |t|
@@ -206,7 +260,7 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
   end
 
   create_table "profiles", :force => true do |t|
-    t.string   "first_name"
+    t.string   "full_name"
     t.string   "mid_name"
     t.string   "last_name"
     t.date     "date_of_birth"
@@ -226,8 +280,17 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "googleplus_id"
     t.string   "twitter_id"
     t.string   "blog_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "achievement"
+    t.text     "blog"
+    t.text     "education"
+    t.text     "recent_activities"
+    t.string   "skill"
   end
 
   create_table "projects", :force => true do |t|
@@ -241,6 +304,7 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "github_page_link"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "recent_activities"
   end
 
   create_table "publications", :force => true do |t|
@@ -257,6 +321,7 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "author"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "recent_activities"
   end
 
   create_table "sessions", :force => true do |t|
@@ -274,8 +339,9 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "access"
     t.string   "os_installed"
     t.string   "sw_details"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
   end
 
   create_table "users", :force => true do |t|
@@ -283,8 +349,10 @@ ActiveRecord::Schema.define(:version => 20150811180411) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "password_confirmation"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "auth_token"
   end
 
 end

@@ -1,3 +1,3 @@
 class Dashboard < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :correspondence, :event, :infrastructure, :profile, :project, :publication
 end

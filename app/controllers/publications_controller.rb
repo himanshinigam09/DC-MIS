@@ -1,9 +1,13 @@
 class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.json
+  before_filter :zero_users_or_authenticated
+
   layout "index", :only => [:index]
   def index
     @publications = Publication.all
+@publications = Publication.search(params[:search]).order("paper_title").page(params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -90,4 +94,11 @@ class PublicationsController < ApplicationController
     def publication_params
       params.require(:publication).permit(:abstract, :author, :date_of_publication, :level, :link, :location, :organizer_name, :paper_id, :paper_title, :publication_name, :sponsers_name)
     end
+  def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

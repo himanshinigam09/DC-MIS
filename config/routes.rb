@@ -1,14 +1,33 @@
 DCMis::Application.routes.draw do  
   
   
+  
+
+
+
+
+  resources :issue_resources
+
+
+root :to => 'dcs#index'
+  
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  
 
 
   
+resources :departments
+
+
+  resources :items
   
 
   
 
-  
+    
+  get "password_resets/new"
 
   resources :publications
 
@@ -19,33 +38,11 @@ DCMis::Application.routes.draw do
   resources :current_projects
 
 
-  resources :dashboards
-
 
   
 
 
-  resources :entrances
-
-
-  resources :achievements
-
-
-  resources :daily_logs
-
-
-  resources :projects
-
-
   
-
-
-  resources :events
-
-
-  resources :profiles
-
-
 
   resources :dcs
 
@@ -59,17 +56,18 @@ DCMis::Application.routes.draw do
   resources :profiles
   resources :open_source
   resources :current_dcmembers
-  resources :events 
-  resources :past_dcmembers
-  resources :past_dcmembers
+   resources :past_dcmembers
+  
   resources :projects
   resources :events
   resources :daily_logs
   resources :achievements
   resources :entrances
   resources :infrastructures
-  
-  
+  resources :books
+  resources :system_informations
+   resources :issued_resources
+ 
   
 # these routes are for showing users a login form, logging them in, and logging them out.
 
@@ -80,8 +78,7 @@ get 'signup'  => 'users#new'
 get 'login'  => 'sessions#new' 
 resources :users
 
-
-
+resources :sessions
 
 
 
@@ -135,7 +132,7 @@ resources :users
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  root :to => 'dcs#index'
+  
 
   # root :to => 'welcome#index'
 

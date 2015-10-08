@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-	
+	layout "index", :only => [:index]
 	def new 
-    @user = User.new
+    
 end
 
 def create
@@ -9,7 +9,7 @@ def create
   @user = User.find_by_email(params[:session][:email])
   if @user && @user.authenticate(params[:session][:password])
     session[:user_id] = @user.id
-    redirect_to '/dashboards'
+    redirect_to '/departments'
   else
     render 'new'
   end 

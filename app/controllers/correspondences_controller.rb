@@ -2,13 +2,18 @@ class CorrespondencesController < ApplicationController
   
   # GET /correspondences
   # GET /correspondences.json
+
  layout "index", :only => [:index]
+ before_filter :zero_users_or_authenticated
+
+
  
   def index
     
 
     @correspondences = Correspondence.all
-    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
+    @correspondences = Correspondence.search(params[:search]).order("type_of_correspondence").page(params[:page])
+
  
 
     respond_to do |format|
@@ -33,6 +38,7 @@ class CorrespondencesController < ApplicationController
   # GET /correspondences/new.json
   def new
     @correspondence = Correspondence.new
+    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
 
        
 
@@ -46,6 +52,7 @@ class CorrespondencesController < ApplicationController
   # GET /correspondences/1/edit
   def edit
     @correspondence = Correspondence.find(params[:id])
+    @correspondences = Correspondence.order("").page(params[:page]).per(4) 
 
   end
 
@@ -92,4 +99,11 @@ class CorrespondencesController < ApplicationController
       format.json { head :no_content }
     end
   end
+ def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

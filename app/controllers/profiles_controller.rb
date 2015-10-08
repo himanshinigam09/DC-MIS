@@ -1,11 +1,15 @@
 class ProfilesController < ApplicationController
-  
+  before_filter :zero_users_or_authenticated
+
   # GET /profiles
   # GET /profiles.json
+  layout "application"
   layout "index", :only => [:index]
   def index
     @profiles = Profile.all
-    @profiles = Profile.order("first_name").page(params[:page]).per(4) 
+
+
+    @profiles = Profile.search(params[:search]).order("full_name").page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -66,7 +70,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to @profile }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,4 +90,11 @@ class ProfilesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

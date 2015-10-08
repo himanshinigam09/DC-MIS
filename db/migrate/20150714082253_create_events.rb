@@ -2,7 +2,7 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :type_of_event
-      t.string :organizer_id
+      t.string :organizer_name
       t.string :topic
       t.string :venue
       t.date :date

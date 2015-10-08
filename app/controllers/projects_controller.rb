@@ -1,11 +1,15 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
-  layout "index", :only => [:index]
+  before_filter :zero_users_or_authenticated
+
+  layout "index","show"
   def index
     @projects = Project.all
-    @projects = Project.order("").page(params[:page]).per(4) 
 
+    @projects = Project.search(params[:search]).order("project_name").page(params[:page])
+
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
@@ -91,4 +95,11 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:dc_page_link, :github_page_link, :project_description, :project_leader, :project_name, :project_status, :project_type, :team_id)
     end
+ def zero_users_or_authenticated
+  unless User.count == 0 || current_user
+       redirect_to login_path(notice:"You must be logged in to access this section")
+
+    return false
+  end
+end 
 end

@@ -1,6 +1,6 @@
 class DcMember < ActiveRecord::Base
   
-  attr_accessible :blood_group, :course_name, :date_of_birth, :email, :father_name, :first_name, :gender, :github_link, :guardian_name, :last_name, :linkedin_link, :local_address, :mid_name, :mother_name, :permanent_address, :sem_of_joining
+  attr_accessible :blood_group, :course_name, :date_of_birth, :email, :father_name, :first_name, :gender, :github_link, :guardian_name, :last_name, :linkedin_link, :local_address, :mid_name, :mother_name, :permanent_address, :sem_of_joining, :contact_no, :parent_contact_no, :parent_email
   has_many :communications
   has_many :correspondences, through: :communications
   has_many :member_projects
