@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   # GET /profiles.json
+  layout "application"
   layout "index", :only => [:index]
   def index
     @profiles = Profile.all

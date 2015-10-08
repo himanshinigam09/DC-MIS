@@ -1,21 +1,18 @@
-
-
-
 <html>
 
 <head>
 
 <!--Tabs-->
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="nav.css" />
+ <link rel="stylesheet" type="text/css" href="nav.css" />
     
     
  <script type="text/javascript" src="nav.js"></script>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+<script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -34,7 +31,7 @@ a:hover
 
 </head>
 <body>
-    <br/><br/>    <center><div><h1 style="color:black;font-family:verdanax;">System Information </h1></center>
+   <br/><br/>       <center><h1 style="color:black;font-family:verdanax;">System Information </h1></center>
 
 <div class="container">
 
@@ -84,31 +81,30 @@ a:hover
             <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
               <div class="form">
 
-                      <%= form_for(@system_information) do |f| %>
-                     
+                
+                  <%= form_for @system_information do |f| %>
+                  <% if @system_information.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
 
-                    <% if @system_information.errors.any? %>
-                      <div id="error_explanation">
-                        <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
-
-                        <ul>
-                        <% @system_information.errors.full_messages.each do |msg| %>
-                          <li><%= msg %></li>
-                        <% end %>
-                        </ul>
-                      </div>
-                    <% end %> 
-  
-             
-  
+                      <ul>
+                      <% @system_information.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <% end %>
+                       </ul>
+              </div>
+            <% end %>
+                    
   
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
+                         
                          <%= f.text_field :system_name, class: 'form-control', :placeholder => "System Name" %>
-                        <%= f.text_field :ram, class: 'form-control', :placeholder => "RAM"   %>
-                        <%= f.text_field :ram_type, class: 'form-control', :placeholder => "RAM Type"   %>
+                        <%= f.text_field :ram, class: 'form-control', :placeholder => "ram used"   %>
+                        <%= f.text_field :ram_type, class: 'form-control', :placeholder => "ram type"   %>
  
-                       
+    
+   
                         <ul class="list-inline pull-right">
                             <li><button onClick="location.href='/system_informations'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
@@ -116,26 +112,22 @@ a:hover
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
-                       
-                       <%= f.text_field :hdd_capacity, class: 'form-control', :placeholder => "HDD Capacity" %>
+                         <%= f.text_field :hdd_capacity, class: 'form-control', :placeholder => "Hdd capacity" %>
                         
                       
                        
-                        <%= f.text_field :monitor_type, class: 'form-control', :placeholder => "Monitor Type"   %>
-                        <%= f.text_field :lan, class: 'form-control', :placeholder => "LAN"   %>
+                        <%= f.text_field :monitor_type, class: 'form-control', :placeholder => "Monitor type"   %>
+                         <%= f.text_field :lan, class: 'form-control', :placeholder => "Lan"   %>
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
-                           
+                            
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
                          <%= f.text_field :access, class: 'form-control', :placeholder => "Access"   %>
-                        
-                        <%= f.text_field :os_installed, class: 'form-control', :placeholder => "OS Installed"   %>
-                        <%= f.text_field :sw_details, class: 'form-control', :placeholder => "Software Details"   %>
-                        
-  
+                         <%= f.text_field :os_installed, class: 'form-control', :placeholder => "OS installed"   %>
+                         <%= f.text_field :sw_details, class: 'form-control', :placeholder => "S/w details"   %>
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
                             
@@ -148,11 +140,13 @@ a:hover
                         <h3>Complete</h3>
                         <p>You have successfully completed all steps.</p>
                       <div class="actions ">
+
                       <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
+                      </div>
                       
-                    </div>
-                    <button onClick="location.href='/system_informations'" type="button" class="btn btn-default btn-block next-step" >Back</button>
-                    <br /><br /><br />
+                      <button onClick="location.href='/system_informations'" type="button">Back</button>
+                      <br /><br /><br />
+                    
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -166,46 +160,3 @@ a:hover
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  

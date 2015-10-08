@@ -1,33 +1,45 @@
 class BooksController < ApplicationController
-
-    before_filter :zero_users_or_authenticated
+  # GET /events
+  # GET /events.json
+  before_filter :zero_users_or_authenticated
 
   layout "index", :only => [:index]
   def index
     @books = Book.all
-    @books = Book.order("created_at DESC").page(params[:page]).per(4)
-    
- 	respond_to do |format|
+
+    @books = Book.search(params[:search]).order("title").page(params[:page])
+
+   
+
+    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @books }
     end
   end
 
- 
+  # GET /events/1
+  # GET /events/1.json
   def show
     @book = Book.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @book }
+      #format.json { render json: @event }
     end
   end
+
+  # GET /events/new
+  # GET /events/new.json
   def new
     @book = Book.new
+
+     
+
+
     respond_to do |format|
-    	format.html
+      format.html # new.html.erb
       format.json { render json: @book }
-	  end
+    end
   end
 
   # GET /events/1/edit
@@ -38,8 +50,9 @@ class BooksController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-     @book = Book.new(params[:book])
-    
+    @book = Book.new(book_params)
+
+
     respond_to do |format|
       if @book.save 
         
@@ -54,7 +67,8 @@ class BooksController < ApplicationController
     end
   end
 
-  
+  # PATCH/PUT /events/1
+  # PATCH/PUT /events/1.json
   def update
     @book = Book.find(params[:id])
 
@@ -97,6 +111,6 @@ def zero_users_or_authenticated
     return false
   end
 end
+
+
 end
-
-

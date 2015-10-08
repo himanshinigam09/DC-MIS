@@ -1,6 +1,6 @@
-class CreateIssuedResources < ActiveRecord::Migration
+class CreateIssueResources < ActiveRecord::Migration
   def change
-    create_table :issued_resources do |t|
+    create_table :issue_resources do |t|
       t.string :type_of_resource
       t.string :issued_by
       t.string :issued_to

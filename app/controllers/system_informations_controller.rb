@@ -1,50 +1,61 @@
 class SystemInformationsController < ApplicationController
-
+  # GET /events
+  # GET /events.json
     before_filter :zero_users_or_authenticated
 
   layout "index", :only => [:index]
   def index
     @system_informations = SystemInformation.all
-    @system_informations = SystemInformation.order("created_at DESC").page(params[:page]).per(4)
-    
- 	respond_to do |format|
+
+    @system_informations = SystemInformation.search(params[:search]).order("system_name").page(params[:page])
+
+   
+
+    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @system_informations }
     end
   end
 
- 
+  # GET /events/1
+  # GET /events/1.json
   def show
     @system_information = SystemInformation.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
+      #format.json { render json: @event }
+    end
+  end
+
+  # GET /events/new
+  # GET /events/new.json
+  def new
+    @system_information = SystemInformation.new
+
+     
+
+
+    respond_to do |format|
+      format.html # new.html.erb
       format.json { render json: @system_information }
     end
   end
-  def new
-    @system_information = SystemInformation.new
-    respond_to do |format|
-    	format.html
-      format.json { render json: @system_information }
-	  end
-  end
 
   # GET /events/1/edit
-  def edit
-    @system_information = SystemInformation.find(params[:id])
-  end
+ 
 
   # POST /events
   # POST /events.json
   def create
-     @system_information = SystemInformation.new(params[:system_information])
-    
+    @system_information = SystemInformation.new(system_information_params)
+
+
     respond_to do |format|
       if @system_information.save 
         
           
-        format.html { redirect_to @system_information, notice: 'system_information was successfully created.' }
+        format.html { redirect_to @system_information, notice: 'Information was successfully created.' }
         format.json { render json: @system_information, status: :created, location: @system_information }
       
       else
@@ -54,13 +65,14 @@ class SystemInformationsController < ApplicationController
     end
   end
 
-  
+  # PATCH/PUT /events/1
+  # PATCH/PUT /events/1.json
   def update
     @system_information = SystemInformation.find(params[:id])
 
     respond_to do |format|
       if @system_information.update_attributes(system_information_params)
-        format.html { redirect_to @system_information, notice: 'system_information was successfully updated.' }
+        format.html { redirect_to @system_information, notice: 'Information was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -68,7 +80,9 @@ class SystemInformationsController < ApplicationController
       end
     end
   end
-
+ def edit
+    @system_information = SystemInformation.find(params[:id])
+  end
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
@@ -76,9 +90,9 @@ class SystemInformationsController < ApplicationController
     @system_information = SystemInformation.find(params[:id]) 
     @system_information.destroy 
 
-    respond_to do |format|
-      format.html { redirect_to system_informations_url }
-    end
+    redirect_to system_informations_path
+
+
 
   end
 
@@ -97,7 +111,8 @@ def zero_users_or_authenticated
     return false
   end
 end
+
+
+
+
 end
-
-
-

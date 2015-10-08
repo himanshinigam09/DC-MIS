@@ -1,6 +1,4 @@
-<!-- Page Content -->
 <html>
-<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -44,43 +42,52 @@ background: transparent;
 </ul>
 </div><!--/span-->
 <div class="col-sm-9 col-md-10 main " >
-<h1 class="page-header">Listing Projects</h1>
+<h1 class="page-header">Listing Issued Resources</h1>
 <div class="panel-group" id="accordion" style="background-color:white;">
 <div class="row placeholders" >
 <div class="col-lg-11" >
 <!--toggle sidebar button-->
-<!--search box -->
-<%= form_tag projects_path, :method => 'get' do %>  
+
+<!--search-->
+  <%= form_tag books_path, :method => 'get' do %>  
       <p>  
-        <%= text_field_tag :search, params[:search], :placeholder => 'Enter project name' %>  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter type of resource' %>  
         <%= submit_tag "Search", :name => nil %>  
       </p>  
-    <% end %> 
+    <% end %>    
 <table cellspacing='0'>
 <tr>
-<th>Project name</th>
-<th>Project description</th>
-<th>Team</th>
-<th>Github page link</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<% @projects.each do |project| %>
-<tr>
-<td><%= project.project_name %></td>
-<td><%= project.project_description %></td>
-<td><%= project.team_id %></td>
-<td><%= project.github_page_link %></td>
-<td><%= button_to 'Show', project , method: :get %></td>
-<td><%= button_to 'Edit', edit_project_path(project) , method: :get %></td>
-<td><%= button_to 'Destroy', project, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
-</tr>
+    <th>Type of resource</th>
+    <th>Issued by</th>
+    <th>Issued to</th>
+    <th>Issue date</th>
+    <th>Issue time</th>
+    <th>Submission date</th>
+    <th>Submission time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @issue_resources.each do |issue_resource| %>
+  <tr>
+    <td><%= issue_resource.type_of_resource %></td>
+    <td><%= issue_resource.issued_by %></td>
+    <td><%= issue_resource.issued_to %></td>
+    <td><%= issue_resource.issue_date %></td>
+    <td><%= issue_resource.issue_time %></td>
+    <td><%= issue_resource.submission_date %></td>
+    <td><%= issue_resource.submission_time %></td>
+    <td><%= button_to 'Show', issue_resource,method: :get %></td>
+    <td><%= button_to 'Edit', edit_issue_resource_path(issue_resource),method: :get %></td>
+    <td><%= button_to 'Destroy', issue_resource, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')"%></td>
+  </tr>
 <% end %>
-</table>
-<br />
-<%= button_to 'Add Project', new_project_path,method: :get, :class => 'btn btn-primary' %><br/>
-<%= paginate @projects %>
+</table><br/><br/>
+<%= link_to 'New Issue resource', new_issue_resource_path, method: :get, :class => 'btn btn-primary' ,style: "color:white;" %><br/>
+<%= paginate @issue_resources %>
+
+
 </div>
 </div>
 </div>

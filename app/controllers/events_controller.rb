@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
-    @events = Event.search(params[:search]).order("topic").page(params[:page]).per(4)
+    @events = Event.search(params[:search]).order("topic").page(params[:page])
 
    
 

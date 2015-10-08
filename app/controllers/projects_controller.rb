@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   before_filter :zero_users_or_authenticated
 
-  layout "index", :only => [:index]
+  layout "index","show"
   def index
     @projects = Project.all
 

@@ -5,28 +5,7 @@ class InfrastructuresController < ApplicationController
 layout "index", :only => [:index]
 
 def index
-    @books = Book.all
-    @system_informations = SystemInformation.all
-    @issued_resources = IssuedResource.all
-
-    @books = Book.order("created_at DESC").page(params[:page]).per(4)
-    @system_informations = SystemInformation.order("created_at DESC").page(params[:page]).per(4)
-    @issued_resources = IssuedResource.order("created_at DESC").page(params[:page]).per(4)
-
-
-    @book = Book.new
-  @system_information = SystemInformation.new
-  @issued_resource = IssuedResource.new
- 
-
-
-    respond_to do |format|
-      format.html # index.html.erb
-      
-      format.json { render json: @books }
-      format.json { render json: @system_informations }
-      format.json { render json: @issued_resources }
-    end
+    
   end
 
 def new
