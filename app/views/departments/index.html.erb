@@ -8,16 +8,8 @@
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- script references -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="assets/bootstrap1.min.js"></script>
-        <script src="assets/scripts1.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-
-        <link href="assets/bootstrap.min1.css" rel="stylesheet">
+  
+       
 
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,6 +29,7 @@ a:hover
   }
 }
         </style>
+      
         <script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
@@ -45,7 +38,9 @@ a:hover
         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
     });
 n})
+
    </script>
+
 </head>
     
 <body>
@@ -54,12 +49,24 @@ n})
 <div class="container-fluid">
   <div class="row row-offcanvas row-offcanvas-left">
     <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation"><ul class="nav nav-sidebar">
-        <li><a href="events.html">Events</a></li>
-        <li><a href="infrastructures.html">Infrastructure</a></li>
-        <li><a href="profiles.html">Human Resource</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="correspondences.html">Correspondence</a></li>
-        <li><a href="publications.html">Publications</a></li>
+        <li ><a href="/events">Events</a></li>
+        <li><a href="/profiles">Human Resource</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/correspondences">Correspondence</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li ><a data-toggle="collapse" style="color:#666;"  href="#accordion-sample-two">
+               Infrastructure <b class="caret"></b>
+             </a></li>
+          
+         
+       <div id="accordion-sample-two" class="panel-collapse collapse">
+         
+         <ul class="nav nav-sidebar">
+           <li><a href="/books">&nbsp;&nbsp;&nbsp;&nbsp; Books </a></li>
+            <li><a href="/system_informations">&nbsp;&nbsp;&nbsp;&nbsp; System Information </a></li>
+             <li><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
+         
+       </div>
       </ul>
     </div><!--/span-->
     <div class="col-sm-9 col-md-10 main">

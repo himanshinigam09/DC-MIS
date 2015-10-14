@@ -4,6 +4,11 @@ DCMis::Application.routes.draw do
   
 
 
+
+
+  resources :issue_resources
+
+
 root :to => 'dcs#index'
   
   ActiveAdmin.routes(self)
@@ -44,8 +49,7 @@ resources :departments
 
   resources :dc_members
   resources :correspondences
-  resources :books
-  resources :system_informations
+
   resources :about
   resources :contact
   resources :faq
@@ -60,8 +64,10 @@ resources :departments
   resources :achievements
   resources :entrances
   resources :infrastructures
-  
-  
+  resources :books
+  resources :system_informations
+   resources :issued_resources
+ 
   
 # these routes are for showing users a login form, logging them in, and logging them out.
 
@@ -73,12 +79,6 @@ get 'login'  => 'sessions#new'
 resources :users
 
 resources :sessions
-
-get 'show1/:id' => "infrastructures#show1"
-get 'show2/:id' => "infrastructures#show2"
-delete 'destroy1/:id' => "infrastructures#destroy1"
-
-delete 'destroy2/:id' => "infrastructures#destroy2"
 
 
 
