@@ -50,6 +50,11 @@ resources :departments
   resources :dc_members
   resources :correspondences
 
+  resources :books
+  resources :system_informations
+  resources :issue_resources
+  
+
   resources :about
   resources :contact
   resources :faq
@@ -66,8 +71,7 @@ resources :departments
   resources :infrastructures
   resources :books
   resources :system_informations
-   resources :issued_resources
- 
+   
   
 # these routes are for showing users a login form, logging them in, and logging them out.
 
