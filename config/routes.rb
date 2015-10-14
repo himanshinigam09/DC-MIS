@@ -46,6 +46,8 @@ resources :departments
   resources :correspondences
   resources :books
   resources :system_informations
+  resources :issue_resources
+  
   resources :about
   resources :contact
   resources :faq
