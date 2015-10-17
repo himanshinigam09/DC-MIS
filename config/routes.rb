@@ -27,8 +27,6 @@ resources :departments
   
 
     
-  get "password_resets/new"
-
   resources :publications
 
 
@@ -71,8 +69,7 @@ resources :departments
   resources :infrastructures
   resources :books
   resources :system_informations
-   
-  
+resources :password_resets,     only: [:new, :create, :edit, :update]  
 # these routes are for showing users a login form, logging them in, and logging them out.
 
 post 'login' => 'sessions#create'
