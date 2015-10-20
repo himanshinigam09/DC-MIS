@@ -3,8 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 $('.navbar .dropdown').hover(function() {
@@ -32,16 +31,29 @@ background: transparent;
 <br/>
 <div class="container-fluid" >
 <div class="row row-offcanvas row-offcanvas-left" >
-  <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation" >
+  <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
 <ul class="nav nav-sidebar">
-<li><a href="events.html">Events</a></li>
-<li><a href="infrastructures.html">Infrastructure</a></li>
-<li><a href="profiles.html">Human Resource</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="correspondences.html">Correspondence</a></li>
-<li><a href="publications.html">Publications</a></li>
+
+		<li><a href="/events">Events</a></li>
+        <li class="active"><a href="/profiles">Human Resource</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/correspondences">Correspondence</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li ><a data-toggle="collapse" style="color:#666;"  href="#accordion-sample-two">
+               Infrastructure <b class="caret"></b>
+             </a></li>
+          
+         
+       <div id="accordion-sample-two" class="panel-collapse collapse">
+         
+         <ul class="nav nav-sidebar">
+           <li><a href="/books">&nbsp;&nbsp;&nbsp;&nbsp; Books </a></li>
+            <li><a href="/system_informations">&nbsp;&nbsp;&nbsp;&nbsp; System Information </a></li>
+             <li><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
+         
+       </div>
 </ul>
-</div><!--/span-->
+</div>
 <div class="col-sm-9 col-md-10 main " >
 <h1 class="page-header">Listing Profiles</h1>
 <div class="panel-group" id="accordion" style="background-color:white;">

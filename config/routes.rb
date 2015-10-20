@@ -22,11 +22,11 @@ resources :system_informations
   resources :open_source
   resources :current_dcmembers
   resources :past_dcmembers
-  
+  resources :contact
   resources :projects
   resources :events
   
-  resources :infrastructures
+  
   resources :password_resets,     only: [:new, :create, :edit, :update]  
 # these routes are for showing users a login form, logging them in, and logging them out.
 
