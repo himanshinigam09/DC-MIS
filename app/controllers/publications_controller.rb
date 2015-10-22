@@ -7,12 +7,7 @@ class PublicationsController < ApplicationController
   def index
     @publications = Publication.all
 @publications = Publication.search(params[:search]).order("date_of_publication DESC").page(params[:page]).per(5)
-<<<<<<< HEAD
-=======
-
->>>>>>> 719cb6e294cafd94cc2f2ac9a43f8628a989887c
-
-    respond_to do |format|
+   respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @publications }
     end
