@@ -12,8 +12,9 @@ class CorrespondencesController < ApplicationController
     
 
     @correspondences = Correspondence.all
-    @correspondences = Correspondence.search(params[:search]).order("type_of_correspondence").page(params[:page])
+ @correspondences = Correspondence.search(params[:search]).order("date DESC").page(params[:page])
 
+ 
  
 
     respond_to do |format|
