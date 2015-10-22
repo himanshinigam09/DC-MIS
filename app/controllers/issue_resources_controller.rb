@@ -5,7 +5,12 @@ class IssueResourcesController < ApplicationController
 
   def index
     @issue_resources = IssueResource.all
+<<<<<<< HEAD
  @issue_resources = IssueResource.search(params[:search]).order("issue_date DESC").page(params[:page])
+=======
+    @issue_resources = IssueResource.search(params[:search]).order("issue_date DESC").page(params[:page])
+
+>>>>>>> 719cb6e294cafd94cc2f2ac9a43f8628a989887c
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @issue_resources }

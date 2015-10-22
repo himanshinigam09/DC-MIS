@@ -1,75 +1,33 @@
 DCMis::Application.routes.draw do  
   
-  
-  
-
-
-
-
-  resources :issue_resources
-
-
-root :to => 'dcs#index'
+ root :to => 'dcs#index'
   
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+   
   
-
-
-  
+resources :issue_resources
 resources :departments
-
-
-  resources :items
-  
-
-  
-
-    
-  resources :publications
-
-
-  resources :past_projects
-
-
-  resources :current_projects
-
-
-
-  
-
-
-  
-
-  resources :dcs
-
-
-  resources :dc_members
-  resources :correspondences
-
-  resources :books
-  resources :system_informations
-  resources :issue_resources
-  
-
+resources :publications
+resources :past_projects
+resources :current_projects
+resources :dcs
+resources :correspondences
+resources :books
+resources :system_informations
   resources :about
   resources :contact
-  resources :faq
   resources :profiles
   resources :open_source
   resources :current_dcmembers
-   resources :past_dcmembers
-  
+  resources :past_dcmembers
+  resources :contact
   resources :projects
   resources :events
-  resources :daily_logs
-  resources :achievements
-  resources :entrances
-  resources :infrastructures
-  resources :books
-  resources :system_informations
-resources :password_resets,     only: [:new, :create, :edit, :update]  
+  
+  
+  resources :password_resets,     only: [:new, :create, :edit, :update]  
 # these routes are for showing users a login form, logging them in, and logging them out.
 
 post 'login' => 'sessions#create'

@@ -12,7 +12,11 @@ class CorrespondencesController < ApplicationController
     
 
     @correspondences = Correspondence.all
+<<<<<<< HEAD
  @correspondences = Correspondence.search(params[:search]).order("date DESC").page(params[:page])
+=======
+    @correspondences = Correspondence.search(params[:search]).order("date DESC").page(params[:page])
+>>>>>>> 719cb6e294cafd94cc2f2ac9a43f8628a989887c
 
  
  

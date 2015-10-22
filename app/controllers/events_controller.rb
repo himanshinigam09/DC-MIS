@@ -7,7 +7,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
+<<<<<<< HEAD
 @events = Event.search(params[:search]).order("date DESC").page(params[:page]).per(5)
+=======
+    @events = Event.search(params[:search]).order("date DESC").page(params[:page]).per(5)
+
+>>>>>>> 719cb6e294cafd94cc2f2ac9a43f8628a989887c
    
 
     respond_to do |format|

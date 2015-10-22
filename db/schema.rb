@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151016152214) do
+ActiveRecord::Schema.define(:version => 20151007155801) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -102,8 +102,7 @@ ActiveRecord::Schema.define(:version => 20151016152214) do
   end
 
   add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
-
-  create_table "dc_members", :force => true do |t|
+create_table "dc_members", :force => true do |t|
     t.string   "first_name"
     t.string   "mid_name"
     t.string   "last_name"
@@ -171,7 +170,7 @@ ActiveRecord::Schema.define(:version => 20151016152214) do
     t.string   "online_courses"
     t.string   "project_name"
     t.string   "project_type"
-    t.string   "project_duration"
+     t.string   "project_duration"
     t.string   "project_description"
     t.string   "reference_category"
     t.string   "reference"
@@ -208,7 +207,7 @@ ActiveRecord::Schema.define(:version => 20151016152214) do
     t.time     "issue_time"
     t.date     "submission_date"
     t.time     "submission_time"
-    t.datetime "created_at",       :null => false
+     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
@@ -347,16 +346,11 @@ ActiveRecord::Schema.define(:version => 20151016152214) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "email"  t.string   "password_digest"
     t.string   "password_confirmation"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "auth_token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
-    t.string   "reset_digest"
-    t.datetime "reset_sent_at"
   end
 
 end
