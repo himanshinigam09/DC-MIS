@@ -55,7 +55,7 @@ a:hover
                     <li role="presentation" class="active">
                         <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
                             <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
+                                <i >Step 1</i>
                             </span>
                         </a>
                     </li>
@@ -63,14 +63,14 @@ a:hover
                     <li role="presentation" class="disabled">
                         <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                             <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
+                                <i >Step 2</i>
                             </span>
                         </a>
                     </li>
                     <li role="presentation" class="disabled">
                         <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                             <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
+                                <i >Step 3</i>
                             </span>
                         </a>
                     </li>
@@ -122,7 +122,7 @@ a:hover
                         <%= f.text_field :user_initials, class: 'form-control', :placeholder => "User initials"  %>
                        
                         <ul class="list-inline pull-right">
-                            <li><button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
+                            <li><button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block " >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                              
                         </ul>
@@ -161,7 +161,7 @@ a:hover
                       <%= f.submit nil, :class => 'btn btn-primary btn-block' %>
                       
                     </div>
-                    <button onClick="location.href='/correspondences'" type="button" class="btn btn-default btn-block next-step" >Back</button>
+                     <button onClick="location.href='/correspondences'" type="button">Back</button>
                     
                     </div>
                     <div class="clearfix"></div>
