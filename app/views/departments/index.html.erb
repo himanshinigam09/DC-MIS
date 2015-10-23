@@ -76,7 +76,7 @@ n})
       <br/><br/>
       <h1 class="page-header">Departments</h1>
       <% @departments.each do |department| %>
-      <%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %>
+      
       <div class="row placeholders">
         <div class="col-lg-11">
           <div class="panel-group" id="accordion">
@@ -149,6 +149,7 @@ n})
           </div>
         </div>
       </div><!--/row-->
+      <%= button_to 'Edit', edit_department_path(department) , :style=>"float:center;", :class => 'btn btn-primary', method: :get %>
     </div>
   </div>
 </div><!--/.container-->
