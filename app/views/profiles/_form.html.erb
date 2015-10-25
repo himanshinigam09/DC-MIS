@@ -1,27 +1,75 @@
 <html>
 <head>
 <title>Profiles</title>
-<!--Tabs-->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="nav.css" />
-<script type="text/javascript" src="nav.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="nav.css" />
+    
+    
+ <script type="text/javascript" src="nav.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+n})
+   </script>
 <style>
+body
+{
+  padding-bottom: 70px;
+}
 a:hover
 {
-background: transparent;
+    background: transparent;
 }
-</style>
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+    height:1800px;
+  }
+}
+  </style>
 </head>
+
 <body>
-<br/><br/> <center><h1 style="color:black ;font-family:verdanax;">DC Member Details </h1></center>
-<div class="container">
-<div class="row">
+
+ 
+<div class="container-fluid">
+<div class="row row-offcanvas row-offcanvas-left">
+<div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+<ul class="nav nav-sidebar">
+
+    <li><a href="/events">Events</a></li>
+        <li class="active"><a href="/profiles">Human Resource</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/correspondences">Correspondence</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li ><a data-toggle="collapse" style="color:#666;"  href="#accordion-sample-two">
+               Infrastructure <b class="caret"></b>
+             </a></li>
+          
+         
+       <div id="accordion-sample-two" class="panel-collapse collapse">
+         
+         <ul class="nav nav-sidebar">
+           <li><a href="/books">&nbsp;&nbsp;&nbsp;&nbsp; Books </a></li>
+            <li><a href="/system_informations">&nbsp;&nbsp;&nbsp;&nbsp; System Information </a></li>
+             <li><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
+         
+       </div>
+</ul>
+</div>
+<div class="col-sm-9 col-md-10 main " >
+<center><h1 style="color:black ;font-family:verdanax;"><b>DC Member Details</b></h1></center>
+
+
+
 <div class="wizard">
 <div class="wizard-inner">
 <div class="connecting-line"></div>
@@ -130,6 +178,11 @@ background: transparent;
 </div>
 </div>
 </div>
+</div>
+
+</div>
+<br />
+<br />
 </div>
 </div>
 </body>
