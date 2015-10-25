@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151007155801) do
+ActiveRecord::Schema.define(:version => 20151024161221) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -102,7 +102,8 @@ ActiveRecord::Schema.define(:version => 20151007155801) do
   end
 
   add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
-create_table "dc_members", :force => true do |t|
+
+  create_table "dc_members", :force => true do |t|
     t.string   "first_name"
     t.string   "mid_name"
     t.string   "last_name"
@@ -170,7 +171,7 @@ create_table "dc_members", :force => true do |t|
     t.string   "online_courses"
     t.string   "project_name"
     t.string   "project_type"
-     t.string   "project_duration"
+    t.string   "project_duration"
     t.string   "project_description"
     t.string   "reference_category"
     t.string   "reference"
@@ -199,6 +200,31 @@ create_table "dc_members", :force => true do |t|
     t.datetime "updated_at", :null => false
   end
 
+  create_table "human_resources", :force => true do |t|
+    t.string   "full_name"
+    t.string   "mid_name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.string   "blood_group"
+    t.string   "local_address"
+    t.string   "permanent_address"
+    t.string   "father_name"
+    t.string   "mother_name"
+    t.string   "guardian_name"
+    t.string   "course_name"
+    t.string   "sem_of_joining"
+    t.string   "email"
+    t.string   "github_id"
+    t.string   "linkedin_id"
+    t.string   "facebook_id"
+    t.string   "googleplus_id"
+    t.string   "twitter_id"
+    t.string   "blog_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "issue_resources", :force => true do |t|
     t.string   "type_of_resource"
     t.string   "issued_by"
@@ -207,7 +233,7 @@ create_table "dc_members", :force => true do |t|
     t.time     "issue_time"
     t.date     "submission_date"
     t.time     "submission_time"
-     t.datetime "created_at",       :null => false
+    t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
@@ -346,11 +372,16 @@ create_table "dc_members", :force => true do |t|
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"  t.string   "password_digest"
+    t.string   "email"
+    t.string   "password_digest"
     t.string   "password_confirmation"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
