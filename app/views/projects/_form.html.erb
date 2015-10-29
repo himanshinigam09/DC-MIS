@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="nav.css" />
     
+ <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     
- <script type="text/javascript" src="nav.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+   <script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -21,19 +21,21 @@
 n})
    </script>
 <style>
-body
-{
-  padding-bottom: 70px;
-}
+
 a:hover
 {
     background: transparent;
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    
     height:1000px;
+  }
+}
+@media (min-width: 768px) {
+  .nav-sidebar {
+    
+    height:1050px;
   }
 }
   </style>
@@ -68,7 +70,7 @@ a:hover
 </ul>
 </div>
 <div class="col-sm-9 col-md-10 main " >
-        <center><h1 style="color:black;font-family:verdanax;">Projects </h1></center>
+        <center><h1 style="color:black;font-family:verdanax;">Project Details</h1></center>
  
 
  <div class="wizard">

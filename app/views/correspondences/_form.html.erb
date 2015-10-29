@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="nav.css" />
     
-    
- <script type="text/javascript" src="nav.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+ <script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -28,6 +29,19 @@ body
 a:hover
 {
     background: transparent;
+}
+@media (min-width: 768px) {
+  .nav-sidebar {
+    
+    height:870px;
+  }
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+    height:870px;
+  }
 }
   </style>
     
@@ -61,7 +75,7 @@ a:hover
 </div>
 <div class="col-sm-9 col-md-10 main " >
 
-      <center><div><h1 style="color:black;font-family:verdanax;"><b>Correspondence Details</b></h1></center>
+      <center><div><h1 style="color:black;font-family:verdanax;">Correspondence Details</h1></center>
 
    <div class="wizard">
             <div class="wizard-inner">
@@ -71,7 +85,7 @@ a:hover
                     <li role="presentation" class="active">
                         <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
                             <span class="round-tab">
-                                <i >Step 1</i>
+                                <i>Step 1</i>
                             </span>
                         </a>
                     </li>
@@ -185,12 +199,13 @@ a:hover
         </div>
    
    </div>
+
+</div>
+
 </div>
 </div>
 </div>
 </div>
-</div>
-<br />
 </body>
 </html>
 
