@@ -12,6 +12,7 @@ def create
     session[:user_id] = @user.id
     redirect_to '/departments'
   else
+    flash[:notice] = 'Invalid email/password combination' # Not quite right!
     render 'new'
   end 
 end

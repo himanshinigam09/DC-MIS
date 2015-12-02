@@ -60,12 +60,13 @@ background: transparent;
 <div class="col-lg-11" >
 <!--toggle sidebar button-->
 <!--search-->
+
     <%= form_tag profiles_path, :method => 'get' do %>  
-      <p>  
-        <%= text_field_tag :search, params[:search], :placeholder => 'Enter name' %>  
-        <%= submit_tag "Search", :name => nil %>  
-      </p>  
-    <% end %> 
+      <div style="width:300px;">   
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter name' ,class: 'form-control', :style=> 'float:left;width:70%;'%>&nbsp;  
+        <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>  
+      </div>  
+    <% end %> <br/><br/>
 <div class="table-responsive"> 
 <table cellspacing='0'>
 <tr >

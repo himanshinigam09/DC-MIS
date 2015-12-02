@@ -62,11 +62,11 @@ background: transparent;
 <!--toggle sidebar button-->
 <!--search box -->
 <%= form_tag projects_path, :method => 'get' do %>  
-      <p>  
-        <%= text_field_tag :search, params[:search], :placeholder => 'Enter project name' %>  
-        <%= submit_tag "Search", :name => nil %>  
-      </p>  
-    <% end %> 
+      <div style="width:300px;">  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter project name',class: 'form-control', :style=> 'float:left;width:70%;'%>&nbsp;  
+        <%= submit_tag "Search", :name => nil, class: 'btn btn-primary'  %>  
+      </div>  
+    <% end %><br/><br/> 
 <table cellspacing='0'>
 <tr>
 <th>Project name</th>
