@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151024161221) do
+ActiveRecord::Schema.define(:version => 20151202144749) do
 
   create_table "achievements", :force => true do |t|
     t.string   "dc_member_id"
@@ -59,9 +59,8 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "edition"
     t.string   "publication"
     t.string   "ISBN_number"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.text     "recent_activities"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "communications", :force => true do |t|
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
   add_index "communications", ["dc_member_id"], :name => "index_communications_on_dc_member_id"
 
   create_table "correspondences", :force => true do |t|
-    t.string   "type_of_correspondence"
+    t.string   "type_of_correspondence", :null => false
     t.string   "subject"
     t.string   "user_initials"
     t.string   "medium"
@@ -84,7 +83,6 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.date     "date"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
-    t.text     "recent_activities"
   end
 
   create_table "current_projects", :force => true do |t|
@@ -101,7 +99,10 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
+  create_table "dashboards", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "dc_members", :force => true do |t|
     t.string   "first_name"
@@ -122,6 +123,9 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "email"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "contact_no"
+    t.string   "parent_email"
+    t.string   "parent_contact_no"
   end
 
   create_table "dcs", :force => true do |t|
@@ -190,9 +194,8 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "duration"
     t.string   "material_link"
     t.string   "summary_link"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.text     "recent_activities"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "faqs", :force => true do |t|
@@ -200,44 +203,7 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "human_resources", :force => true do |t|
-    t.string   "full_name"
-    t.string   "mid_name"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.string   "gender"
-    t.string   "blood_group"
-    t.string   "local_address"
-    t.string   "permanent_address"
-    t.string   "father_name"
-    t.string   "mother_name"
-    t.string   "guardian_name"
-    t.string   "course_name"
-    t.string   "sem_of_joining"
-    t.string   "email"
-    t.string   "github_id"
-    t.string   "linkedin_id"
-    t.string   "facebook_id"
-    t.string   "googleplus_id"
-    t.string   "twitter_id"
-    t.string   "blog_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
   create_table "issue_resources", :force => true do |t|
-    t.string   "type_of_resource"
-    t.string   "issued_by"
-    t.string   "issued_to"
-    t.date     "issue_date"
-    t.time     "issue_time"
-    t.date     "submission_date"
-    t.time     "submission_time"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "issued_resources", :force => true do |t|
     t.string   "type_of_resource"
     t.string   "issued_by"
     t.string   "issued_to"
@@ -314,7 +280,6 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.text     "achievement"
     t.text     "blog"
     t.text     "education"
-    t.text     "recent_activities"
     t.string   "skill"
   end
 
@@ -329,7 +294,6 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "github_page_link"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.text     "recent_activities"
   end
 
   create_table "publications", :force => true do |t|
@@ -346,7 +310,6 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "author"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.text     "recent_activities"
   end
 
   create_table "sessions", :force => true do |t|
@@ -364,9 +327,8 @@ ActiveRecord::Schema.define(:version => 20151024161221) do
     t.string   "access"
     t.string   "os_installed"
     t.string   "sw_details"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.text     "recent_activities"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
