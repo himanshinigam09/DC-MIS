@@ -1,10 +1,18 @@
 <html>
 <head>
+<<<<<<< HEAD
 <title>Correspondence</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+=======
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <script type="text/javascript">
 $(document).ready(function(){
 $('.navbar .dropdown').hover(function() {
@@ -25,6 +33,7 @@ a:hover
 {
 background: transparent;
 }
+<<<<<<< HEAD
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
@@ -32,14 +41,21 @@ background: transparent;
     height:600px;
   }
 }
+=======
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 </style>
 </head>
 <body >
 <!-- Navigation -->
+<<<<<<< HEAD
+=======
+<br/>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <div class="container-fluid" >
 <div class="row row-offcanvas row-offcanvas-left" >
 <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation" >
 <ul class="nav nav-sidebar">
+<<<<<<< HEAD
 
 		<li ><a href="/events">Events</a></li>
         <li><a href="/profiles">Human Resource</a></li>
@@ -60,6 +76,14 @@ background: transparent;
          
        </div>
 
+=======
+<li><a href="events.html">Events</a></li>
+<li><a href="infrastructures.html">Infrastructure</a></li>
+<li><a href="profiles.html">Human Resource</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="correspondences.html">Correspondence</a></li>
+<li><a href="publications.html">Publications</a></li>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 </ul>
 </div><!--/span-->
 <div class="col-sm-9 col-md-10 main " >
@@ -71,12 +95,20 @@ background: transparent;
 
 <!--search-->
     <%= form_tag correspondences_path, :method => 'get' do %>  
+<<<<<<< HEAD
       <div style="width:300px;">    
         <%= text_field_tag :search, params[:search], :placeholder => 'Enter correspondence',class: 'form-control', :style=> 'float:left;width:70%;'%>  
        &nbsp; 
         <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>  
       </div>  
     <% end %>  <br/><br/>
+=======
+      <p>  
+        <%= text_field_tag :search, params[:search], :placeholder => 'Enter correspondence' %>  
+        <%= submit_tag "Search", :name => nil %>  
+      </p>  
+    <% end %>  
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <table cellspacing='0'>
 <tr>
 <th>Type of correspondence</th>
@@ -100,9 +132,13 @@ background: transparent;
 <td><%= correspondence.description %></td>
 <td><%= correspondence.date %></td>
 <td><%= button_to 'Show', correspondence ,method: :get%></td>
+<<<<<<< HEAD
 <td><%= button_to 'Edit', edit_correspondence_path(correspondence) ,method: :get %>
 <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-sm" data-title="Edit" data-toggle="modal" data-target="edit_correspondence_path(correspondence)" ><span class="glyphicon glyphicon-pencil"></span></button></p>
    </td>
+=======
+<td><%= button_to 'Edit', edit_correspondence_path(correspondence) ,method: :get %></td>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <td><%= button_to 'Destroy', correspondence, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')" %></td>
 </tr>
 <% end %>

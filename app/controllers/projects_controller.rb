@@ -3,8 +3,12 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   before_filter :zero_users_or_authenticated
 
+<<<<<<< HEAD
     layout "index", :only => [:index]
 
+=======
+  layout "index","show"
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   def index
     @projects = Project.all
 

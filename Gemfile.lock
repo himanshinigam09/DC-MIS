@@ -206,3 +206,9 @@ DEPENDENCIES
   strong_parameters
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+<<<<<<< HEAD
+=======
+
+BUNDLED WITH
+   1.10.4
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d

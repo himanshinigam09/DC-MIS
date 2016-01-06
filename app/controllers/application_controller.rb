@@ -19,6 +19,12 @@ end
       redirect_to '/login' # halts request cycle
     end
   end
+<<<<<<< HEAD
+=======
+
+
+  
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
 
   

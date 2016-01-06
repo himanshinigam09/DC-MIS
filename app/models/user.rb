@@ -9,4 +9,8 @@ has_one :user_profile
 
 
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d

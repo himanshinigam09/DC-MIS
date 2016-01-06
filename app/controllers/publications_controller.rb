@@ -6,8 +6,15 @@ class PublicationsController < ApplicationController
   layout "index", :only => [:index]
   def index
     @publications = Publication.all
+<<<<<<< HEAD
 @publications = Publication.search(params[:search]).order("date_of_publication DESC").page(params[:page]).per(5)
    respond_to do |format|
+=======
+@publications = Publication.search(params[:search]).order("paper_title").page(params[:page])
+
+
+    respond_to do |format|
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
       format.html # index.html.erb
       format.json { render json: @publications }
     end

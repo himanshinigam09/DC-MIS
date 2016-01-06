@@ -1,11 +1,24 @@
 DCMis::Application.routes.draw do  
   
   
+<<<<<<< HEAD
  root :to => 'dcs#index'
+=======
+  
+
+
+
+
+  resources :issue_resources
+
+
+root :to => 'dcs#index'
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+<<<<<<< HEAD
    
   
 resources :issue_resources
@@ -17,17 +30,70 @@ resources :dcs
 resources :correspondences
 resources :books
 resources :system_informations
+=======
+  
+
+
+  
+resources :departments
+
+
+  resources :items
+  
+
+  
+
+    
+  get "password_resets/new"
+
+  resources :publications
+
+
+  resources :past_projects
+
+
+  resources :current_projects
+
+
+
+  
+
+
+  
+
+  resources :dcs
+
+
+  resources :dc_members
+  resources :correspondences
+
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   resources :about
   resources :contact
   resources :profiles
   resources :open_source
   resources :current_dcmembers
+<<<<<<< HEAD
   resources :past_dcmembers
   resources :contact
   resources :projects
   resources :events
   
   
+=======
+   resources :past_dcmembers
+  
+  resources :projects
+  resources :events
+  resources :daily_logs
+  resources :achievements
+  resources :entrances
+  resources :infrastructures
+  resources :books
+  resources :system_informations
+   resources :issued_resources
+ 
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   
 # these routes are for showing users a login form, logging them in, and logging them out.
 
@@ -37,6 +103,11 @@ get 'logout' => 'sessions#destroy'
 get 'signup'  => 'users#new'
 get 'login'  => 'sessions#new' 
 resources :users
+<<<<<<< HEAD
+=======
+
+resources :sessions
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
 resources :sessions
 

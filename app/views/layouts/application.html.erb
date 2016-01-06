@@ -1,6 +1,7 @@
  <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -13,6 +14,23 @@
 
 
 <script type="text/javascript">
+=======
+  <title>DCMis</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link href="assets/styles1.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+
+  <script type="text/javascript">
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -21,7 +39,10 @@
     });
 n})
    </script>
+<<<<<<< HEAD
  
+=======
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
         <style>
             
@@ -31,6 +52,7 @@ a:hover
 }
         </style>
 
+<<<<<<< HEAD
 
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag 'application' %>
@@ -39,6 +61,17 @@ a:hover
 </head>
 <body>
 <%= render partial: "/layouts/flash_messages", flash: flash %> 
+=======
+   
+
+  <%= javascript_include_tag "https://js.stripe.com/v1/" %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+  
+</head>
+<body>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,20 +89,34 @@ a:hover
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+<<<<<<< HEAD
                         <a href="/about">About Us</a>
                     </li>
                     <li>
                         <a href="/open_source">Open Source</a>
+=======
+                        <a href="/about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/open_source.html">Open Source</a>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                     </li>
                     
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">DC Members<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
+<<<<<<< HEAD
                                 <a href="/current_dcmembers">Current Members</a>
                             </li>
                             <li>
                                 <a href="/past_dcmembers">Past Members</a>
+=======
+                                <a href="/current_dcmembers.html">Current Members</a>
+                            </li>
+                            <li>
+                                <a href="/past_dcmembers.html">Past Members</a>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                             </li>
                             
                         </ul>
@@ -78,16 +125,24 @@ a:hover
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
+<<<<<<< HEAD
                                 <a href="/current_projects">Current Projects</a>
                             </li>
                             <li>
                                 <a href="/past_projects">Past Projects</a>
+=======
+                                <a href="/current_projects.html">Current Projects</a>
+                            </li>
+                            <li>
+                                <a href="/past_projects.html">Past Projects</a>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                             </li>
                             
                         </ul>
                     </li>
                    
                     <% if current_user %> 
+<<<<<<< HEAD
                     <li><%= link_to "Departments", '/departments' %></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name %>&nbsp;<%=current_user.last_name  %><b class="caret"></b></a>
@@ -100,6 +155,13 @@ a:hover
                         
                         
                       
+=======
+                    <li><%= link_to "Departments", '/departments' %></a></li> 
+                        
+                        <li><%= link_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')" %></li> <br/>
+                        
+                       <div style="float:right; color:gray;">Logged in as&nbsp;<%= current_user.email %></div>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                     <% else %> 
                          
                         <li><%= link_to "Login", 'login' %></a></li> 

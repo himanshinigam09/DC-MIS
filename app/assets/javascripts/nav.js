@@ -32,4 +32,8 @@ function nextTab(elem) {
 }
 function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d

@@ -12,11 +12,17 @@ class CorrespondencesController < ApplicationController
     
 
     @correspondences = Correspondence.all
+<<<<<<< HEAD
 
  @correspondences = Correspondence.search(params[:search]).order("date DESC").page(params[:page])
 
  
  
+=======
+    @correspondences = Correspondence.search(params[:search]).order("type_of_correspondence").page(params[:page])
+
+ 
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
     respond_to do |format|
       format.html # index.html.erb

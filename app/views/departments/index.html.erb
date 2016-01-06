@@ -7,11 +7,25 @@
         <title>Departments </title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<<<<<<< HEAD
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
              
                
+=======
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="assets/bootstrap1.min.js"></script>
+        <script src="assets/scripts1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+        <link href="assets/bootstrap.min1.css" rel="stylesheet">
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,11 +41,18 @@ a:hover
   .main {
     padding-right: 40px;
     padding-left: 40px;
+<<<<<<< HEAD
     height:1300px;
   }
 }
         </style>
       
+=======
+    height:1200px;
+  }
+}
+        </style>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
         <script type="text/javascript">
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
@@ -40,16 +61,25 @@ a:hover
         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
     });
 n})
+<<<<<<< HEAD
 
    </script>
 
 </head>
     
 <body>
+=======
+   </script>
+</head>
+    
+<body>
+<br/>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
     <!-- Navigation -->
 <div class="container-fluid">
   <div class="row row-offcanvas row-offcanvas-left">
     <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation"><ul class="nav nav-sidebar">
+<<<<<<< HEAD
         <li ><a href="/events">Events</a></li>
         <li><a href="/profiles">Human Resource</a></li>
         <li><a href="/projects">Projects</a></li>
@@ -68,6 +98,14 @@ n})
              <li><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
          
        </div>
+=======
+        <li><a href="events.html">Events</a></li>
+        <li><a href="infrastructures.html">Infrastructure</a></li>
+        <li><a href="profiles.html">Human Resource</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="correspondences.html">Correspondence</a></li>
+        <li><a href="publications.html">Publications</a></li>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
       </ul>
     </div><!--/span-->
     <div class="col-sm-9 col-md-10 main">
@@ -78,7 +116,11 @@ n})
       <br/><br/>
       <h1 class="page-header">Departments</h1>
       <% @departments.each do |department| %>
+<<<<<<< HEAD
       
+=======
+      <%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %>
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
       <div class="row placeholders">
         <div class="col-lg-11">
           <div class="panel-group" id="accordion">
@@ -151,7 +193,10 @@ n})
           </div>
         </div>
       </div><!--/row-->
+<<<<<<< HEAD
       <%= button_to 'Edit', edit_department_path(department) , :style=>"float:center;", :class => 'btn btn-primary', method: :get %>
+=======
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
     </div>
   </div>
 </div><!--/.container-->

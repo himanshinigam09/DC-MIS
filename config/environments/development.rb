@@ -38,4 +38,8 @@ DCMis::Application.configure do
 
 config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 end
