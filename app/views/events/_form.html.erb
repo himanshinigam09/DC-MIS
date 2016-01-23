@@ -131,7 +131,10 @@ a:hover
           <div class="tab-content">
             <div class="tab-pane active" role="tabpanel" id="step1">
                          
-                         <%= label_tag("Event Type :  ")%><%= f.select :type_of_event, options_for_select(%w[Conference Presentation Seminar Test Workshop]), class: 'form-control' %>
+                         <%= label_tag("Event Type :  ")%>
+                        
+                         <%= f.select :type_of_event, options_for_select(%w[Conference Presentation Seminar Test Workshop]), {}, class: "form-control" %>
+                          
 
   
  
