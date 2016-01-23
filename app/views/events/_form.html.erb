@@ -1,20 +1,4 @@
 <html>
-<<<<<<< HEAD
-<head>
-<title>Events</title>
-<!--Tabs-->
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="nav.css" />
-    
-
-  
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-=======
 
 <head>
 
@@ -29,7 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
    $(document).ready(function(){
     $('.navbar .dropdown').hover(function() {
         $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
@@ -39,66 +22,10 @@
 n})
    </script>
 <style>
-<<<<<<< HEAD
-
-=======
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 a:hover
 {
     background: transparent;
 }
-<<<<<<< HEAD
-@media (min-width: 768px) {
-  .nav-sidebar {
-    
-    height:660px;
-  }
-}
-@media (min-width: 768px) {
-  .main {
-    
-    height:660px;
-  }
-}
-  </style>
-    
-</head>
-<body>
-<!-- Navigation -->
-<div class="container-fluid">
-<div class="row row-offcanvas row-offcanvas-left">
-<div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
-<ul class="nav nav-sidebar">
-
-    <li class="active"  ><a href="/events">Events</a></li>
-        <li><a href="/profiles">Human Resource</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/correspondences">Correspondence</a></li>
-        <li><a href="/publications">Publications</a></li>
-        <li ><a data-toggle="collapse" style="color:#666;"  href="#accordion-sample-two">
-               Infrastructure <b class="caret"></b>
-             </a></li>
-          
-         
-       <div id="accordion-sample-two" class="panel-collapse collapse">
-         
-         <ul class="nav nav-sidebar">
-           <li><a href="/books">&nbsp;&nbsp;&nbsp;&nbsp; Books </a></li>
-            <li><a href="/system_informations">&nbsp;&nbsp;&nbsp;&nbsp; System Information </a></li>
-             <li><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
-         
-       </div>
-</ul>
-</div>
-<div class="col-sm-9 col-md-10 main " >
-<center><h1 style="color:black;font-family:verdanax;">Event Details</h1></center>
-
-
-<div class="wizard">
-    <div class="wizard-inner">
-      <div class="connecting-line">
-        </div>
-=======
   </style>
     
 
@@ -115,17 +42,12 @@ a:hover
         <div class="wizard">
             <div class="wizard-inner">
                 <div class="connecting-line"></div>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                 <ul class="nav nav-tabs" role="tablist">
 
                     <li role="presentation" class="active">
                         <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
                             <span class="round-tab">
-<<<<<<< HEAD
-                                <i >Step 1</i>
-=======
                                 <i class="glyphicon glyphicon-pencil"></i>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                             </span>
                         </a>
                     </li>
@@ -133,22 +55,14 @@ a:hover
                     <li role="presentation" class="disabled">
                         <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                             <span class="round-tab">
-<<<<<<< HEAD
-                                <i >Step 2</i>
-=======
                                 <i class="glyphicon glyphicon-pencil"></i>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                             </span>
                         </a>
                     </li>
                     <li role="presentation" class="disabled">
                         <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                             <span class="round-tab">
-<<<<<<< HEAD
-                                <i >Step 3</i>
-=======
                                 <i class="glyphicon glyphicon-pencil"></i>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                             </span>
                         </a>
                     </li>
@@ -161,19 +75,11 @@ a:hover
                         </a>
                     </li>
                 </ul>
-<<<<<<< HEAD
-      </div>
-
-           
-      <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;padding-bottom:70px;">
-        <div class="form">
-=======
             </div>
 
            
             <div style="box-shadow:10px 10px 40px 30px #F7F7F7 inset;border:solid; border-color:#F5F5F5;border-radius:25px;">
               <div class="form">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
                   <%= form_for(@event) do |f| %>
                    <% if @event.errors.any? %>
@@ -186,17 +92,11 @@ a:hover
                 <% end %>
                 </ul>
               </div>
-<<<<<<< HEAD
-              <% end %>
-          <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="step1">
-=======
             <% end %>
   
   
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                          
                          <%= label_tag("Event Type :  ")%><%= f.select :type_of_event, options_for_select(%w[Conference Presentation Seminar Test Workshop]), class: 'form-control' %>
 
@@ -211,51 +111,29 @@ a:hover
    
    
                         <ul class="list-inline pull-right">
-<<<<<<< HEAD
-                            <li><button onClick="location.href='/events'" type="button" class="btn btn-default btn-block " >Back</button></li>
-                           <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
-                             
-                        </ul>
-            </div>
-            <div class="tab-pane" role="tabpanel" id="step2">
-=======
                             <li><button onClick="location.href='/events'" type="button" class="btn btn-default btn-block next-step" >Back</button></li>
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                              
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                          <%= f.text_field :venue, class: 'form-control', :placeholder => "Venue"   %>
     
   
     
     
-<<<<<<< HEAD
-                        <%= label_tag("Date :  ")%><%= f.date_select :date, class: 'form-control', :placeholder => "Date"   %><br/><br/>
-                        
-                      
-                       
-                        <%= label_tag("Time :  ")%><%= f.time_select :time, class: 'form-control', :placeholder => "Time"   %>
-=======
                         <%= f.date_select :date, class: 'form-control', :placeholder => "Date"   %><br/><br/>
                         
                       
                        
                         <%= f.time_select :time, class: 'form-control', :placeholder => "Time"   %>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default btn-block prev-step">Previous</button></li>
                             
                             <li><button type="button" class="btn btn-primary btn-block next-step">Save and continue</button></li>
                         </ul>
-<<<<<<< HEAD
-            </div>
-            <div class="tab-pane" role="tabpanel" id="step3">
-=======
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step3">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
                         <%= f.text_field :duration, class: 'form-control', :placeholder => "Duration"   %>
   
    
@@ -269,13 +147,8 @@ a:hover
                             
                             <li><button type="button" class="btn btn-primary btn-block btn-info-full next-step">Save and continue</button></li>
                         </ul>
-<<<<<<< HEAD
-            </div>
-            <div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
-=======
                     </div>
                     <div class="tab-pane" role="tabpanel" id="complete" style="font-family: Verdana;">
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
                     
                         <h3>Complete</h3>
@@ -287,27 +160,6 @@ a:hover
                       
                       <button onClick="location.href='/events'" type="button">Back</button>
                       <br /><br /><br />
-<<<<<<< HEAD
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <% end %>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
-</div>
-</div>
-</div>
- 
-</body>
-</html>
-=======
                     
                     </div>
                     <div class="clearfix"></div>
@@ -322,4 +174,3 @@ a:hover
 
 </body>
 </html>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d

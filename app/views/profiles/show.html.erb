@@ -3,27 +3,14 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-<<<<<<< HEAD
-    <title>Profiles</title>
-=======
     <title>DC-MIS</title>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
-<<<<<<< HEAD
-
-    <meta name="author" content="3rd Wave Media">    
-     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-=======
     <meta name="author" content="3rd Wave Media">    
     <link rel="shortcut icon" href="favicon.ico">  
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
     <script type="text/javascript">
@@ -68,20 +55,12 @@ a:hover
 
     <br/><br/>
     <header  class="header">
-<<<<<<< HEAD
-        <div style="width:1042px;height:300px;" class="container">   
-=======
         <div style="width:1042px;height:250px;" class="container">   
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
           <%= image_tag @profile.image.url , class:'profile-image img-responsive pull-left', :style => "height:220px;width:220px;border-radius:200px;"%>  
            
                    
             
-<<<<<<< HEAD
-            
-=======
             <br/><br/><br/>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
            <div class="col-md-4" style="width:237px;height:163px;font-size:27px;">
            
                 <i><h1 style="font-family:verdana;color:#49515a" class="name"><%= @profile.full_name %></h1></i>
@@ -111,11 +90,7 @@ text-align: center;" class="btn btn-social-icon btn-github"><i class="fa fa-gith
             
            <%= button_to 'Edit', edit_profile_path(@profile),method: :get, :style=>"float:right;color:grey;" %>
             
-<<<<<<< HEAD
-           
-=======
            <%= button_to "Log out", logout_path, method: "get",:onclick=> "return confirm('Are you sure you want to log out?')",:style=>"float:right;color:grey;" %>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
            <%= button_to 'Back', profiles_path ,method: :get,:style=>"float:right;color:grey;"%>
            <%= button_to 'Destroy', @profile, method: :delete, :onclick=> "return confirm('Are you sure you want to delete this item?')",:style=>"float:right;color:grey;" %>
              

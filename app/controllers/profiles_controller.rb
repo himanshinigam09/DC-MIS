@@ -9,11 +9,7 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
 
 
-<<<<<<< HEAD
-    @profiles = Profile.search(params[:search]).order("full_name").page(params[:page]).per(4)
-=======
     @profiles = Profile.search(params[:search]).order("full_name").page(params[:page])
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 
     respond_to do |format|
       format.html # index.html.erb

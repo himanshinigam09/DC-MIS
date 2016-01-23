@@ -3,23 +3,16 @@ class CurrentProjectsController < ApplicationController
   # GET /current_projects.json
   layout "index", :only => [:index]
   def index
-<<<<<<< HEAD
-    
-=======
     @current_projects = CurrentProject.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @current_projects }
     end
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   end
 
   # GET /current_projects/1
   # GET /current_projects/1.json
-<<<<<<< HEAD
- 
-=======
   def show
     @current_project = CurrentProject.find(params[:id])
 
@@ -97,5 +90,4 @@ class CurrentProjectsController < ApplicationController
     def current_project_params
       params.require(:current_project).permit()
     end
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 end

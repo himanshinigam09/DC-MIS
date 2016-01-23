@@ -45,11 +45,7 @@ span.round-tab {
     position: absolute;
     left: 0;
     text-align: center;
-<<<<<<< HEAD
-    font-size: 18px;
-=======
     font-size: 25px;
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 }
 span.round-tab i{
     color:#555555;

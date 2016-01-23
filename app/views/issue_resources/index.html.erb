@@ -1,19 +1,9 @@
 <html>
-<<<<<<< HEAD
-<head>
-<title>Issue Resources</title>
-
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-=======
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <script type="text/javascript">
 $(document).ready(function(){
 $('.navbar .dropdown').hover(function() {
@@ -34,43 +24,10 @@ a:hover
 {
 background: transparent;
 }
-<<<<<<< HEAD
-@media (min-width: 768px) {
-  .main {
-    
-    height:600px;
-  }
-=======
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 </style>
 </head>
 <body >
 <!-- Navigation -->
-<<<<<<< HEAD
-
-<div class="container-fluid">
-<div class="row row-offcanvas row-offcanvas-left" >
-<div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation" >
-<ul class="nav nav-sidebar">
-        <li ><a href="/events">Events</a></li>
-        <li><a href="/profiles">Human Resource</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/correspondences">Correspondence</a></li>
-        <li><a href="/publications">Publications</a></li>
-        <li  ><a data-toggle="collapse" style="color:#666;"  href="#accordion-sample-two">
-               Infrastructure <b class="caret"></b>
-             </a></li>
-          
-         
-       <div id="accordion-sample-two" class="panel-collapse collapse">
-         
-         <ul class="nav nav-sidebar">
-           <li><a href="/books">&nbsp;&nbsp;&nbsp;&nbsp; Books </a></li>
-            <li><a href="/system_informations">&nbsp;&nbsp;&nbsp;&nbsp; System Information </a></li>
-             <li class="active" ><a href="/issue_resources">&nbsp;&nbsp;&nbsp;&nbsp; Issue Resource </a></li></ul>
-         
-       </div>
-=======
 <br/>
 <div class="container-fluid" >
 <div class="row row-offcanvas row-offcanvas-left" >
@@ -82,7 +39,6 @@ background: transparent;
 <li><a href="projects.html">Projects</a></li>
 <li><a href="correspondences.html">Correspondence</a></li>
 <li><a href="publications.html">Publications</a></li>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 </ul>
 </div><!--/span-->
 <div class="col-sm-9 col-md-10 main " >
@@ -94,20 +50,11 @@ background: transparent;
 
 <!--search-->
   <%= form_tag books_path, :method => 'get' do %>  
-<<<<<<< HEAD
-      <div style="width:300px;"> 
-        <%= text_field_tag :search, params[:search], :placeholder => 'Enter type of resource' ,class: 'form-control', :style=> 'float:left;width:70%;'%>  
-       &nbsp; 
-        <%= submit_tag "Search", :name => nil , class: 'btn btn-primary' %>  
-        </div>
-    <% end %> <br/><br/>   
-=======
       <p>  
         <%= text_field_tag :search, params[:search], :placeholder => 'Enter type of resource' %>  
         <%= submit_tag "Search", :name => nil %>  
       </p>  
     <% end %>    
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <table cellspacing='0'>
 <tr>
     <th>Type of resource</th>
@@ -137,11 +84,7 @@ background: transparent;
   </tr>
 <% end %>
 </table><br/><br/>
-<<<<<<< HEAD
-<%= link_to 'Add Issue resource', new_issue_resource_path, method: :get, :class => 'btn btn-primary' ,style: "color:white;" %><br/>
-=======
 <%= link_to 'New Issue resource', new_issue_resource_path, method: :get, :class => 'btn btn-primary' ,style: "color:white;" %><br/>
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 <%= paginate @issue_resources %>
 
 

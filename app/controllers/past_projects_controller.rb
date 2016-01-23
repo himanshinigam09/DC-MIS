@@ -3,23 +3,16 @@ class PastProjectsController < ApplicationController
   # GET /past_projects.json
   layout "index", :only => [:index]
   def index
-<<<<<<< HEAD
-    
-=======
     @past_projects = PastProject.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @past_projects }
     end
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
   end
 
   # GET /past_projects/1
   # GET /past_projects/1.json
-<<<<<<< HEAD
- 
-=======
   def show
     @past_project = PastProject.find(params[:id])
 
@@ -97,5 +90,4 @@ class PastProjectsController < ApplicationController
     def past_project_params
       params.require(:past_project).permit()
     end
->>>>>>> 216b9ee33b1f74f9672d0e3e17ea96046f7a954d
 end
