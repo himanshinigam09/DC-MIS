@@ -1,5 +1,6 @@
 DCMis::Application.routes.draw do  
   
+  
  root :to => 'dcs#index'
   
   ActiveAdmin.routes(self)
@@ -27,7 +28,7 @@ resources :system_informations
   resources :events
   
   
-  resources :password_resets,     only: [:new, :create, :edit, :update]  
+  
 # these routes are for showing users a login form, logging them in, and logging them out.
 
 post 'login' => 'sessions#create'
@@ -38,7 +39,6 @@ get 'login'  => 'sessions#new'
 resources :users
 
 resources :sessions
-
 
 
   # The priority is based upon order of creation:

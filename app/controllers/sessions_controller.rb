@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-	layout "index", :only => [:index]
-	def new 
+  layout "index", :only => [:index]
+  def new 
     
 end
 
