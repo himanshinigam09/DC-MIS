@@ -4,6 +4,9 @@ gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+    gem 'mysql2'
+end
 group :production do
   gem 'pg',             '0.17.1'
 end
@@ -11,7 +14,7 @@ end
 gem 'rails_12factor', group: :production
 
 
-gem 'mysql2'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'minitest'
