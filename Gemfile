@@ -8,6 +8,7 @@ group :production do
   gem 'pg',             '0.17.1'
 end
 
+gem 'rails_12factor', group: :production
 
 
 gem 'mysql2'
@@ -52,5 +53,3 @@ gem 'strong_parameters'
 
 # To use debugger
 # gem 'debugger'
-gem 'rails_12factor', group: :production
-ruby '1.9.0'
