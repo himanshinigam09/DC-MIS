@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+source "https://rails-assets.org"
+gem 'rails-assets-bootstrap', ">= 4.0.0.alpha.2"
+gem 'rails-assets-tether'
 gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
@@ -56,3 +58,4 @@ gem 'strong_parameters'
 
 # To use debugger
 # gem 'debugger'
+ruby '2.0.0'
