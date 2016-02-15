@@ -5,7 +5,7 @@ gem 'rails', '3.2.21'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
-    gem 'mysql2'
+    gem 'mysql2', '~> 0.3.10'
 end
 group :production do
   gem 'pg',             '0.17.1'
@@ -34,7 +34,7 @@ gem 'jquery-rails'
 gem 'high_voltage'
 gem 'foreigner'
 
- gem 'activeadmin'
+ gem "activeadmin", "0.6.0"
  gem "paperclip"
 
 
