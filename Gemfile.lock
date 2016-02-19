@@ -209,11 +209,7 @@ DEPENDENCIES
   minitest
   mysql2 (~> 0.3.10)
   paperclip
-<<<<<<< HEAD
-  pg
-=======
-  pg (= 0.17.1)
->>>>>>> c243e5d7465f80f7bc81746a9b08b97babf342fb
+
   rails (= 3.2.21)
   rails_12factor
   sass-rails (~> 3.2.3)
@@ -222,8 +218,5 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
 
 BUNDLED WITH
-<<<<<<< HEAD
+
    1.10.5
-=======
-   1.11.2
->>>>>>> c243e5d7465f80f7bc81746a9b08b97babf342fb
