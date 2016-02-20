@@ -21,6 +21,6 @@ class CreateDcMembers < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :daily_logs, :dc_member_id
+    
   end
 end
