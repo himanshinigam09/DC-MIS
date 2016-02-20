@@ -8,15 +8,16 @@ group :development, :test do
     gem 'mysql2', '~> 0.3.10'
 end
 group :production do
-  gem 'pg',             '0.17.1'
+  gem 'pg',             '0.18.4'
 end
 
-gem 'rails_12factor', group: :production
 
 
 
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+
+
+
 gem 'minitest'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -56,4 +57,5 @@ gem 'strong_parameters'
 
 # To use debugger
 # gem 'debugger'
-ruby '2.0.0'
+
+gem 'rails_12factor', group: :production
