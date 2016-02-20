@@ -207,9 +207,10 @@ DEPENDENCIES
   rails (= 3.2.21)
   rails_12factor
   sass-rails (~> 3.2.3)
+  sprockets
   strong_parameters
   therubyracer
   uglifier (>= 1.0.3)
 
 BUNDLED WITH
-   1.10.5
+   1.11.2

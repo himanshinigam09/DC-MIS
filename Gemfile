@@ -18,7 +18,6 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 
 
-
 gem 'minitest'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -58,4 +57,5 @@ gem 'strong_parameters'
 
 # To use debugger
 # gem 'debugger'
+gem 'sprockets'
 
