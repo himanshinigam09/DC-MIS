@@ -9,15 +9,14 @@ group :development, :test do
 end
 group :production do
   gem 'pg',             '0.18.4'
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
+  gem 'rails_12factor'
 end
 
 
 
 
 gem 'bootstrap-sass', '~> 3.2.0'
-
 
 
 gem 'minitest'
@@ -53,11 +52,10 @@ gem 'strong_parameters'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+gem 'sprockets'
 
-gem 'rails_12factor', group: :production
