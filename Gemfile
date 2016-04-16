@@ -42,10 +42,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'strong_parameters' 
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'puma'
 # Deploy with Capistrano
 # gem 'capistrano'
 
