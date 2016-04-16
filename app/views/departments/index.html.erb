@@ -70,11 +70,11 @@ n})
       <br/><br/>
       <h1 class="page-header">Departments</h1>
       <% @departments.each do |department| %>
-      <%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %>
+      
       <div class="row placeholders">
         <div class="col-lg-11">
           <div class="panel-group" id="accordion">
-            <div class="panel panel-default"><img style='width:150x;height:150px;float:right; ' src="assets/events.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+            <div class="panel panel-default"><%= button_to 'Edit', edit_department_path(department) , :style=>"float:right;",method: :get %><img style='width:150x;height:150px;float:right; ' src="assets/events.jpeg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
               <div class="panel-heading">
                 <h4 class="panel-title">Events</h4>
               </div>
