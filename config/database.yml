@@ -35,8 +35,10 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: DC-MIS_production
+  database: <%= ENV['RDS_DB_NAME'] %>
   pool: 5
-  username: root
-  password: root
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  <%= ENV['RDS_PORT'] %>
