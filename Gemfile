@@ -4,15 +4,8 @@ gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development, :test do
-    gem 'mysql2', '~> 0.3.10'
-end
-group :production do
 
-  gem 'rails_12factor'
-  gem 'pg',             '0.18.4'
-  
-end
+
 
 
 
@@ -60,3 +53,13 @@ gem 'strong_parameters'
 # gem 'debugger'
 gem 'sprockets'
 
+group :development, :test do
+    gem 'mysql2', '~> 0.3.10'
+end
+
+group :production do
+
+  gem 'rails_12factor'
+  gem 'pg',             '0.18.4'
+  
+end
