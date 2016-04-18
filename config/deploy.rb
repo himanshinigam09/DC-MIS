@@ -1,6 +1,13 @@
 # This is a sample Capistrano config file for rubber
 
 set :rails_env, Rubber.env
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
+ssh_options[:verbose] = :debug
+ssh_options[:keys] = ["~/.ec2/gsg-keypair"]
+
+
+
 
 on :load do
   set :application, rubber_env.app_name
@@ -23,7 +30,7 @@ set :password, nil
 
 # Use sudo with user rails for cap deploy:[stop|start|restart]
 # This way exposed services (mongrel) aren't running as a privileged user
-set :use_sudo, true
+set :use_sudo, false
 
 # If you're having troubles connecting to your server, uncommenting this
 # line will give you more verbose logging output from net-ssh, which will

@@ -53,9 +53,9 @@ gem 'puma'
 # gem 'debugger'
 gem 'sprockets'
 
-
-gem 'mysql2', '~> 0.3.10'
-
+group :development, :test do
+    gem 'mysql2', '~> 0.3.10'
+end
 
 group :production do
 
