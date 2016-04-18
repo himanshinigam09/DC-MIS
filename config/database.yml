@@ -32,13 +32,12 @@ test:
   socket: /var/run/mysqld/mysqld.sock
 
 production:
-  adapter: postgresql
+  
+  adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: <%= ENV['RDS_DB_NAME'] %>
+  database: DC-MIS_production
   pool: 5
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
+  username: root
+  password: root
   socket: /var/run/mysqld/mysqld.sock
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  <%= ENV['RDS_PORT'] %>

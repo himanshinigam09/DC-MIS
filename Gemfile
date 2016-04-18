@@ -7,7 +7,7 @@ gem 'rails', '3.2.21'
 
 
 
-
+gem 'mysql2', '~> 0.3.10'
 
 
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -45,21 +45,16 @@ gem 'strong_parameters'
 gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'puma'
+gem 'unicorn'
+
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'spring',        group: :development
 
 # To use debugger
 # gem 'debugger'
 gem 'sprockets'
 
-group :development, :test do
-    gem 'mysql2', '~> 0.3.10'
-end
 
-group :production do
 
-  gem 'rails_12factor'
-  gem 'pg',             '0.18.4'
-  
-end
+
