@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151202144749) do
+ActiveRecord::Schema.define(:version => 20151024161221) do
+
+  create_table "achievements", :force => true do |t|
+    t.string   "dc_member_id"
+    t.string   "achievement"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "edition"
     t.string   "publication"
     t.string   "ISBN_number"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
   end
 
   create_table "communications", :force => true do |t|
@@ -67,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
   add_index "communications", ["dc_member_id"], :name => "index_communications_on_dc_member_id"
 
   create_table "correspondences", :force => true do |t|
-    t.string   "type_of_correspondence", :null => false
+    t.string   "type_of_correspondence"
     t.string   "subject"
     t.string   "user_initials"
     t.string   "medium"
@@ -76,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.date     "date"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.text     "recent_activities"
   end
 
   create_table "current_projects", :force => true do |t|
@@ -83,10 +92,16 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "dashboards", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "daily_logs", :force => true do |t|
+    t.integer  "dc_member_id"
+    t.date     "date"
+    t.string   "log"
+    t.string   "remark"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
+
+  add_index "daily_logs", ["dc_member_id"], :name => "index_daily_logs_on_dc_member_id"
 
   create_table "dc_members", :force => true do |t|
     t.string   "first_name"
@@ -107,9 +122,6 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "email"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.string   "contact_no"
-    t.string   "parent_email"
-    t.string   "parent_contact_no"
   end
 
   create_table "dcs", :force => true do |t|
@@ -178,8 +190,14 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "duration"
     t.string   "material_link"
     t.string   "summary_link"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
+  end
+
+  create_table "faqs", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "issue_resources", :force => true do |t|
@@ -193,6 +211,28 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  create_table "issued_resources", :force => true do |t|
+    t.string   "type_of_resource"
+    t.string   "issued_by"
+    t.string   "issued_to"
+    t.date     "issue_date"
+    t.time     "issue_time"
+    t.date     "submission_date"
+    t.time     "submission_time"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "member_achievements", :force => true do |t|
+    t.integer  "dc_member_id"
+    t.integer  "achievement_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "member_achievements", ["achievement_id"], :name => "index_member_achievements_on_achievement_id"
+  add_index "member_achievements", ["dc_member_id"], :name => "index_member_achievements_on_dc_member_id"
 
   create_table "member_events", :force => true do |t|
     t.integer  "dc_member_id"
@@ -249,6 +289,7 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.text     "achievement"
     t.text     "blog"
     t.text     "education"
+    t.text     "recent_activities"
     t.string   "skill"
   end
 
@@ -263,6 +304,7 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "github_page_link"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "recent_activities"
   end
 
   create_table "publications", :force => true do |t|
@@ -279,6 +321,7 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "author"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "recent_activities"
   end
 
   create_table "sessions", :force => true do |t|
@@ -296,8 +339,9 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "access"
     t.string   "os_installed"
     t.string   "sw_details"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.text     "recent_activities"
   end
 
   create_table "users", :force => true do |t|
@@ -311,6 +355,8 @@ ActiveRecord::Schema.define(:version => 20151202144749) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
